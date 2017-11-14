@@ -4,6 +4,14 @@ import java.awt.event.WindowEvent;
 
 public class JMorph extends JFrame {
 
+    //Constructor
+    public JMorph(){
+        super("JMorph brought to you by MC Productions");
+
+        setSize(800, 600 );
+        setVisible(true);
+    }
+
     //Initialize and run class
     public static void main(String args[])
     {
