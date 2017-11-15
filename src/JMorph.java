@@ -1,16 +1,28 @@
 import javax.swing.*;
+import javax.swing.border.Border;
+import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
 public class JMorph extends JFrame {
+
+    private JPanel sourcePanel;
+    private JPanel destPanel;
 
     //Constructor
     public JMorph(){
         super("JMorph brought to you by MC Productions");
 
         setupMenu();
+        sourcePanel = new ImagePanel();
+        destPanel = new ImagePanel();
 
-        setSize(800, 600 );
+        JPanel centerPanel = new JPanel();
+        add(centerPanel, BorderLayout.CENTER);
+        centerPanel.add(sourcePanel, BorderLayout.WEST);
+        centerPanel.add(destPanel, BorderLayout.EAST);
+
+        setSize(800, 600);
         setVisible(true);
     }
 
