@@ -1,6 +1,8 @@
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.awt.event.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -14,6 +16,8 @@ public class JMorph extends JFrame {
     private MyImageObj srcView; // Displays Source Image
     private MyImageObj destView; //Displays destination Image
 
+
+
     //Constructor
     public JMorph(){
         super("JMorph brought to you by MC Productions");
@@ -21,8 +25,9 @@ public class JMorph extends JFrame {
         setupMenu();
         buildComponents();
         buildDisplay();
-        setSize(800, 600 );
-        setVisible(true);
+
+
+
     }
 
     /*Helper Method
@@ -165,6 +170,7 @@ public class JMorph extends JFrame {
         c.add(destView,BorderLayout.WEST);
 
         pack();
+        setSize(800, 600);
         setVisible(true);
     }
 
