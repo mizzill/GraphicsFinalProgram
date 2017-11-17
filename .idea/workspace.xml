@@ -2,7 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7df4f537-39d0-47f3-8e18-748b545f72b1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ImagePanel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Final/JMorph$1.class" afterPath="$PROJECT_DIR$/out/production/Final/JMorph$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Final/JMorph$2.class" afterPath="$PROJECT_DIR$/out/production/Final/JMorph$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Final/JMorph$3.class" afterPath="$PROJECT_DIR$/out/production/Final/JMorph$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Final/JMorph$4.class" afterPath="$PROJECT_DIR$/out/production/Final/JMorph$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Final/JMorph$5.class" afterPath="$PROJECT_DIR$/out/production/Final/JMorph$5.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Final/JMorph$6.class" afterPath="$PROJECT_DIR$/out/production/Final/JMorph$6.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Final/JMorph$7.class" afterPath="$PROJECT_DIR$/out/production/Final/JMorph$7.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Final/JMorph$8.class" afterPath="$PROJECT_DIR$/out/production/Final/JMorph$8.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Final/JMorph.class" afterPath="$PROJECT_DIR$/out/production/Final/JMorph.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/JMorph.java" afterPath="$PROJECT_DIR$/src/JMorph.java" />
     </list>
@@ -17,24 +25,24 @@
   <component name="FileEditorManager">
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
-        <leaf>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
           <file leaf-file-name="JMorph.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/JMorph.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-1029">
-                  <caret line="8" column="27" lean-forward="true" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
+                <state relative-caret-position="235">
+                  <caret line="136" column="57" lean-forward="true" selection-start-line="136" selection-start-column="57" selection-end-line="136" selection-end-column="57" />
                   <folding>
                     <element signature="imports" expanded="true" />
-                    <element signature="e#3584#3585#0" expanded="true" />
-                    <element signature="e#3646#3647#0" expanded="true" />
-                    <element signature="e#4125#5130#0" expanded="true" />
-                    <element signature="e#5129#5130#0" expanded="true" />
-                    <element signature="e#5267#5810#0" expanded="true" />
-                    <element signature="e#5809#5810#0" expanded="true" />
-                    <element signature="e#7097#7201#0" expanded="true" />
-                    <element signature="e#7200#7201#0" expanded="true" />
-                    <marker date="1510794785955" expanded="false" signature="910:3816" ph="{...}" />
-                    <marker date="1510794785955" expanded="false" signature="3939:5827" ph="{...}" />
+                    <element signature="method#setupMenu#0;class#JMorph#0" expanded="false" />
+                    <element signature="e#4722#4723#0" expanded="true" />
+                    <element signature="e#4802#4803#0" expanded="true" />
+                    <element signature="e#4889#5894#0" expanded="true" />
+                    <element signature="e#5893#5894#0" expanded="true" />
+                    <element signature="e#6031#6574#0" expanded="true" />
+                    <element signature="e#6573#6574#0" expanded="true" />
+                    <element signature="method#buildDisplay#0;class#JMorph#0" expanded="false" />
+                    <element signature="e#7910#8014#0" expanded="true" />
+                    <element signature="e#8013#8014#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -53,8 +61,8 @@
           <file leaf-file-name="MyImageProc.java" pinned="false" current-in-tab="false">
             <entry file="file://$USER_HOME$/Downloads/week10/week10/ip/MyImageProc.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="191">
-                  <caret line="447" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="544" selection-end-column="0" />
+                <state relative-caret-position="8988">
+                  <caret line="447" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="544" selection-end-column="0" />
                   <folding>
                     <element signature="n#!!doc" expanded="true" />
                   </folding>
@@ -65,17 +73,21 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
           <file leaf-file-name="MyImageProc.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/MyImageProc.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="287">
-                  <caret line="267" column="8" lean-forward="false" selection-start-line="267" selection-start-column="8" selection-end-line="267" selection-end-column="8" />
+                <state relative-caret-position="210">
+                  <caret line="98" column="46" lean-forward="true" selection-start-line="98" selection-start-column="46" selection-end-line="98" selection-end-column="46" />
                   <folding>
                     <element signature="n#!!doc" expanded="true" />
                     <element signature="method#buildMenus#0;class#MyImageProc#0" expanded="false" />
+                    <element signature="e#5561#6561#0" expanded="true" />
+                    <element signature="e#6560#6561#0" expanded="true" />
                     <element signature="e#6695#7366#0" expanded="true" />
                     <element signature="e#7365#7366#0" expanded="true" />
+                    <element signature="e#12702#12869#0" expanded="true" />
+                    <element signature="e#12868#12869#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -84,7 +96,7 @@
           <file leaf-file-name="MyImageObj.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/MyImageObj.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="315">
+                <state relative-caret-position="945">
                   <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
                   <folding>
                     <element signature="imports" expanded="true" />
@@ -96,8 +108,8 @@
           <file leaf-file-name="Bombs.java" pinned="false" current-in-tab="false">
             <entry file="file://$USER_HOME$/IdeaProjects/Minesweeper/src/Bombs.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="274">
-                  <caret line="173" column="39" lean-forward="false" selection-start-line="173" selection-start-column="39" selection-end-line="173" selection-end-column="39" />
+                <state relative-caret-position="288">
+                  <caret line="29" column="17" lean-forward="false" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="17" />
                   <folding />
                 </state>
               </provider>
@@ -119,6 +131,7 @@
       <find>boa</find>
       <find>image</find>
       <find>view</find>
+      <find>slid</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -166,7 +179,6 @@
     <panes>
       <pane id="AndroidView" />
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -183,6 +195,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -338,7 +351,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1510683157050</updated>
-      <workItem from="1510683159002" duration="6197000" />
+      <workItem from="1510683159002" duration="6284000" />
+      <workItem from="1510935158617" duration="1885000" />
     </task>
     <task id="LOCAL-00001" summary="Created Project starter file">
       <created>1510683482758</created>
@@ -365,39 +379,39 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6197000" />
+    <option name="totallyTimeSpent" value="8169000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1098" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32952183" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32952183" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32952183" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -417,9 +431,37 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/JMorph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" column="27" lean-forward="false" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#setupMenu#0;class#JMorph#0" expanded="false" />
+            <element signature="e#4722#4723#0" expanded="true" />
+            <element signature="e#4802#4803#0" expanded="true" />
+            <element signature="e#4889#5894#0" expanded="true" />
+            <element signature="e#5893#5894#0" expanded="true" />
+            <element signature="e#6031#6574#0" expanded="true" />
+            <element signature="e#6573#6574#0" expanded="true" />
+            <element signature="method#buildDisplay#0;class#JMorph#0" expanded="false" />
+            <element signature="e#7910#8014#0" expanded="true" />
+            <element signature="e#8013#8014#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ImagePanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$USER_HOME$/Downloads/week10/week10/ip/MyImageProc.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
+        <state relative-caret-position="9387">
           <caret line="447" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="544" selection-end-column="0" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
@@ -427,9 +469,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/MyImageProc.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="method#buildMenus#0;class#MyImageProc#0" expanded="false" />
+            <element signature="e#5561#6561#0" expanded="true" />
+            <element signature="e#6560#6561#0" expanded="true" />
+            <element signature="e#6695#7366#0" expanded="true" />
+            <element signature="e#7365#7366#0" expanded="true" />
+            <element signature="e#12702#12869#0" expanded="true" />
+            <element signature="e#12868#12869#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$USER_HOME$/IdeaProjects/Minesweeper/src/Bombs.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
+        <state relative-caret-position="3318">
           <caret line="173" column="39" lean-forward="false" selection-start-line="173" selection-start-column="39" selection-end-line="173" selection-end-column="39" />
           <folding />
         </state>
@@ -437,10 +496,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MyImageObj.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
+        <state relative-caret-position="882">
           <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/week10/week10/ip/MyImageProc.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8988">
+          <caret line="447" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="544" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -453,35 +522,57 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MyImageProc.java">
+    <entry file="file://$USER_HOME$/IdeaProjects/Minesweeper/src/Bombs.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="267" column="8" lean-forward="false" selection-start-line="267" selection-start-column="8" selection-end-line="267" selection-end-column="8" />
+        <state relative-caret-position="288">
+          <caret line="29" column="17" lean-forward="false" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MyImageObj.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="945">
+          <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="method#buildMenus#0;class#MyImageProc#0" expanded="false" />
-            <element signature="e#6695#7366#0" expanded="true" />
-            <element signature="e#7365#7366#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/JMorph.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1029">
-          <caret line="8" column="27" lean-forward="true" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
+        <state relative-caret-position="235">
+          <caret line="136" column="57" lean-forward="true" selection-start-line="136" selection-start-column="57" selection-end-line="136" selection-end-column="57" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3584#3585#0" expanded="true" />
-            <element signature="e#3646#3647#0" expanded="true" />
-            <element signature="e#4125#5130#0" expanded="true" />
-            <element signature="e#5129#5130#0" expanded="true" />
-            <element signature="e#5267#5810#0" expanded="true" />
-            <element signature="e#5809#5810#0" expanded="true" />
-            <element signature="e#7097#7201#0" expanded="true" />
-            <element signature="e#7200#7201#0" expanded="true" />
-            <marker date="1510794785955" expanded="false" signature="910:3816" ph="{...}" />
-            <marker date="1510794785955" expanded="false" signature="3939:5827" ph="{...}" />
+            <element signature="method#setupMenu#0;class#JMorph#0" expanded="false" />
+            <element signature="e#4722#4723#0" expanded="true" />
+            <element signature="e#4802#4803#0" expanded="true" />
+            <element signature="e#4889#5894#0" expanded="true" />
+            <element signature="e#5893#5894#0" expanded="true" />
+            <element signature="e#6031#6574#0" expanded="true" />
+            <element signature="e#6573#6574#0" expanded="true" />
+            <element signature="method#buildDisplay#0;class#JMorph#0" expanded="false" />
+            <element signature="e#7910#8014#0" expanded="true" />
+            <element signature="e#8013#8014#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MyImageProc.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="98" column="46" lean-forward="true" selection-start-line="98" selection-start-column="46" selection-end-line="98" selection-end-column="46" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="method#buildMenus#0;class#MyImageProc#0" expanded="false" />
+            <element signature="e#5561#6561#0" expanded="true" />
+            <element signature="e#6560#6561#0" expanded="true" />
+            <element signature="e#6695#7366#0" expanded="true" />
+            <element signature="e#7365#7366#0" expanded="true" />
+            <element signature="e#12702#12869#0" expanded="true" />
+            <element signature="e#12868#12869#0" expanded="true" />
           </folding>
         </state>
       </provider>

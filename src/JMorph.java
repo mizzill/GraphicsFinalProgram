@@ -1,5 +1,7 @@
 import javax.imageio.ImageIO;
 import javax.swing.*;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
@@ -16,12 +18,20 @@ public class JMorph extends JFrame {
     private MyImageObj srcView; // Displays Source Image
     private MyImageObj destView; //Displays destination Image
 
+    private final int MIN_SECONDS = 15;
+    private final int MAX_SECONDS = 60;
+    private final int INIT_SECONDS = 30;
+
+    private JSlider frameSlider;
+    int seconds;
+
 
 
     //Constructor
     public JMorph(){
         super("JMorph brought to you by MC Productions");
 
+        seconds = INIT_SECONDS;
         setupMenu();
         buildComponents();
         buildDisplay();
@@ -116,6 +126,18 @@ public class JMorph extends JFrame {
         srcView = new MyImageObj( readImage("src/boat.gif") );
         destView = new MyImageObj( readImage("src/boat.gif") );
 
+        frameSlider = new JSlider(SwingConstants.HORIZONTAL, MIN_SECONDS, MAX_SECONDS, INIT_SECONDS);
+        frameSlider.setMajorTickSpacing(5);
+        frameSlider.setPaintLabels(true);
+        frameSlider.setPaintTicks(true);
+
+        frameSlider.addChangeListener(
+                new ChangeListener() {
+                    public void stateChanged (ChangeEvent e) {
+                        seconds = frameSlider.getValue();
+                    }
+                }
+        );
         srcView.addMouseMotionListener(
                 new MouseMotionAdapter() {
                     public void mouseDragged(MouseEvent event) {
@@ -166,6 +188,8 @@ public class JMorph extends JFrame {
 
 
         Container c = this.getContentPane();
+
+        c.add(frameSlider, BorderLayout.NORTH);
         c.add(srcView, BorderLayout.EAST);
         c.add(destView,BorderLayout.WEST);
 
