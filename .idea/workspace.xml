@@ -2,15 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7df4f537-39d0-47f3-8e18-748b545f72b1" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Final/JMorph$1.class" afterPath="$PROJECT_DIR$/out/production/Final/JMorph$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Final/JMorph$2.class" afterPath="$PROJECT_DIR$/out/production/Final/JMorph$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Final/JMorph$3.class" afterPath="$PROJECT_DIR$/out/production/Final/JMorph$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Final/JMorph$4.class" afterPath="$PROJECT_DIR$/out/production/Final/JMorph$4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Final/JMorph$5.class" afterPath="$PROJECT_DIR$/out/production/Final/JMorph$5.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Final/JMorph$6.class" afterPath="$PROJECT_DIR$/out/production/Final/JMorph$6.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Final/JMorph$7.class" afterPath="$PROJECT_DIR$/out/production/Final/JMorph$7.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Final/JMorph$8.class" afterPath="$PROJECT_DIR$/out/production/Final/JMorph$8.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Final/JMorph.class" afterPath="$PROJECT_DIR$/out/production/Final/JMorph.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/JMorph.java" afterPath="$PROJECT_DIR$/src/JMorph.java" />
     </list>
@@ -23,37 +14,26 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
+    <splitter split-orientation="horizontal" split-proportion="0.5198638">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
           <file leaf-file-name="JMorph.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/JMorph.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="235">
-                  <caret line="136" column="57" lean-forward="true" selection-start-line="136" selection-start-column="57" selection-end-line="136" selection-end-column="57" />
+                <state relative-caret-position="465">
+                  <caret line="208" column="50" lean-forward="true" selection-start-line="208" selection-start-column="50" selection-end-line="208" selection-end-column="50" />
                   <folding>
                     <element signature="imports" expanded="true" />
                     <element signature="method#setupMenu#0;class#JMorph#0" expanded="false" />
-                    <element signature="e#4722#4723#0" expanded="true" />
-                    <element signature="e#4802#4803#0" expanded="true" />
-                    <element signature="e#4889#5894#0" expanded="true" />
-                    <element signature="e#5893#5894#0" expanded="true" />
-                    <element signature="e#6031#6574#0" expanded="true" />
-                    <element signature="e#6573#6574#0" expanded="true" />
-                    <element signature="method#buildDisplay#0;class#JMorph#0" expanded="false" />
-                    <element signature="e#7910#8014#0" expanded="true" />
-                    <element signature="e#8013#8014#0" expanded="true" />
+                    <element signature="e#4774#4775#0" expanded="true" />
+                    <element signature="e#4854#4855#0" expanded="true" />
+                    <element signature="e#4941#5952#0" expanded="true" />
+                    <element signature="e#5951#5952#0" expanded="true" />
+                    <element signature="e#6089#6637#0" expanded="true" />
+                    <element signature="e#6636#6637#0" expanded="true" />
+                    <element signature="e#7973#8077#0" expanded="true" />
+                    <element signature="e#8076#8077#0" expanded="true" />
                   </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="ImagePanel.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/ImagePanel.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="42">
-                  <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-                  <folding />
                 </state>
               </provider>
             </entry>
@@ -77,8 +57,8 @@
           <file leaf-file-name="MyImageProc.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/MyImageProc.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="210">
-                  <caret line="98" column="46" lean-forward="true" selection-start-line="98" selection-start-column="46" selection-end-line="98" selection-end-column="46" />
+                <state relative-caret-position="-523">
+                  <caret line="98" column="46" lean-forward="false" selection-start-line="98" selection-start-column="46" selection-end-line="98" selection-end-column="46" />
                   <folding>
                     <element signature="n#!!doc" expanded="true" />
                     <element signature="method#buildMenus#0;class#MyImageProc#0" expanded="false" />
@@ -96,7 +76,7 @@
           <file leaf-file-name="MyImageObj.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/MyImageObj.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="945">
+                <state relative-caret-position="882">
                   <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
                   <folding>
                     <element signature="imports" expanded="true" />
@@ -108,7 +88,7 @@
           <file leaf-file-name="Bombs.java" pinned="false" current-in-tab="false">
             <entry file="file://$USER_HOME$/IdeaProjects/Minesweeper/src/Bombs.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="288">
+                <state relative-caret-position="420">
                   <caret line="29" column="17" lean-forward="false" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="17" />
                   <folding />
                 </state>
@@ -177,8 +157,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="AndroidView" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -195,8 +177,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -352,7 +332,8 @@
       <option name="presentableId" value="Default" />
       <updated>1510683157050</updated>
       <workItem from="1510683159002" duration="6284000" />
-      <workItem from="1510935158617" duration="1885000" />
+      <workItem from="1510935158617" duration="2517000" />
+      <workItem from="1511018543545" duration="922000" />
     </task>
     <task id="LOCAL-00001" summary="Created Project starter file">
       <created>1510683482758</created>
@@ -375,11 +356,18 @@
       <option name="project" value="LOCAL" />
       <updated>1510685051184</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added in a frame slider. Next thing to do is probably the grid">
+      <created>1510938460388</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1510938460388</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8169000" />
+    <option name="totallyTimeSpent" value="9723000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1098" extended-state="6" />
@@ -398,7 +386,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.08229167" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -424,7 +412,8 @@
     <MESSAGE value="Created Project starter file" />
     <MESSAGE value="Starter GUI" />
     <MESSAGE value="Added file menu with a few options. Gotta start somewhere" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added file menu with a few options. Gotta start somewhere" />
+    <MESSAGE value="Added in a frame slider. Next thing to do is probably the grid" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added in a frame slider. Next thing to do is probably the grid" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -433,20 +422,91 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/JMorph.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1281">
+          <caret line="136" column="57" lean-forward="false" selection-start-line="136" selection-start-column="57" selection-end-line="136" selection-end-column="57" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#setupMenu#0;class#JMorph#0" expanded="false" />
+            <element signature="e#4774#4775#0" expanded="true" />
+            <element signature="e#4854#4855#0" expanded="true" />
+            <element signature="e#4941#5952#0" expanded="true" />
+            <element signature="e#5951#5952#0" expanded="true" />
+            <element signature="e#6089#6637#0" expanded="true" />
+            <element signature="e#6636#6637#0" expanded="true" />
+            <element signature="e#7973#8077#0" expanded="true" />
+            <element signature="e#8076#8077#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ImagePanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/week10/week10/ip/MyImageProc.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9387">
+          <caret line="447" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="544" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MyImageProc.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="method#buildMenus#0;class#MyImageProc#0" expanded="false" />
+            <element signature="e#5561#6561#0" expanded="true" />
+            <element signature="e#6560#6561#0" expanded="true" />
+            <element signature="e#6695#7366#0" expanded="true" />
+            <element signature="e#7365#7366#0" expanded="true" />
+            <element signature="e#12702#12869#0" expanded="true" />
+            <element signature="e#12868#12869#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MyImageObj.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="882">
+          <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/IdeaProjects/Minesweeper/src/Bombs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="29" column="17" lean-forward="false" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/JMorph.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
           <caret line="8" column="27" lean-forward="false" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#setupMenu#0;class#JMorph#0" expanded="false" />
-            <element signature="e#4722#4723#0" expanded="true" />
-            <element signature="e#4802#4803#0" expanded="true" />
-            <element signature="e#4889#5894#0" expanded="true" />
-            <element signature="e#5893#5894#0" expanded="true" />
-            <element signature="e#6031#6574#0" expanded="true" />
-            <element signature="e#6573#6574#0" expanded="true" />
-            <element signature="method#buildDisplay#0;class#JMorph#0" expanded="false" />
-            <element signature="e#7910#8014#0" expanded="true" />
-            <element signature="e#8013#8014#0" expanded="true" />
+            <element signature="e#4774#4775#0" expanded="true" />
+            <element signature="e#4854#4855#0" expanded="true" />
+            <element signature="e#4941#5952#0" expanded="true" />
+            <element signature="e#5951#5952#0" expanded="true" />
+            <element signature="e#6089#6637#0" expanded="true" />
+            <element signature="e#6636#6637#0" expanded="true" />
+            <element signature="e#7973#8077#0" expanded="true" />
+            <element signature="e#8076#8077#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -514,6 +574,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/IdeaProjects/Minesweeper/src/Bombs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="29" column="17" lean-forward="false" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MyImageObj.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="882">
+          <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/ImagePanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="42">
@@ -522,48 +600,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/IdeaProjects/Minesweeper/src/Bombs.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="29" column="17" lean-forward="false" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MyImageObj.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="945">
-          <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/JMorph.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="136" column="57" lean-forward="true" selection-start-line="136" selection-start-column="57" selection-end-line="136" selection-end-column="57" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#setupMenu#0;class#JMorph#0" expanded="false" />
-            <element signature="e#4722#4723#0" expanded="true" />
-            <element signature="e#4802#4803#0" expanded="true" />
-            <element signature="e#4889#5894#0" expanded="true" />
-            <element signature="e#5893#5894#0" expanded="true" />
-            <element signature="e#6031#6574#0" expanded="true" />
-            <element signature="e#6573#6574#0" expanded="true" />
-            <element signature="method#buildDisplay#0;class#JMorph#0" expanded="false" />
-            <element signature="e#7910#8014#0" expanded="true" />
-            <element signature="e#8013#8014#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/MyImageProc.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="98" column="46" lean-forward="true" selection-start-line="98" selection-start-column="46" selection-end-line="98" selection-end-column="46" />
+        <state relative-caret-position="-523">
+          <caret line="98" column="46" lean-forward="false" selection-start-line="98" selection-start-column="46" selection-end-line="98" selection-end-column="46" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="method#buildMenus#0;class#MyImageProc#0" expanded="false" />
@@ -573,6 +613,25 @@
             <element signature="e#7365#7366#0" expanded="true" />
             <element signature="e#12702#12869#0" expanded="true" />
             <element signature="e#12868#12869#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/JMorph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="208" column="50" lean-forward="true" selection-start-line="208" selection-start-column="50" selection-end-line="208" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#setupMenu#0;class#JMorph#0" expanded="false" />
+            <element signature="e#4774#4775#0" expanded="true" />
+            <element signature="e#4854#4855#0" expanded="true" />
+            <element signature="e#4941#5952#0" expanded="true" />
+            <element signature="e#5951#5952#0" expanded="true" />
+            <element signature="e#6089#6637#0" expanded="true" />
+            <element signature="e#6636#6637#0" expanded="true" />
+            <element signature="e#7973#8077#0" expanded="true" />
+            <element signature="e#8076#8077#0" expanded="true" />
           </folding>
         </state>
       </provider>

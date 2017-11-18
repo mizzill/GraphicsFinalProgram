@@ -23,7 +23,9 @@ public class JMorph extends JFrame {
     private final int INIT_SECONDS = 30;
 
     private JSlider frameSlider;
-    int seconds;
+
+    private int seconds, x,y;
+    private boolean firstdrag = true;
 
 
 
@@ -141,24 +143,24 @@ public class JMorph extends JFrame {
         srcView.addMouseMotionListener(
                 new MouseMotionAdapter() {
                     public void mouseDragged(MouseEvent event) {
-         /*               Graphics g = view.getGraphics();
+                       Graphics g = srcView.getGraphics();
                         g.setColor (Color.white);
                         if (firstdrag) {
                             x = event.getX();  y = event.getY();
                             firstdrag = false;
                         }
                         else {
-                            view.showImage();
+                            srcView.showImage();
                             x=event.getX();
                             y=event.getY();
-                            int w=view.getImage().getWidth();
-                            int h=view.getImage().getHeight();
+                            int w=srcView.getImage().getWidth();
+                            int h=srcView.getImage().getHeight();
                             g.fillOval (x-5, y-5, 10, 10);
                             g.drawLine (0,0, x, y);
                             g.drawLine (0,h, x, y);
                             g.drawLine (w,h, x, y);
                             g.drawLine (w,0, x, y);
-                        } */
+                        }
                     }
                 }
         );
@@ -167,17 +169,17 @@ public class JMorph extends JFrame {
         srcView.addMouseListener(
                 new MouseAdapter() {
                     public void mouseReleased(MouseEvent event) {
-        /*    Graphics g = view.getGraphics();
+            Graphics g = srcView.getGraphics();
             firstdrag = true;
             x=event.getX();
             y=event.getY();
-            int w=view.getImage().getWidth();
-            int h=view.getImage().getHeight();
+            int w=srcView.getImage().getWidth();
+            int h=srcView.getImage().getHeight();
             g.fillOval (x-5, y-5, 10, 10);
             g.drawLine (0,0, x, y);
             g.drawLine (0,h, x, y);
             g.drawLine (w,h, x, y);
-            g.drawLine (w,0, x, y);*/
+            g.drawLine (w,0, x, y);
 
 
                     }
@@ -190,8 +192,8 @@ public class JMorph extends JFrame {
         Container c = this.getContentPane();
 
         c.add(frameSlider, BorderLayout.NORTH);
-        c.add(srcView, BorderLayout.EAST);
-        c.add(destView,BorderLayout.WEST);
+        c.add(srcView, BorderLayout.WEST);
+        c.add(destView,BorderLayout.EAST);
 
         pack();
         setSize(800, 600);
