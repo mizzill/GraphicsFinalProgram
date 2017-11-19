@@ -5,7 +5,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
 import java.awt.image.*;
 
-public class MyImageObj extends JLabel {
+public class ImageView extends JComponent {
 
     // Instance variable to hold the buffered image
     private BufferedImage bim = null;
@@ -35,27 +35,22 @@ public class MyImageObj extends JLabel {
     private int selected = -1;
 
     // This constructor stores a buffered image passed in as a parameter
-    public MyImageObj(BufferedImage img) {
+    public ImageView(BufferedImage img) {
 
-        bim = img;
-
-        setPreferredSize(new Dimension(bim.getWidth(), bim.getHeight()));
-
-        setupControlGrid();
-
+        setImage(img);
         setupMouseListeners();
-
-        this.repaint();
 
     }
 
     // This mutator changes the stored image and updates control points
     public void setImage(BufferedImage img) {
+
         if (img == null) return;
         bim = img;
         setPreferredSize(new Dimension(bim.getWidth(), bim.getHeight()));
         setupControlGrid();
         this.repaint();
+
     }
 
     // Accessor to get a handle to the BufferedImage object stored here
@@ -73,23 +68,26 @@ public class MyImageObj extends JLabel {
     // Get a graphics context and show the image with the control point grid
     public void paintComponent(Graphics g) {
 
-        // Get the graphics context of the buffered image
-        Graphics2D bimGfx = bim.createGraphics();
-        bimGfx.setColor(Color.white);
+        // Get the graphics context
+        Graphics2D big = (Graphics2D) g;
+        big.setColor(Color.white);
+
+        // Draw the image onto the view
+        big.drawImage(bim, 0, 0, this);
 
         // Draw grid lines
         for (int i = 0; i <= gridRows; ++i) {
-            bimGfx.drawLine(0, i * gridCellHeight, gridCols * gridCellWidth, i * gridCellHeight);
+            big.drawLine(0, i * gridCellHeight, gridCols * gridCellWidth, i * gridCellHeight);
         }
 
         for (int i = 0; i <= gridCols; ++i) {
-            bimGfx.drawLine(i * gridCellWidth, 0, i * gridCellWidth, gridRows * gridCellHeight);
+            big.drawLine(i * gridCellWidth, 0, i * gridCellWidth, gridRows * gridCellHeight);
         }
 
         // Draw control points and their corresponding lines
         for (int i = 0; i < controlPoints.length; ++i) {
             // Draw the point
-            bimGfx.fillOval(
+            big.fillOval(
                     controlPoints[i].x - pointRadius,
                     controlPoints[i].y - pointRadius,
                     pointRadius * 2,
@@ -97,25 +95,25 @@ public class MyImageObj extends JLabel {
             );
 
             // Draw the lines
-            bimGfx.drawLine(
+            big.drawLine(
                     controlPoints[i].x,
                     controlPoints[i].y,
                     gridCellCoords[i].x,
                     gridCellCoords[i].y
             );
-            bimGfx.drawLine(
+            big.drawLine(
                     controlPoints[i].x,
                     controlPoints[i].y,
                     gridCellCoords[i].x + gridCellWidth,
                     gridCellCoords[i].y + gridCellHeight
             );
-            bimGfx.drawLine(
+            big.drawLine(
                     controlPoints[i].x,
                     controlPoints[i].y,
                     gridCellCoords[i].x,
                     gridCellCoords[i].y + gridCellHeight
             );
-            bimGfx.drawLine(
+            big.drawLine(
                     controlPoints[i].x,
                     controlPoints[i].y,
                     gridCellCoords[i].x + gridCellWidth,
@@ -123,14 +121,10 @@ public class MyImageObj extends JLabel {
             );
         }
 
-        // Draw the image onto the view
-        Graphics2D big = (Graphics2D) g;
-        big.drawImage(bim, 0, 0, this);
-
     }
 
     // Creates the grid and control point arrays
-    private void setupControlGrid() {
+    public void setupControlGrid() {
 
         // Determine the appropriate distance between control points
         gridCellHeight = bim.getHeight() / gridRows;
@@ -165,7 +159,6 @@ public class MyImageObj extends JLabel {
         addMouseListener(new MouseAdapter() {
 
             // Selecting a point
-
             @Override
             public void mousePressed(MouseEvent e) {
                 super.mousePressed(e);
@@ -178,23 +171,44 @@ public class MyImageObj extends JLabel {
             }
 
             // Unselecting a point
-
             @Override
             public void mouseReleased(MouseEvent e) {
                 super.mouseReleased(e);
                 selected = -1;
             }
+
         });
 
+        // Listens for mouse dragging
         addMouseMotionListener(new MouseMotionAdapter() {
 
             // Drag the selected point
-
             @Override
             public void mouseDragged(MouseEvent e) {
                 super.mouseDragged(e);
+
+                // If a point is selected
                 if (selected != -1) {
+
+                    // Move the point to the cursor
                     controlPoints[selected] = e.getPoint();
+
+                    // Make sure the point stays in bounds
+                    if (controlPoints[selected].x < 0) {
+                        controlPoints[selected].x = 0;
+                    }
+                    else if (controlPoints[selected].x > bim.getWidth()) {
+                        controlPoints[selected].x = bim.getWidth();
+                    }
+
+                    if (controlPoints[selected].y < 0) {
+                        controlPoints[selected].y = 0;
+                    }
+                    else if (controlPoints[selected].y > bim.getHeight()) {
+                        controlPoints[selected].y = bim.getHeight();
+                    }
+
+                    // Paint the scene again
                     repaint();
                 }
             }

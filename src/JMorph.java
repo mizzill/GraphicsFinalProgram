@@ -12,8 +12,8 @@ public class JMorph extends JFrame {
     //Right now planning on reusing Buffered Image and MyImageObj class from Week 10 code
     private BufferedImage src; //The Source Image
     private BufferedImage dest; // The Destination Image
-    private MyImageObj srcView; // Displays Source Image
-    private MyImageObj destView; //Displays Destination Image
+    private ImageView srcView; // Displays Source Image
+    private ImageView destView; //Displays Destination Image
 
     private final int MIN_SECONDS = 15;
     private final int MAX_SECONDS = 60;
@@ -86,11 +86,8 @@ public class JMorph extends JFrame {
         JMenuItem resetImgs = new JMenuItem("Reset");
         fileMenu.add( resetImgs );
         resetImgs.addActionListener(e -> {
-                srcView.showImage();
-                destView.showImage();
-                //Add in a dialog box or something to
-                //Warn the user before resetting
-                //infoLabel.setText("Original");
+                srcView.setupControlGrid();
+                destView.setupControlGrid();
             }
         );
 
@@ -107,10 +104,10 @@ public class JMorph extends JFrame {
     }
 
     /*Initializes components with values
-    * Sets up Action Listeners if Necessary*/
+    * Sets up Action Listeners if necessary*/
     private void buildComponents(){
-        srcView = new MyImageObj( readImage("src/boat.gif") );
-        destView = new MyImageObj( readImage("src/island.jpg") );
+        srcView = new ImageView( readImage("src/boat.gif") );
+        destView = new ImageView( readImage("src/island.jpg") );
 
         frameSlider = new JSlider(SwingConstants.HORIZONTAL, MIN_SECONDS, MAX_SECONDS, INIT_SECONDS);
         frameSlider.setMajorTickSpacing(5);
