@@ -1,11 +1,8 @@
 import javax.imageio.ImageIO;
 import javax.swing.*;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
 import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import java.awt.event.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -16,104 +13,91 @@ public class JMorph extends JFrame {
     private BufferedImage src; //The Source Image
     private BufferedImage dest; // The Destination Image
     private MyImageObj srcView; // Displays Source Image
-    private MyImageObj destView; //Displays destination Image
+    private MyImageObj destView; //Displays Destination Image
 
     private final int MIN_SECONDS = 15;
     private final int MAX_SECONDS = 60;
     private final int INIT_SECONDS = 30;
 
     private JSlider frameSlider;
-
-    private int seconds, x,y;
-    private boolean firstdrag = true;
-
-
+    private int seconds;
 
     //Constructor
     public JMorph(){
-        super("JMorph brought to you by MC Productions");
+        super("Mighty JMorphin' Power Rangers");
 
         seconds = INIT_SECONDS;
         setupMenu();
         buildComponents();
         buildDisplay();
 
-
-
     }
 
-    /*Helper Method
-    * Creates Menu bar and items, also adds handlers to them
+    /* Helper Method
+    *  Creates Menu bar, items, and their handlers
     * */
     private void setupMenu(){
         JMenu fileMenu = new JMenu("File");
         final JFileChooser fc = new JFileChooser(".");
+
         //Change Source Image
         JMenuItem changeSrcImage = new JMenuItem("Change Source Image");
         fileMenu.add( changeSrcImage );
-        changeSrcImage.addActionListener(
-                new ActionListener() {
-                    public void actionPerformed (ActionEvent e) {
-                        int returnVal = fc.showOpenDialog(JMorph.this);
-                        if (returnVal == JFileChooser.APPROVE_OPTION) {
-                            File file = fc.getSelectedFile();
-                            try {
-                                src = ImageIO.read(file);
-                            } catch (IOException e1){};
+        changeSrcImage.addActionListener(e -> {
+                int returnVal = fc.showOpenDialog(JMorph.this);
+                if (returnVal == JFileChooser.APPROVE_OPTION) {
+                    File file = fc.getSelectedFile();
+                    try {
+                        src = ImageIO.read(file);
+                    } catch (IOException e1){
+                        //TODO handle this exception
+                    };
 
-                            srcView.setImage(src);
-                            srcView.showImage();
-                        }
-                    }
+                    srcView.setImage(src);
                 }
+            }
         );
+
         //Change Destination Image
         JMenuItem changeDestImage = new JMenuItem("Change Destination Image");
         fileMenu.add( changeDestImage );
-        changeDestImage.addActionListener(
-                new ActionListener() {
-                    public void actionPerformed (ActionEvent e) {
-                        int returnVal = fc.showOpenDialog(JMorph.this);
-                        if (returnVal == JFileChooser.APPROVE_OPTION) {
-                            File file = fc.getSelectedFile();
-                            try {
-                                dest = ImageIO.read(file);
-                            } catch (IOException e1){};
+        changeDestImage.addActionListener(e -> {
+                int returnVal = fc.showOpenDialog(JMorph.this);
+                if (returnVal == JFileChooser.APPROVE_OPTION) {
+                    File file = fc.getSelectedFile();
+                    try {
+                        dest = ImageIO.read(file);
+                    } catch (IOException e1){
+                        //TODO handle this exception
+                    };
 
-                            destView.setImage(dest);
-                            destView.showImage();
-                        }
-                    }
+                    destView.setImage(dest);
                 }
+            }
         );
+
         //Save
         JMenuItem saveCtrlPts = new JMenuItem("Save");
         fileMenu.add( saveCtrlPts );
-        /*TODO Handler*/
+
+        /*TODO Save Handler*/
+
         //Reset
         JMenuItem resetImgs = new JMenuItem("Reset");
         fileMenu.add( resetImgs );
-        resetImgs.addActionListener(
-                new ActionListener () {
-                    public void actionPerformed (ActionEvent e) {
-                        srcView.showImage();
-                        destView.showImage();
-                        //Add in a dialog box or something to
-                        //Warn the user before resettin
-                        //infoLabel.setText("Original");
-                    }
-                }
+        resetImgs.addActionListener(e -> {
+                srcView.showImage();
+                destView.showImage();
+                //Add in a dialog box or something to
+                //Warn the user before resetting
+                //infoLabel.setText("Original");
+            }
         );
 
+        //Exit
         JMenuItem exit = new JMenuItem("Exit");
         fileMenu.add( exit );
-        exit.addActionListener(
-                new ActionListener () {
-                    public void actionPerformed (ActionEvent e) {
-                        System.exit(0);
-                    }
-                }
-        );
+        exit.addActionListener(e -> System.exit(0));
 
         //Add the menus to a JMenuBar
         JMenuBar bar = new JMenuBar();
@@ -126,69 +110,20 @@ public class JMorph extends JFrame {
     * Sets up Action Listeners if Necessary*/
     private void buildComponents(){
         srcView = new MyImageObj( readImage("src/boat.gif") );
-        destView = new MyImageObj( readImage("src/boat.gif") );
+        destView = new MyImageObj( readImage("src/island.jpg") );
 
         frameSlider = new JSlider(SwingConstants.HORIZONTAL, MIN_SECONDS, MAX_SECONDS, INIT_SECONDS);
         frameSlider.setMajorTickSpacing(5);
         frameSlider.setPaintLabels(true);
         frameSlider.setPaintTicks(true);
 
-        frameSlider.addChangeListener(
-                new ChangeListener() {
-                    public void stateChanged (ChangeEvent e) {
-                        seconds = frameSlider.getValue();
-                    }
-                }
-        );
-        srcView.addMouseMotionListener(
-                new MouseMotionAdapter() {
-                    public void mouseDragged(MouseEvent event) {
-                       Graphics g = srcView.getGraphics();
-                        g.setColor (Color.white);
-                        if (firstdrag) {
-                            x = event.getX();  y = event.getY();
-                            firstdrag = false;
-                        }
-                        else {
-                            srcView.showImage();
-                            x=event.getX();
-                            y=event.getY();
-                            int w=srcView.getImage().getWidth();
-                            int h=srcView.getImage().getHeight();
-                            g.fillOval (x-5, y-5, 10, 10);
-                            g.drawLine (0,0, x, y);
-                            g.drawLine (0,h, x, y);
-                            g.drawLine (w,h, x, y);
-                            g.drawLine (w,0, x, y);
-                        }
-                    }
-                }
-        );
-
-        // Listen for mouse release to detect when we've stopped painting
-        srcView.addMouseListener(
-                new MouseAdapter() {
-                    public void mouseReleased(MouseEvent event) {
-            Graphics g = srcView.getGraphics();
-            firstdrag = true;
-            x=event.getX();
-            y=event.getY();
-            int w=srcView.getImage().getWidth();
-            int h=srcView.getImage().getHeight();
-            g.fillOval (x-5, y-5, 10, 10);
-            g.drawLine (0,0, x, y);
-            g.drawLine (0,h, x, y);
-            g.drawLine (w,h, x, y);
-            g.drawLine (w,0, x, y);
-
-
-                    }
-                }
+        frameSlider.addChangeListener(e ->
+            seconds = frameSlider.getValue()
         );
     }
+
+    // Adds all the content views to the frame
     private void buildDisplay(){
-
-
         Container c = this.getContentPane();
 
         c.add(frameSlider, BorderLayout.NORTH);
@@ -219,7 +154,9 @@ public class JMorph extends JFrame {
         Graphics2D big = bim.createGraphics();
         big.drawImage (image, 0, 0, this);
         return bim;
+
     }
+
     //Initialize and run class
     public static void main(String args[])
     {
