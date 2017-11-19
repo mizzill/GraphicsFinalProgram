@@ -1,5 +1,3 @@
-import com.sun.corba.se.impl.orbutil.graph.Graph;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.*;
@@ -10,18 +8,25 @@ public class MyImageObj extends JLabel {
     private BufferedImage bim = null;
 
     // The number of grid rows and columns
-    private int gridWidth = 10;
-    private int gridHeight = 10;
+    private int gridRows = 10;
+    private int gridCols = 10;
 
-    // The distance between each grid cell
-    private int dx = -1;
-    private int dy = -1;
+    // The size of each grid cell
+    private int gridCellWidth = -1;
+    private int gridCellHeight = -1;
 
-    // The diameter of each control point
-    private int diameter = 10;
+    // The offset of the center point within a grid cell
+    private int offsetX;
+    private int offsetY;
+
+    // The radius of each control point
+    private int pointRadius = 5;
 
     // An array to store all control points
     private Point[] controlPoints;
+
+    // An array to store the top-left coordinates of each grid cell
+    private Point[] gridCellCoords;
 
     // This constructor stores a buffered image passed in as a parameter
     public MyImageObj(BufferedImage img) {
@@ -29,7 +34,7 @@ public class MyImageObj extends JLabel {
 
         setPreferredSize(new Dimension(bim.getWidth(), bim.getHeight()));
 
-        setupControlPoints();
+        setupControlGrid();
 
         this.repaint();
     }
@@ -39,11 +44,11 @@ public class MyImageObj extends JLabel {
         if (img == null) return;
         bim = img;
         setPreferredSize(new Dimension(bim.getWidth(), bim.getHeight()));
-        setupControlPoints();
+        setupControlGrid();
         this.repaint();
     }
 
-    // Accessor to get a handle to the bufferedimage object stored here
+    // Accessor to get a handle to the BufferedImage object stored here
     public BufferedImage getImage() {
         return bim;
     }
@@ -60,19 +65,44 @@ public class MyImageObj extends JLabel {
 
         // Get the graphics context of the buffered image
         Graphics2D bimGfx = bim.createGraphics();
+        bimGfx.setColor(Color.white);
 
         // Draw grid lines
-        for (int i = 0; i < gridWidth; ++i) {
-            bimGfx.drawLine(i * dx, 0, i * dx, getHeight());
+        for (int i = 0; i <= gridRows; ++i) {
+            bimGfx.drawLine(0, i * gridCellHeight, gridCols * gridCellWidth, i * gridCellHeight);
         }
 
-        for (int i = 0; i < gridHeight; ++i) {
-            bimGfx.drawLine(0, i * dy, getWidth(), i * dy);
+        for (int i = 0; i <= gridCols; ++i) {
+            bimGfx.drawLine(i * gridCellWidth, 0, i * gridCellWidth, gridRows * gridCellHeight);
         }
 
-        // Draw control points
+        // Draw control points and their corresponding lines
         for (int i = 0; i < controlPoints.length; ++i) {
-            bimGfx.drawOval(controlPoints[i].x, controlPoints[i].y, diameter, diameter);
+            bimGfx.fillOval(controlPoints[i].x, controlPoints[i].y, pointRadius * 2, pointRadius * 2);
+            bimGfx.drawLine(
+                    controlPoints[i].x + pointRadius,
+                    controlPoints[i].y + pointRadius,
+                    gridCellCoords[i].x,
+                    gridCellCoords[i].y
+            );
+            bimGfx.drawLine(
+                    controlPoints[i].x + pointRadius,
+                    controlPoints[i].y + pointRadius,
+                    gridCellCoords[i].x + gridCellWidth,
+                    gridCellCoords[i].y + gridCellHeight
+            );
+            bimGfx.drawLine(
+                    controlPoints[i].x + pointRadius,
+                    controlPoints[i].y + pointRadius,
+                    gridCellCoords[i].x,
+                    gridCellCoords[i].y + gridCellHeight
+            );
+            bimGfx.drawLine(
+                    controlPoints[i].x + pointRadius,
+                    controlPoints[i].y + pointRadius,
+                    gridCellCoords[i].x + gridCellWidth,
+                    gridCellCoords[i].y
+            );
         }
 
         // Draw the image onto the view
@@ -81,20 +111,28 @@ public class MyImageObj extends JLabel {
 
     }
 
-    // Creates a new control point array and populates it
-    private void setupControlPoints() {
+    // Creates the grid and control point arrays
+    private void setupControlGrid() {
 
         // Determine the appropriate distance between control points
-        dx = bim.getWidth() / gridWidth;
-        dy = bim.getHeight() / gridHeight;
+        gridCellHeight = bim.getHeight() / gridRows;
+        gridCellWidth = bim.getWidth() / gridCols;
 
-        // Set up the control points array
-        controlPoints = new Point[gridWidth * gridHeight];
+        // Calculate the offset
+        offsetX = (gridCellWidth / 2) - pointRadius;
+        offsetY = (gridCellHeight / 2) - pointRadius;
+
+        // Create the grid cell coordinate array
+        gridCellCoords = new Point[gridRows * gridCols];
+
+        // Set up the control point array
+        controlPoints = new Point[gridRows * gridCols];
+
+        // Put points into the arrays
         for (int i = 0; i < controlPoints.length; ++i) {
-            int px = (i % gridWidth) * dx;
-            int py = (i / gridWidth) * dy;
-            int offsetX = (dx / 2) - (diameter / 2);
-            int offsetY = (dy / 2) - (diameter / 2);
+            int px = (i % gridCols) * gridCellWidth;
+            int py = (i / gridCols) * gridCellHeight;
+            gridCellCoords[i] = new Point(px, py);
             controlPoints[i] = new Point(px + offsetX, py + offsetY);
         }
 
