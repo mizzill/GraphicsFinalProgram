@@ -1,5 +1,8 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseMotionAdapter;
 import java.awt.image.*;
 
 public class MyImageObj extends JLabel {
@@ -28,15 +31,22 @@ public class MyImageObj extends JLabel {
     // An array to store the top-left coordinates of each grid cell
     private Point[] gridCellCoords;
 
+    // The selected control point index
+    private int selected = -1;
+
     // This constructor stores a buffered image passed in as a parameter
     public MyImageObj(BufferedImage img) {
+
         bim = img;
 
         setPreferredSize(new Dimension(bim.getWidth(), bim.getHeight()));
 
         setupControlGrid();
 
+        setupMouseListeners();
+
         this.repaint();
+
     }
 
     // This mutator changes the stored image and updates control points
@@ -78,28 +88,36 @@ public class MyImageObj extends JLabel {
 
         // Draw control points and their corresponding lines
         for (int i = 0; i < controlPoints.length; ++i) {
-            bimGfx.fillOval(controlPoints[i].x, controlPoints[i].y, pointRadius * 2, pointRadius * 2);
+            // Draw the point
+            bimGfx.fillOval(
+                    controlPoints[i].x - pointRadius,
+                    controlPoints[i].y - pointRadius,
+                    pointRadius * 2,
+                    pointRadius * 2
+            );
+
+            // Draw the lines
             bimGfx.drawLine(
-                    controlPoints[i].x + pointRadius,
-                    controlPoints[i].y + pointRadius,
+                    controlPoints[i].x,
+                    controlPoints[i].y,
                     gridCellCoords[i].x,
                     gridCellCoords[i].y
             );
             bimGfx.drawLine(
-                    controlPoints[i].x + pointRadius,
-                    controlPoints[i].y + pointRadius,
+                    controlPoints[i].x,
+                    controlPoints[i].y,
                     gridCellCoords[i].x + gridCellWidth,
                     gridCellCoords[i].y + gridCellHeight
             );
             bimGfx.drawLine(
-                    controlPoints[i].x + pointRadius,
-                    controlPoints[i].y + pointRadius,
+                    controlPoints[i].x,
+                    controlPoints[i].y,
                     gridCellCoords[i].x,
                     gridCellCoords[i].y + gridCellHeight
             );
             bimGfx.drawLine(
-                    controlPoints[i].x + pointRadius,
-                    controlPoints[i].y + pointRadius,
+                    controlPoints[i].x,
+                    controlPoints[i].y,
                     gridCellCoords[i].x + gridCellWidth,
                     gridCellCoords[i].y
             );
@@ -119,8 +137,8 @@ public class MyImageObj extends JLabel {
         gridCellWidth = bim.getWidth() / gridCols;
 
         // Calculate the offset
-        offsetX = (gridCellWidth / 2) - pointRadius;
-        offsetY = (gridCellHeight / 2) - pointRadius;
+        offsetX = (gridCellWidth / 2);
+        offsetY = (gridCellHeight / 2);
 
         // Create the grid cell coordinate array
         gridCellCoords = new Point[gridRows * gridCols];
@@ -138,6 +156,49 @@ public class MyImageObj extends JLabel {
 
         // Update the image view
         repaint();
+
+    }
+
+    // Sets up the control points for interaction
+    private void setupMouseListeners() {
+
+        addMouseListener(new MouseAdapter() {
+
+            // Selecting a point
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+                super.mousePressed(e);
+                for (int i = 0; i < controlPoints.length; ++i) {
+                    if (Point.distance(e.getX(), e.getY(), controlPoints[i].x, controlPoints[i].y) <= pointRadius * 2) {
+                        selected = i;
+                        break;
+                    }
+                }
+            }
+
+            // Unselecting a point
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                super.mouseReleased(e);
+                selected = -1;
+            }
+        });
+
+        addMouseMotionListener(new MouseMotionAdapter() {
+
+            // Drag the selected point
+
+            @Override
+            public void mouseDragged(MouseEvent e) {
+                super.mouseDragged(e);
+                if (selected != -1) {
+                    controlPoints[selected] = e.getPoint();
+                    repaint();
+                }
+            }
+        });
 
     }
 }
