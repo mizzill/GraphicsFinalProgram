@@ -36,21 +36,17 @@ public class ImageView extends JComponent {
 
     // This constructor stores a buffered image passed in as a parameter
     public ImageView(BufferedImage img) {
-
         setImage(img);
         setupMouseListeners();
-
     }
 
     // This mutator changes the stored image and updates control points
     public void setImage(BufferedImage img) {
-
         if (img == null) return;
         bim = img;
         setPreferredSize(new Dimension(bim.getWidth(), bim.getHeight()));
         setupControlGrid();
         this.repaint();
-
     }
 
     // Accessor to get a handle to the BufferedImage object stored here
@@ -156,6 +152,7 @@ public class ImageView extends JComponent {
     // Sets up the control points for interaction
     private void setupMouseListeners() {
 
+        // Listen for clicking/releasing
         addMouseListener(new MouseAdapter() {
 
             // Selecting a point

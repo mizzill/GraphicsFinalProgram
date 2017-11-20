@@ -9,38 +9,47 @@ import java.io.IOException;
 
 public class JMorph extends JFrame {
 
-    //Right now planning on reusing Buffered Image and MyImageObj class from Week 10 code
     private BufferedImage src; //The Source Image
     private BufferedImage dest; // The Destination Image
     private ImageView srcView; // Displays Source Image
     private ImageView destView; //Displays Destination Image
 
-    private final int MIN_SECONDS = 15;
-    private final int MAX_SECONDS = 60;
-    private final int INIT_SECONDS = 30;
+    private JSlider fpsSlider; // The slider that controls the animation fps
+    private JSlider lengthSlider; // The slider that controls the animation length
 
-    private JSlider frameSlider;
-    private int seconds;
+    // Frames per second of the animation
+    private final int MIN_FPS = 1;
+    private final int MAX_FPS = 60;
+    private final int INIT_FPS = 30;
 
-    //Constructor
+    // Length of animation (in seconds)
+    private final int MIN_LENGTH = 1;
+    private final int MAX_LENGTH = 60;
+    private final int INIT_LENGTH = 5;
+
+    private int fps, animationLength;
+
+    // Constructor
     public JMorph(){
         super("Mighty JMorphin' Power Rangers");
 
-        seconds = INIT_SECONDS;
+        fps = INIT_FPS;
+        animationLength = INIT_LENGTH;
+
         setupMenu();
         buildComponents();
         buildDisplay();
-
     }
 
     /* Helper Method
     *  Creates Menu bar, items, and their handlers
     * */
-    private void setupMenu(){
+    private void setupMenu() {
+
         JMenu fileMenu = new JMenu("File");
         final JFileChooser fc = new JFileChooser(".");
 
-        //Change Source Image
+        // Change Source Image
         JMenuItem changeSrcImage = new JMenuItem("Change Source Image");
         fileMenu.add( changeSrcImage );
         changeSrcImage.addActionListener(e -> {
@@ -49,16 +58,14 @@ public class JMorph extends JFrame {
                     File file = fc.getSelectedFile();
                     try {
                         src = ImageIO.read(file);
-                    } catch (IOException e1){
-                        //TODO handle this exception
-                    };
+                    } catch (IOException e1){};
 
                     srcView.setImage(src);
                 }
             }
         );
 
-        //Change Destination Image
+        // Change Destination Image
         JMenuItem changeDestImage = new JMenuItem("Change Destination Image");
         fileMenu.add( changeDestImage );
         changeDestImage.addActionListener(e -> {
@@ -67,22 +74,20 @@ public class JMorph extends JFrame {
                     File file = fc.getSelectedFile();
                     try {
                         dest = ImageIO.read(file);
-                    } catch (IOException e1){
-                        //TODO handle this exception
-                    };
+                    } catch (IOException e1){};
 
                     destView.setImage(dest);
                 }
             }
         );
 
-        //Save
+        // Save
         JMenuItem saveCtrlPts = new JMenuItem("Save");
         fileMenu.add( saveCtrlPts );
 
         /*TODO Save Handler*/
 
-        //Reset
+        // Reset
         JMenuItem resetImgs = new JMenuItem("Reset");
         fileMenu.add( resetImgs );
         resetImgs.addActionListener(e -> {
@@ -91,7 +96,7 @@ public class JMorph extends JFrame {
             }
         );
 
-        //Exit
+        // Exit
         JMenuItem exit = new JMenuItem("Exit");
         fileMenu.add( exit );
         exit.addActionListener(e -> System.exit(0));
@@ -103,33 +108,49 @@ public class JMorph extends JFrame {
 
     }
 
-    /*Initializes components with values
-    * Sets up Action Listeners if necessary*/
-    private void buildComponents(){
+    /* Initializes components with values
+    *  Sets up Action Listeners if necessary*/
+    private void buildComponents() {
+
         srcView = new ImageView( readImage("src/boat.gif") );
         destView = new ImageView( readImage("src/island.jpg") );
 
-        frameSlider = new JSlider(SwingConstants.HORIZONTAL, MIN_SECONDS, MAX_SECONDS, INIT_SECONDS);
-        frameSlider.setMajorTickSpacing(5);
-        frameSlider.setPaintLabels(true);
-        frameSlider.setPaintTicks(true);
+        // FPS Slider
+        fpsSlider = new JSlider(SwingConstants.HORIZONTAL, MIN_FPS, MAX_FPS, INIT_FPS);
+        fpsSlider.setPaintLabels(true);
+        fpsSlider.setPaintTicks(true);
 
-        frameSlider.addChangeListener(e ->
-            seconds = frameSlider.getValue()
+        fpsSlider.addChangeListener(e ->
+            fps = fpsSlider.getValue()
         );
+
+        // Animation Length slider
+        lengthSlider = new JSlider(SwingConstants.HORIZONTAL, MIN_LENGTH, MAX_LENGTH, INIT_LENGTH);
+        lengthSlider.setPaintLabels(true);
+        lengthSlider.setPaintTicks(true);
+
+        lengthSlider.addChangeListener(e ->
+                animationLength = lengthSlider.getValue()
+        );
+
     }
 
     // Adds all the content views to the frame
-    private void buildDisplay(){
+    private void buildDisplay() {
+
         Container c = this.getContentPane();
 
-        c.add(frameSlider, BorderLayout.NORTH);
+        JPanel sliderPanel = new JPanel();
+        sliderPanel.add(fpsSlider, BorderLayout.WEST);
+        sliderPanel.add(lengthSlider, BorderLayout.EAST);
+        c.add(sliderPanel, BorderLayout.NORTH);
+
         c.add(srcView, BorderLayout.WEST);
         c.add(destView,BorderLayout.EAST);
 
         pack();
-        setSize(800, 600);
         setVisible(true);
+
     }
 
     // This method reads an Image object from a file indicated by
@@ -155,8 +176,7 @@ public class JMorph extends JFrame {
     }
 
     //Initialize and run class
-    public static void main(String args[])
-    {
+    public static void main(String args[]) {
         JMorph j = new JMorph();
         j.addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) { System.exit(0); }
