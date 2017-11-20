@@ -193,7 +193,7 @@ public class ImageView extends JComponent {
                     // Move the point to the cursor
                     controlPoints[selected] = e.getPoint();
 
-                    // Make sure the point stays in bounds
+/*                    // Make sure the point stays in bounds
                     if (controlPoints[selected].x < 0) {
                         controlPoints[selected].x = 0;
                     }
@@ -206,8 +206,22 @@ public class ImageView extends JComponent {
                     }
                     else if (controlPoints[selected].y > bim.getHeight()) {
                         controlPoints[selected].y = bim.getHeight();
+                    }*/
+
+                   // Make sure the point stays in bounds
+                    if (controlPoints[selected].x < gridCellCoords[selected].x) {
+                        controlPoints[selected].x = gridCellCoords[selected].x;
+                    }
+                    else if (controlPoints[selected].x > gridCellCoords[selected].x + gridCellWidth) {
+                        controlPoints[selected].x = gridCellCoords[selected].x + gridCellWidth;
                     }
 
+                    if (controlPoints[selected].y < gridCellCoords[selected].y) {
+                        controlPoints[selected].y = gridCellCoords[selected].y;
+                    }
+                    else if (controlPoints[selected].y > gridCellCoords[selected].y + gridCellHeight) {
+                        controlPoints[selected].y = gridCellCoords[selected].y + gridCellHeight;
+                    }
                     // Paint the scene again
                     repaint();
                 }
