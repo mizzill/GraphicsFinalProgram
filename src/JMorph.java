@@ -14,14 +14,10 @@ public class JMorph extends JFrame {
     private ImageView srcView; // Displays Source Image
     private ImageView destView; //Displays Destination Image
 
-    private JSlider fpsSlider; // The slider that controls the animation fps
     private JSlider lengthSlider; // The slider that controls the animation length
-
-    // Frames per second of the animation
-    private final int MIN_FPS = 1;
-    private final int MAX_FPS = 60;
-    private final int INIT_FPS = 30;
-
+    private JLabel sliderLabel;
+    private JPanel sliderPanel;
+    JButton preview;
     // Length of animation (in seconds)
     private final int MIN_LENGTH = 1;
     private final int MAX_LENGTH = 60;
@@ -33,7 +29,7 @@ public class JMorph extends JFrame {
     public JMorph(){
         super("Mighty JMorphin' Power Rangers");
 
-        fps = INIT_FPS;
+        fps = 30;
         animationLength = INIT_LENGTH;
 
         setupMenu();
@@ -115,17 +111,16 @@ public class JMorph extends JFrame {
         srcView = new ImageView( readImage("src/boat.gif") );
         destView = new ImageView( readImage("src/island.jpg") );
 
-        // FPS Slider
-        fpsSlider = new JSlider(SwingConstants.HORIZONTAL, MIN_FPS, MAX_FPS, INIT_FPS);
-        fpsSlider.setPaintLabels(true);
-        fpsSlider.setPaintTicks(true);
 
-        fpsSlider.addChangeListener(e ->
-            fps = fpsSlider.getValue()
-        );
+        sliderPanel = new JPanel();
+        sliderPanel.setLayout(new GridBagLayout());
+        GridBagConstraints gc = new GridBagConstraints();
 
+        sliderLabel = new JLabel("Set the Length of the preview");
         // Animation Length slider
         lengthSlider = new JSlider(SwingConstants.HORIZONTAL, MIN_LENGTH, MAX_LENGTH, INIT_LENGTH);
+        lengthSlider.setMajorTickSpacing(59);
+        lengthSlider.setMinorTickSpacing(5);
         lengthSlider.setPaintLabels(true);
         lengthSlider.setPaintTicks(true);
 
@@ -133,17 +128,41 @@ public class JMorph extends JFrame {
                 animationLength = lengthSlider.getValue()
         );
 
+        //Set up The preview button
+        preview = new JButton("Preview");
+        //Add handler to call preview function
     }
 
     // Adds all the content views to the frame
     private void buildDisplay() {
 
         Container c = this.getContentPane();
+        GridBagConstraints gc = new GridBagConstraints();
+        //Top Label of Slider
+        gc.fill = GridBagConstraints.HORIZONTAL;
+        gc.gridx = 0;
+        gc.gridy = 0;
+        gc.insets = new Insets(0,0,10,0);
+        sliderPanel.add(sliderLabel, gc);
+        //Constraints for Slider
+        gc.fill = GridBagConstraints.HORIZONTAL;
+        gc.gridx = 0;
+        gc.gridy = 1;
+        gc.insets = new Insets(0,0,10,0);
+        sliderPanel.add(lengthSlider,gc);
 
-        JPanel sliderPanel = new JPanel();
-        sliderPanel.add(fpsSlider, BorderLayout.WEST);
-        sliderPanel.add(lengthSlider, BorderLayout.EAST);
-        c.add(sliderPanel, BorderLayout.NORTH);
+        //Constraints for Preview Button
+        gc.fill = GridBagConstraints.HORIZONTAL;
+        gc.gridx = 0;
+        gc.gridy = 2;
+
+        sliderPanel.add(preview, gc);
+
+        //sliderLabel.setHorizontalTextPosition(SwingConstants.CENTER);
+        //sliderPanel.add(sliderLabel, BorderLayout.CENTER);
+        //sliderPanel.add(lengthSlider, BorderLayout.CENTER);
+        c.add(sliderPanel, BorderLayout.CENTER);
+
 
         c.add(srcView, BorderLayout.WEST);
         c.add(destView,BorderLayout.EAST);
