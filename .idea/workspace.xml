@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7df4f537-39d0-47f3-8e18-748b545f72b1" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Final/ImageView$2.class" afterPath="$PROJECT_DIR$/out/production/Final/ImageView$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Final/ImageView.class" afterPath="$PROJECT_DIR$/out/production/Final/ImageView.class" />
+    <list default="true" id="7df4f537-39d0-47f3-8e18-748b545f72b1" name="Default" comment="Label for slider and created a preview button">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ImageViewController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Final/JMorph$1.class" afterPath="$PROJECT_DIR$/out/production/Final/JMorph$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Final/JMorph$2.class" afterPath="$PROJECT_DIR$/out/production/Final/JMorph$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Final/JMorph.class" afterPath="$PROJECT_DIR$/out/production/Final/JMorph.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ImageView.java" afterPath="$PROJECT_DIR$/src/ImageView.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/JMorph.java" afterPath="$PROJECT_DIR$/src/JMorph.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -22,30 +25,44 @@
           <file leaf-file-name="JMorph.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/JMorph.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-23">
-                  <caret line="153" column="40" lean-forward="false" selection-start-line="153" selection-start-column="40" selection-end-line="153" selection-end-column="40" />
+                <state relative-caret-position="250">
+                  <caret line="116" column="34" lean-forward="false" selection-start-line="116" selection-start-column="34" selection-end-line="116" selection-end-column="34" />
                   <folding>
                     <element signature="imports" expanded="true" />
                     <element signature="method#setupMenu#0;class#JMorph#0" expanded="false" />
-                    <marker date="1511228641231" expanded="false" signature="6389:6466" ph="(WindowAdapter) windowClosing(e) → { " />
-                    <marker date="1511228641231" expanded="false" signature="6481:6493" ph=" }" />
+                    <element signature="e#6560#6664#0" expanded="true" />
+                    <element signature="e#6663#6664#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="ImageView.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="ImageView.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/ImageView.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="3675">
-                  <caret line="215" column="66" lean-forward="true" selection-start-line="215" selection-start-column="66" selection-end-line="215" selection-end-column="66" />
+                <state relative-caret-position="463">
+                  <caret line="245" column="23" lean-forward="false" selection-start-line="245" selection-start-column="23" selection-end-line="245" selection-end-column="23" />
                   <folding>
                     <element signature="imports" expanded="true" />
-                    <element signature="e#1555#1556#0" expanded="true" />
-                    <element signature="e#1581#1582#0" expanded="true" />
-                    <marker date="1511191947698" expanded="false" signature="5565:5706" ph="(MouseMotionAdapter) mouseDragged(e) → {" />
-                    <marker date="1511191947698" expanded="false" signature="7579:7594" ph="}" />
+                    <element signature="e#1667#1668#0" expanded="true" />
+                    <element signature="e#1693#1694#0" expanded="true" />
+                    <element signature="e#8204#8205#0" expanded="true" />
+                    <element signature="e#8248#8249#0" expanded="true" />
+                    <element signature="e#8304#8305#0" expanded="true" />
+                    <element signature="e#8334#8335#0" expanded="true" />
+                    <marker date="1511304835333" expanded="false" signature="6005:6146" ph="(MouseMotionAdapter) mouseDragged(e) → {" />
+                    <marker date="1511304835333" expanded="false" signature="8019:8034" ph="}" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ImageViewController.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/ImageViewController.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="336">
+                  <caret line="16" column="22" lean-forward="false" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -69,8 +86,8 @@
           <file leaf-file-name="Bombs.java" pinned="false" current-in-tab="true">
             <entry file="file://$USER_HOME$/IdeaProjects/Minesweeper/src/Bombs.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="420">
-                  <caret line="97" column="0" lean-forward="true" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
+                <state relative-caret-position="399">
+                  <caret line="96" column="0" lean-forward="true" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -114,6 +131,7 @@
         <option value="$PROJECT_DIR$/src/MyImageObj.java" />
         <option value="$PROJECT_DIR$/src/ImageView.java" />
         <option value="$PROJECT_DIR$/src/JMorph.java" />
+        <option value="$PROJECT_DIR$/src/ImageViewController.java" />
       </list>
     </option>
   </component>
@@ -478,11 +496,18 @@
       <option name="project" value="LOCAL" />
       <updated>1511191968205</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Label for slider and created a preview button">
+      <created>1511228743583</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1511228743583</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19267000" />
+    <option name="totallyTimeSpent" value="23273000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1098" extended-state="6" />
@@ -549,14 +574,16 @@
     <MESSAGE value="Added file menu with a few options. Gotta start somewhere" />
     <MESSAGE value="Added in a frame slider. Next thing to do is probably the grid" />
     <MESSAGE value="Constrict point movement to rectangle" />
-    <option name="LAST_COMMIT_MESSAGE" value="Constrict point movement to rectangle" />
+    <MESSAGE value="Label for slider and created a preview button" />
+    <option name="LAST_COMMIT_MESSAGE" value="Label for slider and created a preview button" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/ImagePanel.java" />
     <entry file="file://$PROJECT_DIR$/src/MyImageProc.java" />
     <entry file="file://$PROJECT_DIR$/src/JMorph.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -565,8 +592,8 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#setupMenu#0;class#JMorph#0" expanded="false" />
-            <marker date="1511228641231" expanded="false" signature="6389:6466" ph="(WindowAdapter) windowClosing(e) → { " />
-            <marker date="1511228641231" expanded="false" signature="6481:6493" ph=" }" />
+            <element signature="e#6560#6664#0" expanded="true" />
+            <element signature="e#6663#6664#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -586,8 +613,8 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#setupMenu#0;class#JMorph#0" expanded="false" />
-            <marker date="1511228641231" expanded="false" signature="6389:6466" ph="(WindowAdapter) windowClosing(e) → { " />
-            <marker date="1511228641231" expanded="false" signature="6481:6493" ph=" }" />
+            <element signature="e#6560#6664#0" expanded="true" />
+            <element signature="e#6663#6664#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -609,8 +636,8 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#setupMenu#0;class#JMorph#0" expanded="false" />
-            <marker date="1511228641231" expanded="false" signature="6389:6466" ph="(WindowAdapter) windowClosing(e) → { " />
-            <marker date="1511228641231" expanded="false" signature="6481:6493" ph=" }" />
+            <element signature="e#6560#6664#0" expanded="true" />
+            <element signature="e#6663#6664#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -636,8 +663,8 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#setupMenu#0;class#JMorph#0" expanded="false" />
-            <marker date="1511228641231" expanded="false" signature="6389:6466" ph="(WindowAdapter) windowClosing(e) → { " />
-            <marker date="1511228641231" expanded="false" signature="6481:6493" ph=" }" />
+            <element signature="e#6560#6664#0" expanded="true" />
+            <element signature="e#6663#6664#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -704,8 +731,8 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#setupMenu#0;class#JMorph#0" expanded="false" />
-            <marker date="1511228641231" expanded="false" signature="6389:6466" ph="(WindowAdapter) windowClosing(e) → { " />
-            <marker date="1511228641231" expanded="false" signature="6481:6493" ph=" }" />
+            <element signature="e#6560#6664#0" expanded="true" />
+            <element signature="e#6663#6664#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -717,8 +744,8 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#setupMenu#0;class#JMorph#0" expanded="false" />
-            <marker date="1511228641231" expanded="false" signature="6389:6466" ph="(WindowAdapter) windowClosing(e) → { " />
-            <marker date="1511228641231" expanded="false" signature="6481:6493" ph=" }" />
+            <element signature="e#6560#6664#0" expanded="true" />
+            <element signature="e#6663#6664#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -734,10 +761,14 @@
           <caret line="197" column="20" lean-forward="false" selection-start-line="197" selection-start-column="20" selection-end-line="197" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1555#1556#0" expanded="true" />
-            <element signature="e#1581#1582#0" expanded="true" />
-            <marker date="1511191947698" expanded="false" signature="5565:5706" ph="(MouseMotionAdapter) mouseDragged(e) → {" />
-            <marker date="1511191947698" expanded="false" signature="7579:7594" ph="}" />
+            <element signature="e#1667#1668#0" expanded="true" />
+            <element signature="e#1693#1694#0" expanded="true" />
+            <element signature="e#8204#8205#0" expanded="true" />
+            <element signature="e#8248#8249#0" expanded="true" />
+            <element signature="e#8304#8305#0" expanded="true" />
+            <element signature="e#8334#8335#0" expanded="true" />
+            <marker date="1511304835333" expanded="false" signature="6005:6146" ph="(MouseMotionAdapter) mouseDragged(e) → {" />
+            <marker date="1511304835333" expanded="false" signature="8019:8034" ph="}" />
           </folding>
         </state>
       </provider>
@@ -749,8 +780,8 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#setupMenu#0;class#JMorph#0" expanded="false" />
-            <marker date="1511228641231" expanded="false" signature="6389:6466" ph="(WindowAdapter) windowClosing(e) → { " />
-            <marker date="1511228641231" expanded="false" signature="6481:6493" ph=" }" />
+            <element signature="e#6560#6664#0" expanded="true" />
+            <element signature="e#6663#6664#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -769,8 +800,8 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#setupMenu#0;class#JMorph#0" expanded="false" />
-            <marker date="1511228641231" expanded="false" signature="6389:6466" ph="(WindowAdapter) windowClosing(e) → { " />
-            <marker date="1511228641231" expanded="false" signature="6481:6493" ph=" }" />
+            <element signature="e#6560#6664#0" expanded="true" />
+            <element signature="e#6663#6664#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -793,8 +824,8 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#setupMenu#0;class#JMorph#0" expanded="false" />
-            <marker date="1511228641231" expanded="false" signature="6389:6466" ph="(WindowAdapter) windowClosing(e) → { " />
-            <marker date="1511228641231" expanded="false" signature="6481:6493" ph=" }" />
+            <element signature="e#6560#6664#0" expanded="true" />
+            <element signature="e#6663#6664#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -835,38 +866,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/IdeaProjects/Minesweeper/src/Bombs.java">
+    <entry file="file://$PROJECT_DIR$/src/ImageView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="97" column="0" lean-forward="true" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="463">
+          <caret line="245" column="23" lean-forward="false" selection-start-line="245" selection-start-column="23" selection-end-line="245" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1667#1668#0" expanded="true" />
+            <element signature="e#1693#1694#0" expanded="true" />
+            <element signature="e#8204#8205#0" expanded="true" />
+            <element signature="e#8248#8249#0" expanded="true" />
+            <element signature="e#8304#8305#0" expanded="true" />
+            <element signature="e#8334#8335#0" expanded="true" />
+            <marker date="1511304835333" expanded="false" signature="6005:6146" ph="(MouseMotionAdapter) mouseDragged(e) → {" />
+            <marker date="1511304835333" expanded="false" signature="8019:8034" ph="}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/JMorph.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-23">
-          <caret line="153" column="40" lean-forward="false" selection-start-line="153" selection-start-column="40" selection-end-line="153" selection-end-column="40" />
+        <state relative-caret-position="250">
+          <caret line="116" column="34" lean-forward="false" selection-start-line="116" selection-start-column="34" selection-end-line="116" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#setupMenu#0;class#JMorph#0" expanded="false" />
-            <marker date="1511228641231" expanded="false" signature="6389:6466" ph="(WindowAdapter) windowClosing(e) → { " />
-            <marker date="1511228641231" expanded="false" signature="6481:6493" ph=" }" />
+            <element signature="e#6560#6664#0" expanded="true" />
+            <element signature="e#6663#6664#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ImageView.java">
+    <entry file="file://$PROJECT_DIR$/src/ImageViewController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3675">
-          <caret line="215" column="66" lean-forward="true" selection-start-line="215" selection-start-column="66" selection-end-line="215" selection-end-column="66" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1555#1556#0" expanded="true" />
-            <element signature="e#1581#1582#0" expanded="true" />
-            <marker date="1511191947698" expanded="false" signature="5565:5706" ph="(MouseMotionAdapter) mouseDragged(e) → {" />
-            <marker date="1511191947698" expanded="false" signature="7579:7594" ph="}" />
-          </folding>
+        <state relative-caret-position="336">
+          <caret line="16" column="22" lean-forward="false" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/IdeaProjects/Minesweeper/src/Bombs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="96" column="0" lean-forward="true" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

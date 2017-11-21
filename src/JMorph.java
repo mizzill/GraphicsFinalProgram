@@ -25,6 +25,8 @@ public class JMorph extends JFrame {
 
     private int fps, animationLength;
 
+    private ImageViewController ivc;
+
     // Constructor
     public JMorph(){
         super("Mighty JMorphin' Power Rangers");
@@ -110,7 +112,9 @@ public class JMorph extends JFrame {
 
         srcView = new ImageView( readImage("src/boat.gif") );
         destView = new ImageView( readImage("src/island.jpg") );
-
+        ivc = new ImageViewController(srcView, destView);
+        srcView.setController(ivc);
+        destView.setController(ivc);
 
         sliderPanel = new JPanel();
         sliderPanel.setLayout(new GridBagLayout());
@@ -131,6 +135,9 @@ public class JMorph extends JFrame {
         //Set up The preview button
         preview = new JButton("Preview");
         //Add handler to call preview function
+
+
+
     }
 
     // Adds all the content views to the frame

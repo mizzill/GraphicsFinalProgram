@@ -34,6 +34,9 @@ public class ImageView extends JComponent {
     // The selected control point index
     private int selected = -1;
 
+    //A View Controller that handles communication between the two panels
+    private ImageViewController ivc;
+
     // This constructor stores a buffered image passed in as a parameter
     public ImageView(BufferedImage img) {
         setImage(img);
@@ -82,14 +85,17 @@ public class ImageView extends JComponent {
 
         // Draw control points and their corresponding lines
         for (int i = 0; i < controlPoints.length; ++i) {
+            if(i == selected)
+                big.setColor(Color.RED);
             // Draw the point
             big.fillOval(
                     controlPoints[i].x - pointRadius,
                     controlPoints[i].y - pointRadius,
                     pointRadius * 2,
                     pointRadius * 2
-            );
 
+            );
+            big.setColor(Color.WHITE);
             // Draw the lines
             big.drawLine(
                     controlPoints[i].x,
@@ -162,6 +168,8 @@ public class ImageView extends JComponent {
                 for (int i = 0; i < controlPoints.length; ++i) {
                     if (Point.distance(e.getX(), e.getY(), controlPoints[i].x, controlPoints[i].y) <= pointRadius * 2) {
                         selected = i;
+                        ivc.updateSelected(selected);
+                        //ivc.updateSelected(i);
                         break;
                     }
                 }
@@ -172,6 +180,9 @@ public class ImageView extends JComponent {
             public void mouseReleased(MouseEvent e) {
                 super.mouseReleased(e);
                 selected = -1;
+                ivc.updateSelected(selected);
+                //ivc.updateSelected(-1);
+                repaint();
             }
 
         });
@@ -225,5 +236,13 @@ public class ImageView extends JComponent {
             }
         });
 
+    }
+
+    //Called from the Imageview Controller to update the selected control point from the other grid.
+    public void updateSelectedExternally(int clickedPoint){
+        this.selected = clickedPoint;
+    }
+    public void setController(ImageViewController ivc){
+        this.ivc = ivc;
     }
 }
