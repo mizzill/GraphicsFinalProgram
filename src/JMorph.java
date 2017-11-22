@@ -1,6 +1,8 @@
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.image.BufferedImage;
@@ -9,29 +11,34 @@ import java.io.IOException;
 
 public class JMorph extends JFrame {
 
+    private JMorph thisMorph; // A reference to this instance, used in callback functions
+
     private BufferedImage src; //The Source Image
     private BufferedImage dest; // The Destination Image
     private ImageView srcView; // Displays Source Image
     private ImageView destView; //Displays Destination Image
+    private ImageViewController ivc; // Controls the Image Views
 
     private JSlider lengthSlider; // The slider that controls the animation length
     private JLabel sliderLabel;
     private JPanel sliderPanel;
-    JButton preview;
+    private JButton previewButton;
+
+    private PreviewDialog previewDialog;
+
     // Length of animation (in seconds)
     private final int MIN_LENGTH = 1;
     private final int MAX_LENGTH = 60;
     private final int INIT_LENGTH = 5;
 
-    private int fps, animationLength;
-
-    private ImageViewController ivc;
+    public final int FPS = 30;
+    public int animationLength;
 
     // Constructor
     public JMorph(){
         super("Mighty JMorphin' Power Rangers");
 
-        fps = 30;
+        thisMorph = this;
         animationLength = INIT_LENGTH;
 
         setupMenu();
@@ -79,12 +86,6 @@ public class JMorph extends JFrame {
             }
         );
 
-        // Save
-        JMenuItem saveCtrlPts = new JMenuItem("Save");
-        fileMenu.add( saveCtrlPts );
-
-        /*TODO Save Handler*/
-
         // Reset
         JMenuItem resetImgs = new JMenuItem("Reset");
         fileMenu.add( resetImgs );
@@ -107,21 +108,22 @@ public class JMorph extends JFrame {
     }
 
     /* Initializes components with values
-    *  Sets up Action Listeners if necessary*/
+    *  Sets up Action Listeners if necessary */
     private void buildComponents() {
 
-        srcView = new ImageView( readImage("src/boat.gif") );
-        destView = new ImageView( readImage("src/island.jpg") );
-        ivc = new ImageViewController(srcView, destView);
-        srcView.setController(ivc);
-        destView.setController(ivc);
+        // Set up the Image Views and the controller
+        ivc = new ImageViewController();
+        srcView = new ImageView( readImage("src/bear.jpg"), ivc );
+        destView = new ImageView( readImage("src/shrek.jpg"), ivc );
+        ivc.setViews(srcView, destView);
 
-        sliderPanel = new JPanel();
-        sliderPanel.setLayout(new GridBagLayout());
-        GridBagConstraints gc = new GridBagConstraints();
+        // Set up the slider panel
+        sliderPanel = new JPanel(new GridBagLayout());
 
-        sliderLabel = new JLabel("Set the Length of the preview");
-        // Animation Length slider
+        // Set up the slider label
+        sliderLabel = new JLabel("Set the Length of the preview in seconds");
+
+        // Set up the slider itself
         lengthSlider = new JSlider(SwingConstants.HORIZONTAL, MIN_LENGTH, MAX_LENGTH, INIT_LENGTH);
         lengthSlider.setMajorTickSpacing(59);
         lengthSlider.setMinorTickSpacing(5);
@@ -132,11 +134,14 @@ public class JMorph extends JFrame {
                 animationLength = lengthSlider.getValue()
         );
 
-        //Set up The preview button
-        preview = new JButton("Preview");
-        //Add handler to call preview function
-
-
+        //Set up the preview button
+        previewButton = new JButton("Preview");
+        previewButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                previewDialog.revealPreview();
+            }
+        });
 
     }
 
@@ -145,17 +150,21 @@ public class JMorph extends JFrame {
 
         Container c = this.getContentPane();
         GridBagConstraints gc = new GridBagConstraints();
+
         //Top Label of Slider
         gc.fill = GridBagConstraints.HORIZONTAL;
         gc.gridx = 0;
         gc.gridy = 0;
         gc.insets = new Insets(0,0,10,0);
+
         sliderPanel.add(sliderLabel, gc);
+
         //Constraints for Slider
         gc.fill = GridBagConstraints.HORIZONTAL;
         gc.gridx = 0;
         gc.gridy = 1;
         gc.insets = new Insets(0,0,10,0);
+
         sliderPanel.add(lengthSlider,gc);
 
         //Constraints for Preview Button
@@ -163,17 +172,17 @@ public class JMorph extends JFrame {
         gc.gridx = 0;
         gc.gridy = 2;
 
-        sliderPanel.add(preview, gc);
+        sliderPanel.add(previewButton, gc);
 
-        //sliderLabel.setHorizontalTextPosition(SwingConstants.CENTER);
-        //sliderPanel.add(sliderLabel, BorderLayout.CENTER);
-        //sliderPanel.add(lengthSlider, BorderLayout.CENTER);
+        // Add the panel and image views to the containing frame
         c.add(sliderPanel, BorderLayout.CENTER);
-
-
         c.add(srcView, BorderLayout.WEST);
         c.add(destView,BorderLayout.EAST);
 
+        // Add the Preview Dialog (invisible at the start)
+        previewDialog = new PreviewDialog(SwingUtilities.getWindowAncestor(previewButton), thisMorph, ivc);
+
+        // Reveal to the world
         pack();
         setVisible(true);
 
