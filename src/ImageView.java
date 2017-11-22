@@ -30,9 +30,15 @@ public class ImageView extends JComponent {
     //A View Controller that handles communication between the two panels
     private ImageViewController ivc;
 
-    // This constructor stores a buffered image passed in as a parameter
+    // This constructor stores a buffered image passed in as a parameter, also an ImageView Controller that handles
+    // communication between ImageViews
     public ImageView(BufferedImage img, ImageViewController ivc) {
         this.ivc = ivc;
+        // Create the grid cell coordinate array
+        gridCellCoords = new Point[ivc.gridRows * ivc.gridCols];
+
+        // Set up the control point array
+        controlPoints = new Point[ivc.gridRows * ivc.gridCols];
         setImage(img);
         setupMouseListeners();
     }
@@ -41,6 +47,7 @@ public class ImageView extends JComponent {
     public void setImage(BufferedImage img) {
         if (img == null) return;
         bim = img;
+
         setPreferredSize(new Dimension(bim.getWidth(), bim.getHeight()));
         setupControlGrid();
         this.repaint();
@@ -130,11 +137,6 @@ public class ImageView extends JComponent {
         offsetX = (gridCellWidth / 2);
         offsetY = (gridCellHeight / 2);
 
-        // Create the grid cell coordinate array
-        gridCellCoords = new Point[ivc.gridRows * ivc.gridCols];
-
-        // Set up the control point array
-        controlPoints = new Point[ivc.gridRows * ivc.gridCols];
 
         // Put points into the arrays
         for (int i = 0; i < controlPoints.length; ++i) {

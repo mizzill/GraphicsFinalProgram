@@ -51,7 +51,7 @@ public class PreviewDialog extends JDialog {
     public void revealPreview() {
         percentCompletion = 0;
         previewImagePanel.reset();
-        //animTimer.restart();
+        animTimer.start();
         setVisible(true);
     }
 

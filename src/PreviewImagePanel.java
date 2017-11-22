@@ -1,5 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
+import java.util.Arrays;
 
 public class PreviewImagePanel extends JPanel {
 
@@ -27,8 +28,11 @@ public class PreviewImagePanel extends JPanel {
         this.gridCellCoords = gridCellCoords;
         this.pointRadius = pointRadius;
 
-        // Start with source points
-        controlPoints = srcControlPoints;
+        this.controlPoints = new Point[this.srcControlPoints.length];
+        // Start with source points by copying them
+        for(int i = 0; i < this.srcControlPoints.length; i++){
+            controlPoints[i] = srcControlPoints[i];
+        }
 
         // Resize the panel
         setBackground(Color.black);
@@ -41,14 +45,18 @@ public class PreviewImagePanel extends JPanel {
             double _x = srcControlPoints[i].x + ((destControlPoints[i].x - srcControlPoints[i].x) * percentCompleted);
             double _y = srcControlPoints[i].y + ((destControlPoints[i].y - srcControlPoints[i].y) * percentCompleted);
             controlPoints[i] = new Point((int)_x, (int)_y);
+
         }
         repaint();
     }
 
     // Resets the image view
     public void reset() {
-        update(0);
-        controlPoints = srcControlPoints;
+        //update(0);
+        for(int i = 0; i < srcControlPoints.length; i++){
+            controlPoints[i] = srcControlPoints[i];
+        }
+        //repaint();
     }
 
     // Get a graphics context and show the image with the control point grid
