@@ -1,8 +1,6 @@
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.image.BufferedImage;
@@ -22,14 +20,14 @@ public class JMorph extends JFrame {
     private JSlider lengthSlider; // The slider that controls the animation length
     private JLabel sliderLabel;
     private JPanel sliderPanel;
-    private JButton previewButton;
 
+    private JButton previewButton;
     private PreviewDialog previewDialog;
 
     // Length of animation (in seconds)
     private final int MIN_LENGTH = 1;
-    private final int MAX_LENGTH = 60;
-    private final int INIT_LENGTH = 5;
+    private final int MAX_LENGTH = 10;
+    private final int INIT_LENGTH = 3;
 
     public final int FPS = 30;
     public int animationLength;
@@ -63,7 +61,7 @@ public class JMorph extends JFrame {
                     File file = fc.getSelectedFile();
                     try {
                         src = ImageIO.read(file);
-                    } catch (IOException e1){};
+                    } catch (IOException e1){}
 
                     srcView.setImage(src);
                 }
@@ -79,7 +77,7 @@ public class JMorph extends JFrame {
                     File file = fc.getSelectedFile();
                     try {
                         dest = ImageIO.read(file);
-                    } catch (IOException e1){};
+                    } catch (IOException e1){}
 
                     destView.setImage(dest);
                 }
@@ -125,8 +123,8 @@ public class JMorph extends JFrame {
 
         // Set up the slider itself
         lengthSlider = new JSlider(SwingConstants.HORIZONTAL, MIN_LENGTH, MAX_LENGTH, INIT_LENGTH);
-        lengthSlider.setMajorTickSpacing(59);
-        lengthSlider.setMinorTickSpacing(5);
+        lengthSlider.setMajorTickSpacing(9);
+        lengthSlider.setMinorTickSpacing(1);
         lengthSlider.setPaintLabels(true);
         lengthSlider.setPaintTicks(true);
 
@@ -136,12 +134,7 @@ public class JMorph extends JFrame {
 
         //Set up the preview button
         previewButton = new JButton("Preview");
-        previewButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                previewDialog.revealPreview();
-            }
-        });
+        previewButton.addActionListener(e -> previewDialog.revealPreview());
 
     }
 
@@ -194,7 +187,7 @@ public class JMorph extends JFrame {
     // value of this method.
     // The mediatracker in this method can throw an exception
 
-    public BufferedImage readImage (String file) {
+    private BufferedImage readImage (String file) {
 
         Image image = Toolkit.getDefaultToolkit().getImage(file);
         MediaTracker tracker = new MediaTracker (new Component () {});

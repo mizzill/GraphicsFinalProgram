@@ -14,10 +14,6 @@ public class ImageView extends JComponent {
     public int gridCellWidth;
     public int gridCellHeight;
 
-    // The offset of the center point within a grid cell
-    private int offsetX;
-    private int offsetY;
-
     // An array to store all control points
     public Point[] controlPoints;
 
@@ -30,15 +26,10 @@ public class ImageView extends JComponent {
     //A View Controller that handles communication between the two panels
     private ImageViewController ivc;
 
-    // This constructor stores a buffered image passed in as a parameter, also an ImageView Controller that handles
+    // This constructor stores a buffered image passed in as a parameter and an ImageView Controller that handles
     // communication between ImageViews
     public ImageView(BufferedImage img, ImageViewController ivc) {
         this.ivc = ivc;
-        // Create the grid cell coordinate array
-        gridCellCoords = new Point[ivc.gridRows * ivc.gridCols];
-
-        // Set up the control point array
-        controlPoints = new Point[ivc.gridRows * ivc.gridCols];
         setImage(img);
         setupMouseListeners();
     }
@@ -50,17 +41,6 @@ public class ImageView extends JComponent {
 
         setPreferredSize(new Dimension(bim.getWidth(), bim.getHeight()));
         setupControlGrid();
-        this.repaint();
-    }
-
-    // Accessor to get a handle to the BufferedImage object stored here
-    public BufferedImage getImage() {
-        return bim;
-    }
-
-    // Show current image by a scheduled call to paint()
-    public void showImage() {
-        if (bim == null) return;
         this.repaint();
     }
 
@@ -134,9 +114,14 @@ public class ImageView extends JComponent {
         gridCellWidth = bim.getWidth() / ivc.gridCols;
 
         // Calculate the offset
-        offsetX = (gridCellWidth / 2);
-        offsetY = (gridCellHeight / 2);
+        int offsetX = (gridCellWidth / 2);
+        int offsetY = (gridCellHeight / 2);
 
+        // Create the grid cell coordinate array
+        gridCellCoords = new Point[ivc.gridRows * ivc.gridCols];
+
+        // Set up the control point array
+        controlPoints = new Point[ivc.gridRows * ivc.gridCols];
 
         // Put points into the arrays
         for (int i = 0; i < controlPoints.length; ++i) {
@@ -223,8 +208,4 @@ public class ImageView extends JComponent {
         this.selected = clickedPoint;
     }
 
-    // Sets the ImageViewController associated with this instance
-    public void setController(ImageViewController ivc){
-        this.ivc = ivc;
-    }
 }

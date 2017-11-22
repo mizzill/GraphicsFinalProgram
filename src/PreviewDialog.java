@@ -1,10 +1,9 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class PreviewDialog extends JDialog {
 
+    private JMorph jMorph;
     private Timer animTimer;
     private PreviewImagePanel previewImagePanel;
 
@@ -17,30 +16,21 @@ public class PreviewDialog extends JDialog {
         // Make this dialog a popup modal
         super(owner, "Preview", ModalityType.APPLICATION_MODAL);
 
-        // Get information from the ImageViewController about the source image view and pass it to a new image panel
-        previewImagePanel = new PreviewImagePanel(
-                ivc.gridRows,
-                ivc.gridCols,
-                ivc.src.gridCellWidth,
-                ivc.src.gridCellHeight,
-                ivc.src.controlPoints,
-                ivc.dest.controlPoints,
-                ivc.src.gridCellCoords,
-                ivc.pointRadius
-        );
+        // Get reference to the JMorph instance
+        this.jMorph = morph;
+
+        // Create and add the preview image panel
+        previewImagePanel = new PreviewImagePanel(ivc);
         add(previewImagePanel);
 
         // Set up the animation timer
-        animTimer = new Timer(1000 / morph.FPS, new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                percentCompletion += 1.0 / (morph.FPS * morph.animationLength);
-                if (percentCompletion >= 1) {
-                    percentCompletion = 1;
-                    animTimer.stop();
-                }
-                previewImagePanel.update(percentCompletion);
+        animTimer = new Timer(1000 / jMorph.FPS, e -> {
+            percentCompletion += 1.0 / (jMorph.FPS * jMorph.animationLength);
+            if (percentCompletion >= 1) {
+                percentCompletion = 1;
+                animTimer.stop();
             }
+            previewImagePanel.update(percentCompletion);
         });
 
         // Pack the dialog
@@ -51,7 +41,10 @@ public class PreviewDialog extends JDialog {
     public void revealPreview() {
         percentCompletion = 0;
         previewImagePanel.reset();
+
+        animTimer.setDelay(1000 / jMorph.FPS);
         animTimer.start();
+
         setVisible(true);
     }
 

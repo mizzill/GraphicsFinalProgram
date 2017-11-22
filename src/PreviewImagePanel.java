@@ -4,59 +4,47 @@ import java.util.Arrays;
 
 public class PreviewImagePanel extends JPanel {
 
-    // Information taken from the source image view
-    private int rows;
-    private int cols;
+    // The ImageViewController instance to draw information from
+    private ImageViewController ivc;
+
+    // The height and width of a grid cell
     private int cellHeight;
     private int cellWidth;
-    private Point[] srcControlPoints;
-    private Point[] destControlPoints;
-    private Point[] gridCellCoords;
-    private int pointRadius;
 
+    // A local array to store animated control points
     private Point[] controlPoints;
 
     // Constructor
-    public PreviewImagePanel(int rows, int cols, int cellHeight, int cellWidth, Point[] srcControlPoints, Point[] destControlPoints, Point[] gridCellCoords, int pointRadius) {
+    public PreviewImagePanel(ImageViewController ivc) {
 
-        this.rows = rows;
-        this.cols = cols;
-        this.cellHeight = cellHeight;
-        this.cellWidth = cellWidth;
-        this.srcControlPoints = srcControlPoints;
-        this.destControlPoints = destControlPoints;
-        this.gridCellCoords = gridCellCoords;
-        this.pointRadius = pointRadius;
+        this.ivc = ivc;
+        this.cellHeight = ivc.src.gridCellHeight;
+        this.cellWidth = ivc.src.gridCellWidth;
 
-        this.controlPoints = new Point[this.srcControlPoints.length];
-        // Start with source points by copying them
-        for(int i = 0; i < this.srcControlPoints.length; i++){
-            controlPoints[i] = srcControlPoints[i];
-        }
+        // Copy the source image's control points into a local array for modification
+        this.controlPoints = Arrays.copyOf(ivc.src.controlPoints, ivc.src.controlPoints.length);
 
         // Resize the panel
         setBackground(Color.black);
-        setPreferredSize(new Dimension(cols * cellWidth, rows * cellHeight));
+        setPreferredSize(new Dimension(ivc.gridCols * cellWidth, ivc.gridRows * cellHeight));
     }
 
     // Updates the control points
     public void update(double percentCompleted) {
-        for (int i = 0; i < controlPoints.length; ++i) {
-            double _x = srcControlPoints[i].x + ((destControlPoints[i].x - srcControlPoints[i].x) * percentCompleted);
-            double _y = srcControlPoints[i].y + ((destControlPoints[i].y - srcControlPoints[i].y) * percentCompleted);
-            controlPoints[i] = new Point((int)_x, (int)_y);
 
+        // Interpolate the new position of each control point
+        for (int i = 0; i < controlPoints.length; ++i) {
+            double _x = ivc.src.controlPoints[i].x + ((ivc.dest.controlPoints[i].x - ivc.src.controlPoints[i].x) * percentCompleted);
+            double _y = ivc.src.controlPoints[i].y + ((ivc.dest.controlPoints[i].y - ivc.src.controlPoints[i].y) * percentCompleted);
+            controlPoints[i] = new Point((int)_x, (int)_y);
         }
+
         repaint();
     }
 
-    // Resets the image view
+    // Resets the control points to their positions from the source image
     public void reset() {
-        //update(0);
-        for(int i = 0; i < srcControlPoints.length; i++){
-            controlPoints[i] = srcControlPoints[i];
-        }
-        //repaint();
+        controlPoints = Arrays.copyOf(ivc.src.controlPoints, ivc.src.controlPoints.length);
     }
 
     // Get a graphics context and show the image with the control point grid
@@ -68,12 +56,12 @@ public class PreviewImagePanel extends JPanel {
         g2d.setColor(Color.white);
 
         // Draw grid lines
-        for (int i = 0; i <= rows; ++i) {
-            g2d.drawLine(0, i * cellHeight, cols * cellWidth, i * cellHeight);
+        for (int i = 0; i <= ivc.gridRows; ++i) {
+            g2d.drawLine(0, i * cellHeight, ivc.gridCols * cellWidth, i * cellHeight);
         }
 
-        for (int i = 0; i <= cols; ++i) {
-            g2d.drawLine(i * cellWidth, 0, i * cellWidth, rows * cellHeight);
+        for (int i = 0; i <= ivc.gridCols; ++i) {
+            g2d.drawLine(i * cellWidth, 0, i * cellWidth, ivc.gridRows * cellHeight);
         }
 
         // Draw control points and their corresponding lines
@@ -84,34 +72,34 @@ public class PreviewImagePanel extends JPanel {
             g2d.drawLine(
                     controlPoints[i].x,
                     controlPoints[i].y,
-                    gridCellCoords[i].x,
-                    gridCellCoords[i].y
+                    ivc.src.gridCellCoords[i].x,
+                    ivc.src.gridCellCoords[i].y
             );
             g2d.drawLine(
                     controlPoints[i].x,
                     controlPoints[i].y,
-                    gridCellCoords[i].x + cellWidth,
-                    gridCellCoords[i].y + cellHeight
+                    ivc.src.gridCellCoords[i].x + cellWidth,
+                    ivc.src.gridCellCoords[i].y + cellHeight
             );
             g2d.drawLine(
                     controlPoints[i].x,
                     controlPoints[i].y,
-                    gridCellCoords[i].x,
-                    gridCellCoords[i].y + cellHeight
+                    ivc.src.gridCellCoords[i].x,
+                    ivc.src.gridCellCoords[i].y + cellHeight
             );
             g2d.drawLine(
                     controlPoints[i].x,
                     controlPoints[i].y,
-                    gridCellCoords[i].x + cellWidth,
-                    gridCellCoords[i].y
+                    ivc.src.gridCellCoords[i].x + cellWidth,
+                    ivc.src.gridCellCoords[i].y
             );
 
             // Draw the control point
             g2d.fillOval(
-                    controlPoints[i].x - pointRadius,
-                    controlPoints[i].y - pointRadius,
-                    pointRadius * 2,
-                    pointRadius * 2
+                    controlPoints[i].x - ivc.pointRadius,
+                    controlPoints[i].y - ivc.pointRadius,
+                    ivc.pointRadius * 2,
+                    ivc.pointRadius * 2
             );
         }
 
