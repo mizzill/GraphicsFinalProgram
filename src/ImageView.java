@@ -10,20 +10,13 @@ public class ImageView extends JComponent {
     // Instance variable to hold the buffered image
     private BufferedImage bim = null;
 
-    // The number of grid rows and columns
-    private int gridRows = 10;
-    private int gridCols = 10;
-
     // The size of each grid cell
-    private int gridCellWidth;
-    private int gridCellHeight;
+    public int gridCellWidth;
+    public int gridCellHeight;
 
     // The offset of the center point within a grid cell
     private int offsetX;
     private int offsetY;
-
-    // The radius of each control point
-    private int pointRadius = 5;
 
     // An array to store all control points
     public Point[] controlPoints;
@@ -38,7 +31,8 @@ public class ImageView extends JComponent {
     private ImageViewController ivc;
 
     // This constructor stores a buffered image passed in as a parameter
-    public ImageView(BufferedImage img) {
+    public ImageView(BufferedImage img, ImageViewController ivc) {
+        this.ivc = ivc;
         setImage(img);
         setupMouseListeners();
     }
@@ -65,6 +59,7 @@ public class ImageView extends JComponent {
 
     // Get a graphics context and show the image with the control point grid
     public void paintComponent(Graphics g) {
+        super.paintComponent(g);
 
         // Get the graphics context
         Graphics2D g2d = (Graphics2D) g;
@@ -74,12 +69,12 @@ public class ImageView extends JComponent {
         g2d.drawImage(bim, 0, 0, this);
 
         // Draw grid lines
-        for (int i = 0; i <= gridRows; ++i) {
-            g2d.drawLine(0, i * gridCellHeight, gridCols * gridCellWidth, i * gridCellHeight);
+        for (int i = 0; i <= ivc.gridRows; ++i) {
+            g2d.drawLine(0, i * gridCellHeight, ivc.gridCols * gridCellWidth, i * gridCellHeight);
         }
 
-        for (int i = 0; i <= gridCols; ++i) {
-            g2d.drawLine(i * gridCellWidth, 0, i * gridCellWidth, gridRows * gridCellHeight);
+        for (int i = 0; i <= ivc.gridCols; ++i) {
+            g2d.drawLine(i * gridCellWidth, 0, i * gridCellWidth, ivc.gridRows * gridCellHeight);
         }
 
         // Draw control points and their corresponding lines
@@ -115,10 +110,10 @@ public class ImageView extends JComponent {
             // Draw the control point
             if (i == selected) { g2d.setColor(Color.RED); }
             g2d.fillOval(
-                    controlPoints[i].x - pointRadius,
-                    controlPoints[i].y - pointRadius,
-                    pointRadius * 2,
-                    pointRadius * 2
+                    controlPoints[i].x - ivc.pointRadius,
+                    controlPoints[i].y - ivc.pointRadius,
+                    ivc.pointRadius * 2,
+                    ivc.pointRadius * 2
             );
         }
 
@@ -128,23 +123,23 @@ public class ImageView extends JComponent {
     public void setupControlGrid() {
 
         // Determine the appropriate distance between control points
-        gridCellHeight = bim.getHeight() / gridRows;
-        gridCellWidth = bim.getWidth() / gridCols;
+        gridCellHeight = bim.getHeight() / ivc.gridRows;
+        gridCellWidth = bim.getWidth() / ivc.gridCols;
 
         // Calculate the offset
         offsetX = (gridCellWidth / 2);
         offsetY = (gridCellHeight / 2);
 
         // Create the grid cell coordinate array
-        gridCellCoords = new Point[gridRows * gridCols];
+        gridCellCoords = new Point[ivc.gridRows * ivc.gridCols];
 
         // Set up the control point array
-        controlPoints = new Point[gridRows * gridCols];
+        controlPoints = new Point[ivc.gridRows * ivc.gridCols];
 
         // Put points into the arrays
         for (int i = 0; i < controlPoints.length; ++i) {
-            int px = (i % gridCols) * gridCellWidth;
-            int py = (i / gridCols) * gridCellHeight;
+            int px = (i % ivc.gridCols) * gridCellWidth;
+            int py = (i / ivc.gridCols) * gridCellHeight;
             gridCellCoords[i] = new Point(px, py);
             controlPoints[i] = new Point(px + offsetX, py + offsetY);
         }
@@ -165,7 +160,7 @@ public class ImageView extends JComponent {
             public void mousePressed(MouseEvent e) {
                 super.mousePressed(e);
                 for (int i = 0; i < controlPoints.length; ++i) {
-                    if (Point.distance(e.getX(), e.getY(), controlPoints[i].x, controlPoints[i].y) <= pointRadius * 2) {
+                    if (Point.distance(e.getX(), e.getY(), controlPoints[i].x, controlPoints[i].y) <= ivc.pointRadius * 2) {
                         selected = i;
                         ivc.updateSelected(selected);
                         break;

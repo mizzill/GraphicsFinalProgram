@@ -1,9 +1,20 @@
 public class ImageViewController {
 
-    private ImageView src, dest;
+    // The Image Views to control
+    public ImageView src, dest;
+
+    // The number of grid rows and columns in each image view
+    public int gridRows = 10;
+    public int gridCols = 10;
+
+    // The radius of each control point in an image view
+    public final int pointRadius = 5;
 
     // Constructor
-    public ImageViewController(ImageView src, ImageView dest) {
+    public ImageViewController() { }
+
+    // Sets the views to watch over
+    public void setViews(ImageView src, ImageView dest) {
         this.src = src;
         this.dest = dest;
     }

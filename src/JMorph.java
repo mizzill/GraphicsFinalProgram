@@ -11,6 +11,8 @@ import java.io.IOException;
 
 public class JMorph extends JFrame {
 
+    private JMorph thisMorph; // A reference to this instance, used in callback functions
+
     private BufferedImage src; //The Source Image
     private BufferedImage dest; // The Destination Image
     private ImageView srcView; // Displays Source Image
@@ -22,17 +24,21 @@ public class JMorph extends JFrame {
     private JPanel sliderPanel;
     private JButton previewButton;
 
+    private PreviewDialog previewDialog;
+
     // Length of animation (in seconds)
     private final int MIN_LENGTH = 1;
     private final int MAX_LENGTH = 60;
     private final int INIT_LENGTH = 5;
 
-    private int animationLength;
+    public final int FPS = 30;
+    public int animationLength;
 
     // Constructor
     public JMorph(){
         super("Mighty JMorphin' Power Rangers");
 
+        thisMorph = this;
         animationLength = INIT_LENGTH;
 
         setupMenu();
@@ -106,12 +112,10 @@ public class JMorph extends JFrame {
     private void buildComponents() {
 
         // Set up the Image Views and the controller
-        srcView = new ImageView( readImage("src/bear.jpg") );
-        destView = new ImageView( readImage("src/shrek.jpg") );
-
-        ivc = new ImageViewController(srcView, destView);
-        srcView.setController(ivc);
-        destView.setController(ivc);
+        ivc = new ImageViewController();
+        srcView = new ImageView( readImage("src/bear.jpg"), ivc );
+        destView = new ImageView( readImage("src/shrek.jpg"), ivc );
+        ivc.setViews(srcView, destView);
 
         // Set up the slider panel
         sliderPanel = new JPanel(new GridBagLayout());
@@ -135,14 +139,7 @@ public class JMorph extends JFrame {
         previewButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // For now, arbitrarily choose the dimensions of the source image for the dialog size
-                new PreviewDialog(
-                        SwingUtilities.getWindowAncestor(previewButton),
-                        new Dimension(srcView.getWidth(), srcView.getHeight()),
-                        srcView.gridCellCoords,
-                        srcView.controlPoints,
-                        destView.controlPoints
-                );
+                previewDialog.revealPreview();
             }
         });
 
@@ -182,6 +179,10 @@ public class JMorph extends JFrame {
         c.add(srcView, BorderLayout.WEST);
         c.add(destView,BorderLayout.EAST);
 
+        // Add the Preview Dialog (invisible at the start)
+        previewDialog = new PreviewDialog(SwingUtilities.getWindowAncestor(previewButton), thisMorph, ivc);
+
+        // Reveal to the world
         pack();
         setVisible(true);
 
