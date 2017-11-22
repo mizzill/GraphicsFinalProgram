@@ -26,10 +26,10 @@ public class ImageView extends JComponent {
     private int pointRadius = 5;
 
     // An array to store all control points
-    private Point[] controlPoints;
+    public Point[] controlPoints;
 
     // An array to store the top-left coordinates of each grid cell
-    private Point[] gridCellCoords;
+    public Point[] gridCellCoords;
 
     // The selected control point index
     private int selected = -1;

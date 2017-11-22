@@ -1,6 +1,8 @@
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.image.BufferedImage;
@@ -18,7 +20,7 @@ public class JMorph extends JFrame {
     private JSlider lengthSlider; // The slider that controls the animation length
     private JLabel sliderLabel;
     private JPanel sliderPanel;
-    private JButton preview;
+    private JButton previewButton;
 
     // Length of animation (in seconds)
     private final int MIN_LENGTH = 1;
@@ -129,8 +131,20 @@ public class JMorph extends JFrame {
         );
 
         //Set up the preview button
-        preview = new JButton("Preview");
-        //TODO Add handler to call preview function
+        previewButton = new JButton("Preview");
+        previewButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // For now, arbitrarily choose the dimensions of the source image for the dialog size
+                new PreviewDialog(
+                        SwingUtilities.getWindowAncestor(previewButton),
+                        new Dimension(srcView.getWidth(), srcView.getHeight()),
+                        srcView.gridCellCoords,
+                        srcView.controlPoints,
+                        destView.controlPoints
+                );
+            }
+        });
 
     }
 
@@ -161,7 +175,7 @@ public class JMorph extends JFrame {
         gc.gridx = 0;
         gc.gridy = 2;
 
-        sliderPanel.add(preview, gc);
+        sliderPanel.add(previewButton, gc);
 
         // Add the panel and image views to the containing frame
         c.add(sliderPanel, BorderLayout.CENTER);
