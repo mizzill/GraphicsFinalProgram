@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7df4f537-39d0-47f3-8e18-748b545f72b1" name="Default" comment="Label for slider and created a preview button">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Final/ImageView$1.class" afterPath="$PROJECT_DIR$/out/production/Final/ImageView$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Final/ImageView$2.class" afterPath="$PROJECT_DIR$/out/production/Final/ImageView$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Final/ImageView.class" afterPath="$PROJECT_DIR$/out/production/Final/ImageView.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/UI Mockup (Rough).png" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ImageView.java" afterPath="$PROJECT_DIR$/src/ImageView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ImageViewController.java" afterPath="$PROJECT_DIR$/src/ImageViewController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/JMorph.java" afterPath="$PROJECT_DIR$/src/JMorph.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -18,29 +17,40 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="JMorph.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="JMorph.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/JMorph.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="950">
-              <caret line="128" column="41" lean-forward="true" selection-start-line="128" selection-start-column="41" selection-end-line="128" selection-end-column="41" />
+            <state relative-caret-position="2025">
+              <caret line="108" column="0" lean-forward="false" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#6285#6389#0" expanded="true" />
-                <element signature="e#6388#6389#0" expanded="true" />
+                <element signature="e#6354#6458#0" expanded="true" />
+                <element signature="e#6457#6458#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ImageView.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ImageView.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ImageView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4650">
-              <caret line="191" column="0" lean-forward="false" selection-start-line="191" selection-start-column="0" selection-end-line="191" selection-end-column="0" />
+            <state relative-caret-position="725">
+              <caret line="223" column="82" lean-forward="false" selection-start-line="223" selection-start-column="82" selection-end-line="223" selection-end-column="101" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1511312315886" expanded="true" signature="8329:8335" ph="{...}" />
+                <element signature="e#5901#7266#0" expanded="true" />
+                <element signature="e#7265#7266#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ImageViewController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ImageViewController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="12" lean-forward="true" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="12" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -65,6 +75,8 @@
       <find>print</find>
       <find>println</find>
       <find>sliderPanel =</find>
+      <find>selected</find>
+      <find>gridCellWidth</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -80,9 +92,9 @@
       <list>
         <option value="$PROJECT_DIR$/src/MyImageProc.java" />
         <option value="$PROJECT_DIR$/src/MyImageObj.java" />
-        <option value="$PROJECT_DIR$/src/ImageView.java" />
-        <option value="$PROJECT_DIR$/src/ImageViewController.java" />
         <option value="$PROJECT_DIR$/src/JMorph.java" />
+        <option value="$PROJECT_DIR$/src/ImageViewController.java" />
+        <option value="$PROJECT_DIR$/src/ImageView.java" />
       </list>
     </option>
   </component>
@@ -1213,8 +1225,8 @@
           <caret line="143" column="50" lean-forward="false" selection-start-line="143" selection-start-column="50" selection-end-line="143" selection-end-column="50" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#6285#6389#0" expanded="true" />
-            <element signature="e#6388#6389#0" expanded="true" />
+            <element signature="e#6354#6458#0" expanded="true" />
+            <element signature="e#6457#6458#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1226,8 +1238,8 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#6285#6389#0" expanded="true" />
-            <element signature="e#6388#6389#0" expanded="true" />
+            <element signature="e#6354#6458#0" expanded="true" />
+            <element signature="e#6457#6458#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1245,8 +1257,8 @@
           <caret line="136" column="57" lean-forward="false" selection-start-line="136" selection-start-column="57" selection-end-line="136" selection-end-column="57" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#6285#6389#0" expanded="true" />
-            <element signature="e#6388#6389#0" expanded="true" />
+            <element signature="e#6354#6458#0" expanded="true" />
+            <element signature="e#6457#6458#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1268,8 +1280,8 @@
           <caret line="8" column="27" lean-forward="false" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#6285#6389#0" expanded="true" />
-            <element signature="e#6388#6389#0" expanded="true" />
+            <element signature="e#6354#6458#0" expanded="true" />
+            <element signature="e#6457#6458#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1304,6 +1316,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="278">
           <caret line="78" column="16" lean-forward="false" selection-start-line="78" selection-start-column="16" selection-end-line="78" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1314,8 +1327,8 @@
           <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#6285#6389#0" expanded="true" />
-            <element signature="e#6388#6389#0" expanded="true" />
+            <element signature="e#6354#6458#0" expanded="true" />
+            <element signature="e#6457#6458#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1326,8 +1339,8 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#6285#6389#0" expanded="true" />
-            <element signature="e#6388#6389#0" expanded="true" />
+            <element signature="e#6354#6458#0" expanded="true" />
+            <element signature="e#6457#6458#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1343,7 +1356,8 @@
           <caret line="197" column="20" lean-forward="false" selection-start-line="197" selection-start-column="20" selection-end-line="197" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1511312315886" expanded="true" signature="8329:8335" ph="{...}" />
+            <element signature="e#5901#7266#0" expanded="true" />
+            <element signature="e#7265#7266#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1354,8 +1368,8 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#6285#6389#0" expanded="true" />
-            <element signature="e#6388#6389#0" expanded="true" />
+            <element signature="e#6354#6458#0" expanded="true" />
+            <element signature="e#6457#6458#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1373,8 +1387,8 @@
           <caret line="136" column="57" lean-forward="false" selection-start-line="136" selection-start-column="57" selection-end-line="136" selection-end-column="57" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#6285#6389#0" expanded="true" />
-            <element signature="e#6388#6389#0" expanded="true" />
+            <element signature="e#6354#6458#0" expanded="true" />
+            <element signature="e#6457#6458#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1396,8 +1410,8 @@
           <caret line="8" column="27" lean-forward="false" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#6285#6389#0" expanded="true" />
-            <element signature="e#6388#6389#0" expanded="true" />
+            <element signature="e#6354#6458#0" expanded="true" />
+            <element signature="e#6457#6458#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1424,6 +1438,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="278">
           <caret line="78" column="16" lean-forward="false" selection-start-line="78" selection-start-column="16" selection-end-line="78" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1434,38 +1449,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ImageView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4650">
-          <caret line="191" column="0" lean-forward="false" selection-start-line="191" selection-start-column="0" selection-end-line="191" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1511312315886" expanded="true" signature="8329:8335" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/IdeaProjects/Minesweeper/src/Bombs.java" />
     <entry file="file://$PROJECT_DIR$/src/JMorph.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="950">
-          <caret line="128" column="41" lean-forward="true" selection-start-line="128" selection-start-column="41" selection-end-line="128" selection-end-column="41" />
+        <state relative-caret-position="2025">
+          <caret line="108" column="0" lean-forward="false" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#6285#6389#0" expanded="true" />
-            <element signature="e#6388#6389#0" expanded="true" />
+            <element signature="e#6354#6458#0" expanded="true" />
+            <element signature="e#6457#6458#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ImageViewController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="16" column="22" lean-forward="false" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
+        <state relative-caret-position="0">
+          <caret line="0" column="12" lean-forward="true" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/IdeaProjects/Minesweeper/src/Bombs.java" />
+    <entry file="file://$PROJECT_DIR$/src/ImageView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="725">
+          <caret line="223" column="82" lean-forward="false" selection-start-line="223" selection-start-column="82" selection-end-line="223" selection-end-column="101" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#5901#7266#0" expanded="true" />
+            <element signature="e#7265#7266#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
   </component>
   <component name="masterDetails">
     <states>

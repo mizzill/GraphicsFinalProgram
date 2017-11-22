@@ -103,9 +103,10 @@ public class JMorph extends JFrame {
     *  Sets up Action Listeners if necessary */
     private void buildComponents() {
 
-        // Set up the Image Views and their controller
-        srcView = new ImageView( readImage("src/boat.gif") );
-        destView = new ImageView( readImage("src/island.jpg") );
+        // Set up the Image Views and the controller
+        srcView = new ImageView( readImage("src/bear.jpg") );
+        destView = new ImageView( readImage("src/shrek.jpg") );
+
         ivc = new ImageViewController(srcView, destView);
         srcView.setController(ivc);
         destView.setController(ivc);
@@ -113,8 +114,10 @@ public class JMorph extends JFrame {
         // Set up the slider panel
         sliderPanel = new JPanel(new GridBagLayout());
 
+        // Set up the slider label
         sliderLabel = new JLabel("Set the Length of the preview in seconds");
 
+        // Set up the slider itself
         lengthSlider = new JSlider(SwingConstants.HORIZONTAL, MIN_LENGTH, MAX_LENGTH, INIT_LENGTH);
         lengthSlider.setMajorTickSpacing(59);
         lengthSlider.setMinorTickSpacing(5);

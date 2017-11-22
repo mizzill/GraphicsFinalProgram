@@ -1,15 +1,16 @@
 public class ImageViewController {
-    int selected;
-    ImageView src,dest;
-    //Constructor
-    public ImageViewController(ImageView src, ImageView dest){
-        selected = -1;
+
+    private ImageView src, dest;
+
+    // Constructor
+    public ImageViewController(ImageView src, ImageView dest) {
         this.src = src;
         this.dest = dest;
     }
 
-    public void updateSelected(int clickedPoint){
-        this.selected = clickedPoint;
+    /* Updates the "selected" property on both the clicked point
+       and the corresponding point on the other image */
+    public void updateSelected(int clickedPoint) {
         src.updateSelectedExternally(clickedPoint);
         dest.updateSelectedExternally(clickedPoint);
 
