@@ -47,7 +47,7 @@ public class JMorph extends JFrame {
 
     //Constants For Control Grid Resolution
     private final int MIN_POINTS = 1;
-    private final int MAX_POINTS= 30;
+    private final int MAX_POINTS= 20;
     private final int INIT_POINTS= 10;
 
     public final int FPS = 30;
