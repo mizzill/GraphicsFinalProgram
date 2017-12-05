@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7df4f537-39d0-47f3-8e18-748b545f72b1" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ImageViewController.java" afterPath="$PROJECT_DIR$/src/ImageViewController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/JMorph.java" afterPath="$PROJECT_DIR$/src/JMorph.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -14,14 +15,14 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.725">
+    <splitter split-orientation="horizontal" split-proportion="0.48854166">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
           <file leaf-file-name="JMorph.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/JMorph.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1995">
-                  <caret line="224" column="8" lean-forward="false" selection-start-line="224" selection-start-column="8" selection-end-line="224" selection-end-column="8" />
+                <state relative-caret-position="185">
+                  <caret line="182" column="46" lean-forward="false" selection-start-line="182" selection-start-column="46" selection-end-line="182" selection-end-column="46" />
                   <folding>
                     <element signature="method#setupMenu#0;class#JMorph#0" expanded="false" />
                   </folding>
@@ -56,8 +57,8 @@
           <file leaf-file-name="MyImageProc.java" pinned="false" current-in-tab="false">
             <entry file="file://$USER_HOME$/Downloads/week10/week10/ip/MyImageProc.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="36">
-                  <caret line="262" column="44" lean-forward="true" selection-start-line="262" selection-start-column="44" selection-end-line="262" selection-end-column="44" />
+                <state relative-caret-position="1695">
+                  <caret line="293" column="0" lean-forward="true" selection-start-line="293" selection-start-column="0" selection-end-line="293" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -66,8 +67,8 @@
           <file leaf-file-name="ImageView.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/ImageView.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="3715">
-                  <caret line="201" column="17" lean-forward="true" selection-start-line="201" selection-start-column="17" selection-end-line="201" selection-end-column="17" />
+                <state relative-caret-position="2037">
+                  <caret line="115" column="2" lean-forward="true" selection-start-line="115" selection-start-column="2" selection-end-line="115" selection-end-column="2" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -82,8 +83,8 @@
           <file leaf-file-name="ImageViewController.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/ImageViewController.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="273">
-                  <caret line="13" column="36" lean-forward="false" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
+                <state relative-caret-position="334">
+                  <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
                   <folding />
                 </state>
               </provider>
@@ -119,6 +120,7 @@
       <find>setVisible</find>
       <find>grid</find>
       <find>buffer</find>
+      <find>resolutionLa</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -136,8 +138,8 @@
         <option value="$PROJECT_DIR$/src/MyImageObj.java" />
         <option value="$PROJECT_DIR$/src/PreviewDialog.java" />
         <option value="$PROJECT_DIR$/src/PreviewImagePanel.java" />
-        <option value="$PROJECT_DIR$/src/ImageViewController.java" />
         <option value="$PROJECT_DIR$/src/ImageView.java" />
+        <option value="$PROJECT_DIR$/src/ImageViewController.java" />
         <option value="$PROJECT_DIR$/src/JMorph.java" />
       </list>
     </option>
@@ -416,11 +418,18 @@
       <option name="project" value="LOCAL" />
       <updated>1512485274204</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Cleaned up the code a bit">
+      <created>1512486031566</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1512486031566</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31688000" />
+    <option name="totallyTimeSpent" value="33268000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1098" extended-state="6" />
@@ -519,7 +528,8 @@
     <MESSAGE value="Label for slider and created a preview button" />
     <MESSAGE value="Brightness Slider almost works" />
     <MESSAGE value="Fixed the brightness slider" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed the brightness slider" />
+    <MESSAGE value="Cleaned up the code a bit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cleaned up the code a bit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -708,14 +718,6 @@
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/IdeaProjects/Minesweeper/src/Bombs.java" />
-    <entry file="file://$PROJECT_DIR$/src/ImageViewController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="13" column="36" lean-forward="false" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/PreviewImagePanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -738,26 +740,34 @@
     </entry>
     <entry file="file://$USER_HOME$/Downloads/week10/week10/ip/MyImageProc.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="262" column="44" lean-forward="true" selection-start-line="262" selection-start-column="44" selection-end-line="262" selection-end-column="44" />
+        <state relative-caret-position="1695">
+          <caret line="293" column="0" lean-forward="true" selection-start-line="293" selection-start-column="0" selection-end-line="293" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ImageView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3715">
-          <caret line="201" column="17" lean-forward="true" selection-start-line="201" selection-start-column="17" selection-end-line="201" selection-end-column="17" />
+        <state relative-caret-position="2037">
+          <caret line="115" column="2" lean-forward="true" selection-start-line="115" selection-start-column="2" selection-end-line="115" selection-end-column="2" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/ImageViewController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="334">
+          <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/JMorph.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1995">
-          <caret line="224" column="8" lean-forward="false" selection-start-line="224" selection-start-column="8" selection-end-line="224" selection-end-column="8" />
+        <state relative-caret-position="185">
+          <caret line="182" column="46" lean-forward="false" selection-start-line="182" selection-start-column="46" selection-end-line="182" selection-end-column="46" />
           <folding>
             <element signature="method#setupMenu#0;class#JMorph#0" expanded="false" />
           </folding>

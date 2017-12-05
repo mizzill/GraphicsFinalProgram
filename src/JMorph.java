@@ -21,12 +21,16 @@ public class JMorph extends JFrame {
     private JLabel sliderLabel;
     private JPanel sliderPanel;
 
-    //Src Brightness Slider
-    private JSlider srcBrightSlider;
-    //Dest Brightness Slider
-    private JSlider destBrightSlider;
+    private JSlider srcBrightSlider; //Src Brightness Slider
+    private JSlider destBrightSlider; //Dest Brightness Slider
+
+    //Brightness Slider Labels
     private JLabel srcBrightLabel;
     private JLabel destBrightLabel;
+
+    //Resolution Slider
+    private JSlider resolutionSlider;
+    private JLabel resolutionLabel;
 
     private JButton previewButton;
     private PreviewDialog previewDialog;
@@ -40,6 +44,11 @@ public class JMorph extends JFrame {
     private final int MIN_LUMINANCE = 10;
     private final int MAX_LUMINANCE = 25;
     private final int INIT_LUMINANCE = 10;
+
+    //Constants For Control Grid Resolution
+    private final int MIN_POINTS = 1;
+    private final int MAX_POINTS= 30;
+    private final int INIT_POINTS= 10;
 
     public final int FPS = 30;
     public int animationLength;
@@ -167,6 +176,18 @@ public class JMorph extends JFrame {
         srcBrightLabel = new JLabel("Source Brightness:");
         destBrightLabel = new JLabel("Destination Brightness:");
 
+        //Resolution Slider
+        resolutionLabel = new JLabel("Grid Resolution:");
+        resolutionSlider = new JSlider(SwingConstants.HORIZONTAL, MIN_POINTS, MAX_POINTS, INIT_POINTS);
+        resolutionSlider.setMajorTickSpacing(29);
+        resolutionSlider.setMinorTickSpacing(9);
+        resolutionSlider.setPaintLabels(true);
+        resolutionSlider.setPaintTicks(true);
+        resolutionSlider.addChangeListener(e -> {
+            int resolution = resolutionSlider.getValue();
+            ivc.changeGridResolution(resolution);
+        }
+        );
         //Set up the preview button
         previewButton = new JButton("Preview");
         previewButton.addActionListener(e -> previewDialog.revealPreview());
@@ -179,10 +200,22 @@ public class JMorph extends JFrame {
         Container c = this.getContentPane();
         GridBagConstraints gc = new GridBagConstraints();
 
-        //Top Label of Slider
         gc.fill = GridBagConstraints.HORIZONTAL;
         gc.gridx = 0;
         gc.gridy = 0;
+        gc.insets = new Insets(0,0,10,0);
+        sliderPanel.add(resolutionLabel,gc);
+
+        gc.fill = GridBagConstraints.HORIZONTAL;
+        gc.gridx = 0;
+        gc.gridy = 1;
+        gc.insets = new Insets(0,0,10,0);
+        sliderPanel.add(resolutionSlider,gc);
+
+        //Top Label of Slider
+        gc.fill = GridBagConstraints.HORIZONTAL;
+        gc.gridx = 0;
+        gc.gridy = 2;
         gc.insets = new Insets(0,0,10,0);
 
         sliderPanel.add(sliderLabel, gc);
@@ -190,7 +223,7 @@ public class JMorph extends JFrame {
         //Constraints for Slider
         gc.fill = GridBagConstraints.HORIZONTAL;
         gc.gridx = 0;
-        gc.gridy = 1;
+        gc.gridy = 3;
         gc.insets = new Insets(0,0,10,0);
 
         sliderPanel.add(lengthSlider,gc);
@@ -198,7 +231,7 @@ public class JMorph extends JFrame {
         //Constraints for Preview Button
         gc.fill = GridBagConstraints.HORIZONTAL;
         gc.gridx = 0;
-        gc.gridy = 2;
+        gc.gridy = 4;
 
         sliderPanel.add(previewButton, gc);
 

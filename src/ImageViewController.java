@@ -28,4 +28,13 @@ public class ImageViewController {
         src.repaint();
         dest.repaint();
     }
+
+    public void changeGridResolution(int resolution){
+        gridRows = resolution;
+        gridCols = resolution;
+
+        src.setupControlGrid();
+        dest.setupControlGrid();
+
+    }
 }
