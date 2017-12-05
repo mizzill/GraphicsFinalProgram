@@ -142,13 +142,12 @@ public class JMorph extends JFrame {
         // Set up the slider label
         sliderLabel = new JLabel("Set the Length of the preview in seconds");
 
-        // Set up the slider itself
+        // Set up the animation length slider
         lengthSlider = new JSlider(SwingConstants.HORIZONTAL, MIN_LENGTH, MAX_LENGTH, INIT_LENGTH);
         lengthSlider.setMajorTickSpacing(9);
         lengthSlider.setMinorTickSpacing(1);
         lengthSlider.setPaintLabels(true);
         lengthSlider.setPaintTicks(true);
-
         lengthSlider.addChangeListener(e ->
                 animationLength = lengthSlider.getValue()
         );
@@ -237,9 +236,6 @@ public class JMorph extends JFrame {
 
         // Add the panel and image views to the containing frame
         c.add(sliderPanel, BorderLayout.CENTER);
-
-        //Setup grid layout for bottom panel and the two sliders
-        GridLayout grid = new GridLayout (2, 1);
 
         //Add the Images to the view
         c.add(srcView, BorderLayout.WEST);

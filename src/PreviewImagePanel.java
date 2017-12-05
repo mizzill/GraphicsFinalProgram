@@ -18,11 +18,11 @@ public class PreviewImagePanel extends JPanel {
     public PreviewImagePanel(ImageViewController ivc) {
 
         this.ivc = ivc;
-        this.cellHeight = ivc.src.gridCellHeight;
-        this.cellWidth = ivc.src.gridCellWidth;
+        cellHeight = ivc.src.gridCellHeight;
+        cellWidth = ivc.src.gridCellWidth;
 
         // Copy the source image's control points into a local array for modification
-        this.controlPoints = Arrays.copyOf(ivc.src.controlPoints, ivc.src.controlPoints.length);
+        controlPoints = Arrays.copyOf(ivc.src.controlPoints, ivc.src.controlPoints.length);
 
         // Resize the panel
         setBackground(Color.black);
@@ -44,6 +44,8 @@ public class PreviewImagePanel extends JPanel {
 
     // Resets the control points to their positions from the source image
     public void reset() {
+        cellHeight = ivc.src.gridCellHeight;
+        cellWidth = ivc.src.gridCellWidth;
         controlPoints = Arrays.copyOf(ivc.src.controlPoints, ivc.src.controlPoints.length);
     }
 
