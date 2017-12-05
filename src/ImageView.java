@@ -39,7 +39,7 @@ public class ImageView extends JComponent {
     public void setImage(BufferedImage img) {
         if (img == null) return;
         bim = img;
-        original = new BufferedImage(bim.getWidth(), bim.getHeight(), bim.getType());
+        original = copyImage(bim);
 
         setPreferredSize(new Dimension(bim.getWidth(), bim.getHeight()));
         setupControlGrid();
@@ -206,10 +206,16 @@ public class ImageView extends JComponent {
     }
     public void changeBrightness(float brightness){
         RescaleOp op = new RescaleOp(brightness, 0, null);
-        op.filter(bim, bim);
+        op.filter(original, bim);
         repaint();
     }
-
+    public static BufferedImage copyImage(BufferedImage source){
+        BufferedImage b = new BufferedImage(source.getWidth(), source.getHeight(), source.getType());
+        Graphics g = b.getGraphics();
+        g.drawImage(source, 0, 0, null);
+        g.dispose();
+        return b;
+    }
     // Called from the Image View Controller to update the selected control point from the other grid
     public void updateSelectedExternally(int clickedPoint){
         this.selected = clickedPoint;

@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7df4f537-39d0-47f3-8e18-748b545f72b1" name="Default" comment="Label for slider and created a preview button">
+    <list default="true" id="7df4f537-39d0-47f3-8e18-748b545f72b1" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Final/boat.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Final/island.jpg" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Final/ImageView$1.class" afterPath="$PROJECT_DIR$/out/production/Final/ImageView$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Final/ImageView$2.class" afterPath="$PROJECT_DIR$/out/production/Final/ImageView$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Final/ImageView.class" afterPath="$PROJECT_DIR$/out/production/Final/ImageView.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Final/JMorph$1.class" afterPath="$PROJECT_DIR$/out/production/Final/JMorph$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Final/JMorph$2.class" afterPath="$PROJECT_DIR$/out/production/Final/JMorph$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Final/JMorph.class" afterPath="$PROJECT_DIR$/out/production/Final/JMorph.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Final/PreviewDialog.class" afterPath="$PROJECT_DIR$/out/production/Final/PreviewDialog.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Final/PreviewImagePanel.class" afterPath="$PROJECT_DIR$/out/production/Final/PreviewImagePanel.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ImageView.java" afterPath="$PROJECT_DIR$/src/ImageView.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/JMorph.java" afterPath="$PROJECT_DIR$/src/JMorph.java" />
@@ -18,11 +28,11 @@
     <splitter split-orientation="horizontal" split-proportion="0.725">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-          <file leaf-file-name="JMorph.java" pinned="false" current-in-tab="false">
+          <file leaf-file-name="JMorph.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/JMorph.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-1136">
-                  <caret line="160" column="43" lean-forward="false" selection-start-line="160" selection-start-column="43" selection-end-line="160" selection-end-column="43" />
+                <state relative-caret-position="340">
+                  <caret line="220" column="41" lean-forward="false" selection-start-line="220" selection-start-column="41" selection-end-line="220" selection-end-column="41" />
                   <folding>
                     <element signature="method#setupMenu#0;class#JMorph#0" expanded="false" />
                   </folding>
@@ -64,11 +74,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="ImageView.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="ImageView.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/ImageView.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="376">
-                  <caret line="211" column="0" lean-forward="true" selection-start-line="211" selection-start-column="0" selection-end-line="211" selection-end-column="0" />
+                <state relative-caret-position="3715">
+                  <caret line="201" column="17" lean-forward="true" selection-start-line="201" selection-start-column="17" selection-end-line="201" selection-end-column="17" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -119,6 +129,7 @@
       <find>previewButton</find>
       <find>setVisible</find>
       <find>grid</find>
+      <find>buffer</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -137,8 +148,8 @@
         <option value="$PROJECT_DIR$/src/PreviewDialog.java" />
         <option value="$PROJECT_DIR$/src/PreviewImagePanel.java" />
         <option value="$PROJECT_DIR$/src/ImageViewController.java" />
-        <option value="$PROJECT_DIR$/src/JMorph.java" />
         <option value="$PROJECT_DIR$/src/ImageView.java" />
+        <option value="$PROJECT_DIR$/src/JMorph.java" />
       </list>
     </option>
   </component>
@@ -395,11 +406,18 @@
       <option name="project" value="LOCAL" />
       <updated>1511228743583</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Brightness Slider almost works">
+      <created>1512441942299</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1512441942299</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30345000" />
+    <option name="totallyTimeSpent" value="30919000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1098" extended-state="6" />
@@ -496,7 +514,8 @@
     <MESSAGE value="Added in a frame slider. Next thing to do is probably the grid" />
     <MESSAGE value="Constrict point movement to rectangle" />
     <MESSAGE value="Label for slider and created a preview button" />
-    <option name="LAST_COMMIT_MESSAGE" value="Label for slider and created a preview button" />
+    <MESSAGE value="Brightness Slider almost works" />
+    <option name="LAST_COMMIT_MESSAGE" value="Brightness Slider almost works" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -721,22 +740,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/JMorph.java">
+    <entry file="file://$PROJECT_DIR$/src/ImageView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1136">
-          <caret line="160" column="43" lean-forward="false" selection-start-line="160" selection-start-column="43" selection-end-line="160" selection-end-column="43" />
+        <state relative-caret-position="3715">
+          <caret line="201" column="17" lean-forward="true" selection-start-line="201" selection-start-column="17" selection-end-line="201" selection-end-column="17" />
           <folding>
-            <element signature="method#setupMenu#0;class#JMorph#0" expanded="false" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ImageView.java">
+    <entry file="file://$PROJECT_DIR$/src/JMorph.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="211" column="0" lean-forward="true" selection-start-line="211" selection-start-column="0" selection-end-line="211" selection-end-column="0" />
+        <state relative-caret-position="340">
+          <caret line="220" column="41" lean-forward="false" selection-start-line="220" selection-start-column="41" selection-end-line="220" selection-end-column="41" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="method#setupMenu#0;class#JMorph#0" expanded="false" />
           </folding>
         </state>
       </provider>

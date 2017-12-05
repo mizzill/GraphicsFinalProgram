@@ -36,7 +36,7 @@ public class JMorph extends JFrame {
 
     //Constants for brightness
     private final int MIN_LUMINANCE = 10;
-    private final int MAX_LUMINANCE = 50;
+    private final int MAX_LUMINANCE = 25;
     private final int INIT_LUMINANCE = 10;
 
     public final int FPS = 30;
@@ -199,7 +199,7 @@ public class JMorph extends JFrame {
         // Add the panel and image views to the containing frame
         c.add(sliderPanel, BorderLayout.CENTER);
 
-        //GridLayout grid = new GridLayout (2, 1);
+        GridLayout grid = new GridLayout (2, 1);
 
         //srcPanel.add(srcView, gc);
 
@@ -214,7 +214,11 @@ public class JMorph extends JFrame {
         //destPanel.add(destView);
         //destPanel.add(destBrightSlider);
         c.add(destView,BorderLayout.EAST);
-        JPanel brightPanel = new JPanel( new GridLayout(1,2));
+        JPanel brightPanel = new JPanel( new GridLayout(2,2));
+        JLabel srcBrightLabel = new JLabel("Source Brightness:");
+        JLabel destBrightLabel = new JLabel("Destination Brightness:");
+        brightPanel.add(srcBrightLabel);
+        brightPanel.add(destBrightLabel);
         brightPanel.add(srcBrightSlider);
         brightPanel.add(destBrightSlider);
         c.add(brightPanel, BorderLayout.SOUTH);
