@@ -21,6 +21,11 @@ public class JMorph extends JFrame {
     private JLabel sliderLabel;
     private JPanel sliderPanel;
 
+    //Src Brightness Slider
+    private JSlider srcBrightSlider;
+    //Desst Brightness Slider
+    private JSlider destBrightSlider;
+
     private JButton previewButton;
     private PreviewDialog previewDialog;
 
@@ -28,6 +33,11 @@ public class JMorph extends JFrame {
     private final int MIN_LENGTH = 1;
     private final int MAX_LENGTH = 10;
     private final int INIT_LENGTH = 3;
+
+    //Constants for brightness
+    private final int MIN_LUMINANCE = 10;
+    private final int MAX_LUMINANCE = 50;
+    private final int INIT_LUMINANCE = 10;
 
     public final int FPS = 30;
     public int animationLength;
@@ -132,6 +142,25 @@ public class JMorph extends JFrame {
                 animationLength = lengthSlider.getValue()
         );
 
+        //Build out the Brightness Sliders
+        srcBrightSlider = new JSlider(SwingConstants.HORIZONTAL, MIN_LUMINANCE, MAX_LUMINANCE, INIT_LUMINANCE);
+        srcBrightSlider.setPaintTicks(true);
+        srcBrightSlider.addChangeListener(e -> {
+            int value = srcBrightSlider.getValue();
+            float brightness = value / 10f;
+            srcView.changeBrightness(brightness);
+
+        }
+        );
+
+        destBrightSlider = new JSlider(SwingConstants.HORIZONTAL, MIN_LUMINANCE, MAX_LUMINANCE, INIT_LUMINANCE);
+        destBrightSlider.setPaintTicks(true);
+        destBrightSlider.addChangeListener(e -> {
+                    int value = destBrightSlider.getValue();
+                    float brightness = value / 10f;
+                    destView.changeBrightness(brightness);
+                }
+        );
         //Set up the preview button
         previewButton = new JButton("Preview");
         previewButton.addActionListener(e -> previewDialog.revealPreview());
@@ -169,9 +198,26 @@ public class JMorph extends JFrame {
 
         // Add the panel and image views to the containing frame
         c.add(sliderPanel, BorderLayout.CENTER);
-        c.add(srcView, BorderLayout.WEST);
-        c.add(destView,BorderLayout.EAST);
 
+        //GridLayout grid = new GridLayout (2, 1);
+
+        //srcPanel.add(srcView, gc);
+
+        //srcPanel.add(srcBrightSlider, gc);
+        //srcPanel.setLayout(grid);
+
+        c.add(srcView, BorderLayout.WEST);
+
+        JPanel destPanel = new JPanel();
+        //GridLayout grid = new GridLayout (2, 1);
+        //destPanel.setLayout(grid);
+        //destPanel.add(destView);
+        //destPanel.add(destBrightSlider);
+        c.add(destView,BorderLayout.EAST);
+        JPanel brightPanel = new JPanel( new GridLayout(1,2));
+        brightPanel.add(srcBrightSlider);
+        brightPanel.add(destBrightSlider);
+        c.add(brightPanel, BorderLayout.SOUTH);
         // Add the Preview Dialog (invisible at the start)
         previewDialog = new PreviewDialog(SwingUtilities.getWindowAncestor(previewButton), thisMorph, ivc);
 

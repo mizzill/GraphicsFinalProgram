@@ -9,6 +9,7 @@ public class ImageView extends JComponent {
 
     // Instance variable to hold the buffered image
     private BufferedImage bim = null;
+    private BufferedImage original = null;
 
     // The size of each grid cell
     public int gridCellWidth;
@@ -38,6 +39,7 @@ public class ImageView extends JComponent {
     public void setImage(BufferedImage img) {
         if (img == null) return;
         bim = img;
+        original = new BufferedImage(bim.getWidth(), bim.getHeight(), bim.getType());
 
         setPreferredSize(new Dimension(bim.getWidth(), bim.getHeight()));
         setupControlGrid();
@@ -201,6 +203,11 @@ public class ImageView extends JComponent {
             }
         });
 
+    }
+    public void changeBrightness(float brightness){
+        RescaleOp op = new RescaleOp(brightness, 0, null);
+        op.filter(bim, bim);
+        repaint();
     }
 
     // Called from the Image View Controller to update the selected control point from the other grid
