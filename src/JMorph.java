@@ -47,8 +47,8 @@ public class JMorph extends JFrame {
 
     //Constants For Control Grid Resolution
     private final int MIN_POINTS = 1;
-    private final int MAX_POINTS= 20;
-    private final int INIT_POINTS= 10;
+    private final int MAX_POINTS = 20;
+    private final int INIT_POINTS = 10;
 
     public final int FPS = 30;
     public int animationLength;
@@ -181,8 +181,8 @@ public class JMorph extends JFrame {
         //Resolution Slider
         resolutionLabel = new JLabel("Grid Resolution:");
         resolutionSlider = new JSlider(SwingConstants.HORIZONTAL, MIN_POINTS, MAX_POINTS, INIT_POINTS);
-        resolutionSlider.setMajorTickSpacing(29);
-        resolutionSlider.setMinorTickSpacing(9);
+        resolutionSlider.setMajorTickSpacing(19);
+        resolutionSlider.setMinorTickSpacing(1);
         resolutionSlider.setPaintLabels(true);
         resolutionSlider.setPaintTicks(true);
         resolutionSlider.addChangeListener(e -> {
