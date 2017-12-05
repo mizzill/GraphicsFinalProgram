@@ -109,8 +109,11 @@ public class JMorph extends JFrame {
         JMenuItem resetImgs = new JMenuItem("Reset");
         fileMenu.add( resetImgs );
         resetImgs.addActionListener(e -> {
-                srcView.setupControlGrid();
-                destView.setupControlGrid();
+                ivc.changeGridResolution(INIT_POINTS);
+                resolutionSlider.setValue(INIT_POINTS);
+                destBrightSlider.setValue(INIT_LUMINANCE);
+                srcBrightSlider.setValue(INIT_LUMINANCE);
+                lengthSlider.setValue(INIT_LENGTH);
             }
         );
 
