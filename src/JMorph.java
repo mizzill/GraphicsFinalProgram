@@ -23,8 +23,10 @@ public class JMorph extends JFrame {
 
     //Src Brightness Slider
     private JSlider srcBrightSlider;
-    //Desst Brightness Slider
+    //Dest Brightness Slider
     private JSlider destBrightSlider;
+    private JLabel srcBrightLabel;
+    private JLabel destBrightLabel;
 
     private JButton previewButton;
     private PreviewDialog previewDialog;
@@ -161,6 +163,10 @@ public class JMorph extends JFrame {
                     destView.changeBrightness(brightness);
                 }
         );
+
+        srcBrightLabel = new JLabel("Source Brightness:");
+        destBrightLabel = new JLabel("Destination Brightness:");
+
         //Set up the preview button
         previewButton = new JButton("Preview");
         previewButton.addActionListener(e -> previewDialog.revealPreview());
@@ -199,29 +205,24 @@ public class JMorph extends JFrame {
         // Add the panel and image views to the containing frame
         c.add(sliderPanel, BorderLayout.CENTER);
 
+        //Setup grid layout for bottom panel and the two sliders
         GridLayout grid = new GridLayout (2, 1);
 
-        //srcPanel.add(srcView, gc);
-
-        //srcPanel.add(srcBrightSlider, gc);
-        //srcPanel.setLayout(grid);
-
+        //Add the Images to the view
         c.add(srcView, BorderLayout.WEST);
-
-        JPanel destPanel = new JPanel();
-        //GridLayout grid = new GridLayout (2, 1);
-        //destPanel.setLayout(grid);
-        //destPanel.add(destView);
-        //destPanel.add(destBrightSlider);
         c.add(destView,BorderLayout.EAST);
+
+        //Initialize Panel for the brightness sliders
         JPanel brightPanel = new JPanel( new GridLayout(2,2));
-        JLabel srcBrightLabel = new JLabel("Source Brightness:");
-        JLabel destBrightLabel = new JLabel("Destination Brightness:");
+
+        //Add the sliders and the labels
         brightPanel.add(srcBrightLabel);
         brightPanel.add(destBrightLabel);
         brightPanel.add(srcBrightSlider);
         brightPanel.add(destBrightSlider);
+
         c.add(brightPanel, BorderLayout.SOUTH);
+
         // Add the Preview Dialog (invisible at the start)
         previewDialog = new PreviewDialog(SwingUtilities.getWindowAncestor(previewButton), thisMorph, ivc);
 
