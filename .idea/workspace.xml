@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7df4f537-39d0-47f3-8e18-748b545f72b1" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Final/boat.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Final/island.jpg" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Final/ImageView$1.class" afterPath="$PROJECT_DIR$/out/production/Final/ImageView$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Final/ImageView$2.class" afterPath="$PROJECT_DIR$/out/production/Final/ImageView$2.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Final/ImageView.class" afterPath="$PROJECT_DIR$/out/production/Final/ImageView.class" />
@@ -13,8 +11,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Final/PreviewDialog.class" afterPath="$PROJECT_DIR$/out/production/Final/PreviewDialog.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Final/PreviewImagePanel.class" afterPath="$PROJECT_DIR$/out/production/Final/PreviewImagePanel.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ImageView.java" afterPath="$PROJECT_DIR$/src/ImageView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/JMorph.java" afterPath="$PROJECT_DIR$/src/JMorph.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -413,11 +409,18 @@
       <option name="project" value="LOCAL" />
       <updated>1512441942299</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Brightness Slider almost works">
+      <created>1512485258019</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1512485258019</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30919000" />
+    <option name="totallyTimeSpent" value="30930000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1098" extended-state="6" />
