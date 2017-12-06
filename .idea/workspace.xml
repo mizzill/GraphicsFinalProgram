@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7df4f537-39d0-47f3-8e18-748b545f72b1" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Final/ImageView.class" afterPath="$PROJECT_DIR$/out/production/Final/ImageView.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Final/JMorph$1.class" afterPath="$PROJECT_DIR$/out/production/Final/JMorph$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Final/JMorph$2.class" afterPath="$PROJECT_DIR$/out/production/Final/JMorph$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Final/JMorph.class" afterPath="$PROJECT_DIR$/out/production/Final/JMorph.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Final/ImageViewController.class" afterPath="$PROJECT_DIR$/out/production/Final/ImageViewController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ImageView.java" afterPath="$PROJECT_DIR$/src/ImageView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ImageViewController.java" afterPath="$PROJECT_DIR$/src/ImageViewController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/JMorph.java" afterPath="$PROJECT_DIR$/src/JMorph.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -26,13 +21,13 @@
           <file leaf-file-name="JMorph.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/JMorph.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="382">
-                  <caret line="490" column="9" lean-forward="true" selection-start-line="490" selection-start-column="9" selection-end-line="490" selection-end-column="9" />
+                <state relative-caret-position="220">
+                  <caret line="413" column="22" lean-forward="false" selection-start-line="413" selection-start-column="22" selection-end-line="413" selection-end-column="22" />
                   <folding>
                     <element signature="imports" expanded="true" />
                     <element signature="method#buildDisplay#0;class#JMorph#0" expanded="false" />
-                    <marker date="1512574570310" expanded="false" signature="17899:17976" ph="(WindowAdapter) windowClosing(e) → { " />
-                    <marker date="1512574570310" expanded="false" signature="17991:18003" ph=" }" />
+                    <element signature="e#17901#18005#0" expanded="true" />
+                    <element signature="e#18004#18005#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -114,7 +109,7 @@
           <file leaf-file-name="ImageViewController.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/ImageViewController.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="292">
+                <state relative-caret-position="442">
                   <caret line="29" column="5" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
                   <folding />
                 </state>
@@ -5397,15 +5392,21 @@
       <option name="project" value="LOCAL" />
       <updated>1512529078326</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Saving and Loading now work completely!">
+      <created>1512574774729</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1512574774729</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44206000" />
+    <option name="totallyTimeSpent" value="44350000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1098" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -5415,8 +5416,8 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32952183" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32744282" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32952183" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32744282" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -5504,7 +5505,8 @@
     <MESSAGE value="Cleaned up the code a bit" />
     <MESSAGE value="Saving and Loading components are added. Now we just need to write and read the right stuff" />
     <MESSAGE value="Saving now saves all of the settings to whatever file you choose. Will work on loading in the morning" />
-    <option name="LAST_COMMIT_MESSAGE" value="Saving now saves all of the settings to whatever file you choose. Will work on loading in the morning" />
+    <MESSAGE value="Saving and Loading now work completely!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Saving and Loading now work completely!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -5531,6 +5533,8 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#buildDisplay#0;class#JMorph#0" expanded="false" />
+            <element signature="e#17901#18005#0" expanded="true" />
+            <element signature="e#18004#18005#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -5572,6 +5576,8 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#buildDisplay#0;class#JMorph#0" expanded="false" />
+            <element signature="e#17901#18005#0" expanded="true" />
+            <element signature="e#18004#18005#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -5583,6 +5589,8 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#buildDisplay#0;class#JMorph#0" expanded="false" />
+            <element signature="e#17901#18005#0" expanded="true" />
+            <element signature="e#18004#18005#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -5607,6 +5615,8 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#buildDisplay#0;class#JMorph#0" expanded="false" />
+            <element signature="e#17901#18005#0" expanded="true" />
+            <element signature="e#18004#18005#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -5625,6 +5635,8 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#buildDisplay#0;class#JMorph#0" expanded="false" />
+            <element signature="e#17901#18005#0" expanded="true" />
+            <element signature="e#18004#18005#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -5647,6 +5659,8 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#buildDisplay#0;class#JMorph#0" expanded="false" />
+            <element signature="e#17901#18005#0" expanded="true" />
+            <element signature="e#18004#18005#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -5743,22 +5757,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/JMorph.java">
+    <entry file="file://$PROJECT_DIR$/src/ImageViewController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2982">
-          <caret line="41" column="39" lean-forward="true" selection-start-line="41" selection-start-column="39" selection-end-line="41" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#buildDisplay#0;class#JMorph#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="442">
+          <caret line="29" column="5" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ImageViewController.java">
+    <entry file="file://$PROJECT_DIR$/src/JMorph.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="29" column="5" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
-          <folding />
+        <state relative-caret-position="220">
+          <caret line="413" column="22" lean-forward="false" selection-start-line="413" selection-start-column="22" selection-end-line="413" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#buildDisplay#0;class#JMorph#0" expanded="false" />
+            <element signature="e#17901#18005#0" expanded="true" />
+            <element signature="e#18004#18005#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

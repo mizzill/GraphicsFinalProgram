@@ -411,7 +411,7 @@ public class JMorph extends JFrame {
                         new BufferedReader(fileReader);
 
                 while((line = bufferedReader.readLine()) != null) {
-                    System.out.println(line);
+                    //System.out.println(line);
                     lineList.add(line);
                 }
 
