@@ -37,4 +37,8 @@ public class ImageViewController {
         dest.setupControlGrid();
 
     }
+    public void loadControlPoints( int[] srcX, int[] srcY, int[] destX, int[] destY){
+        src.updateControlPoints( srcX, srcY );
+        dest.updateControlPoints(destX, destY);
+    }
 }

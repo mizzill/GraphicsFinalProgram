@@ -224,4 +224,11 @@ public class ImageView extends JComponent {
     public Point[] getControlPoints() {
         return controlPoints;
     }
+    public void updateControlPoints(int[] x, int[] y) {
+        for(int i = 0; i < x.length; i ++) {
+            controlPoints[i].x = x[i];
+            controlPoints[i].y = y[i];
+        }
+        repaint();
+    }
 }

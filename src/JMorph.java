@@ -7,6 +7,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.io.*;
+import java.util.ArrayList;
 
 public class JMorph extends JFrame {
 
@@ -373,13 +374,7 @@ public class JMorph extends JFrame {
                     bufferedWriter.write( Integer.toString( destControlPoints[i].y ) ) ;
                     bufferedWriter.newLine();
                 }
-                // Note that write() does not automatically
-                // append a newline character.
-                bufferedWriter.write("Hello there,");
-                bufferedWriter.write(" here is some text.");
-                bufferedWriter.newLine();
-                bufferedWriter.write("We are writing");
-                bufferedWriter.write(" the text to the file.");
+
 
                 // Always close files.
                 bufferedWriter.close();
@@ -405,7 +400,7 @@ public class JMorph extends JFrame {
             String fileName = file.getName();
 
             String line = null;
-
+            ArrayList<String> lineList = new ArrayList<>();
             try {
                 // FileReader reads text files in the default encoding.
                 FileReader fileReader =
@@ -417,6 +412,7 @@ public class JMorph extends JFrame {
 
                 while((line = bufferedReader.readLine()) != null) {
                     System.out.println(line);
+                    lineList.add(line);
                 }
 
                 // Always close files.
@@ -432,6 +428,66 @@ public class JMorph extends JFrame {
                         "Error reading file '"
                                 + fileName + "'");
             }
+
+            //After File has been read into array, we can use the data.
+            //Set Source Image
+            srcPath = lineList.get(0);
+            srcView.setImage( readImage( srcPath ) );
+
+            //Set Destination Image
+            destPath = lineList.get(1);
+            destView.setImage( readImage( destPath ) );
+
+            //Set Source Image Intensity
+            srcBrightSlider.setValue( Integer.parseInt( lineList.get(2) ) );
+
+            //Set Destination Image Intensity
+            destBrightSlider.setValue( Integer.parseInt( lineList.get(3) ) );
+
+            //Set Control Point Resolution
+            int resolution = Integer.parseInt( lineList.get(4) );
+            resolutionSlider.setValue( resolution );
+
+            //Set Length of Preview
+            lengthSlider.setValue( Integer.parseInt( lineList.get(5) ) );
+
+            int srcXCoords[] = new int[resolution * resolution];
+            int srcYCoords[] = new int[resolution * resolution];
+            int destXCoords[] = new int[resolution * resolution];
+            int destYCoords[] = new int[resolution * resolution];
+
+            //Read In Image 1 X coords
+            int i;
+            int arrayPosition = 0;
+            for(i = 6; i < (resolution * resolution) +6 ; i++){
+                srcXCoords[arrayPosition] = Integer.parseInt( lineList.get(i) );
+                arrayPosition++;
+            }
+
+
+            //Read in Image 1 Ycoords
+            int j;
+            arrayPosition = 0;
+            for(j = i; j < (resolution * resolution) + i ; j++){
+                srcYCoords[arrayPosition] = Integer.parseInt( lineList.get(j) );
+                arrayPosition++;
+            }
+            //Read in Image 2 X Coords
+            int k;
+            arrayPosition = 0;
+            for(k = j; k < (resolution * resolution) + j ; k++){
+                destXCoords[arrayPosition] = Integer.parseInt( lineList.get(k) );
+                arrayPosition++;
+            }
+            //Read in Image 2 Y Coords
+            int m;
+            arrayPosition = 0;
+            for(m = k; m < (resolution * resolution) + k ; m++){
+                destYCoords[arrayPosition] = Integer.parseInt( lineList.get(m) );
+                arrayPosition++;
+            }
+
+            ivc.loadControlPoints(srcXCoords,srcYCoords,destXCoords,destYCoords);
         }
     }
 
