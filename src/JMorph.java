@@ -6,6 +6,7 @@ import java.awt.event.WindowEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.io.*;
 
 public class JMorph extends JFrame {
 
@@ -53,6 +54,8 @@ public class JMorph extends JFrame {
     public final int FPS = 30;
     public int animationLength;
 
+    private final JFileChooser fc = new JFileChooser(".");
+
     // Constructor
     public JMorph(){
         super("Mighty JMorphin' Power Rangers");
@@ -71,7 +74,6 @@ public class JMorph extends JFrame {
     private void setupMenu() {
 
         JMenu fileMenu = new JMenu("File");
-        final JFileChooser fc = new JFileChooser(".");
 
         // Change Source Image
         JMenuItem changeSrcImage = new JMenuItem("Change Source Image");
@@ -115,6 +117,19 @@ public class JMorph extends JFrame {
                 srcBrightSlider.setValue(INIT_LUMINANCE);
                 lengthSlider.setValue(INIT_LENGTH);
             }
+        );
+        JMenuItem save = new JMenuItem("Save Settings");
+        fileMenu.add( save );
+        save.addActionListener(e -> {
+            saveConfig();
+        }
+        );
+
+        JMenuItem load = new JMenuItem("Load Settings");
+        fileMenu.add( load );
+        load.addActionListener(e -> {
+            loadConfig();
+        }
         );
 
         // Exit
@@ -284,6 +299,89 @@ public class JMorph extends JFrame {
         big.drawImage (image, 0, 0, this);
         return bim;
 
+    }
+    //Saves what images the user is using, brightness level, and control point locations for both images
+    //Based on a combination of code from oracel docs at
+    //https://docs.oracle.com/javase/tutorial/displayCode.html?code=https://docs.oracle.com/javase/tutorial/uiswing/examples/components/FileChooserDemoProject/src/components/FileChooserDemo.java
+    //and here
+    //https://www.caveofprogramming.com/java/java-file-reading-and-writing-files-in-java.html
+    private void saveConfig(){
+        // The name of the file to open.
+        //String fileName = "config.txt"
+        int returnVal = fc.showSaveDialog(this);
+        if( returnVal == JFileChooser.APPROVE_OPTION )
+        {
+            File file = fc.getSelectedFile();
+            String fileName = file.getName();
+            try {
+                // Assume default encoding.
+                FileWriter fileWriter =
+                        new FileWriter(fileName);
+
+                // Always wrap FileWriter in BufferedWriter.
+                BufferedWriter bufferedWriter =
+                        new BufferedWriter(fileWriter);
+
+                // Note that write() does not automatically
+                // append a newline character.
+                bufferedWriter.write("Hello there,");
+                bufferedWriter.write(" here is some text.");
+                bufferedWriter.newLine();
+                bufferedWriter.write("We are writing");
+                bufferedWriter.write(" the text to the file.");
+
+                // Always close files.
+                bufferedWriter.close();
+            }
+            catch(IOException ex) {
+                System.out.println(
+                        "Error writing to file '"
+                                + fileName + "'");
+
+            }
+        }
+        else{
+
+        }
+
+    }
+    //Loads user configuration from a text file the user chooses
+    private void loadConfig(){
+        int returnVal = fc.showOpenDialog(this);
+
+        if (returnVal == JFileChooser.APPROVE_OPTION) {
+            File file = fc.getSelectedFile();
+            String fileName = file.getName();
+
+            String line = null;
+
+            try {
+                // FileReader reads text files in the default encoding.
+                FileReader fileReader =
+                        new FileReader(fileName);
+
+                // Always wrap FileReader in BufferedReader.
+                BufferedReader bufferedReader =
+                        new BufferedReader(fileReader);
+
+                while((line = bufferedReader.readLine()) != null) {
+                    System.out.println(line);
+                }
+
+                // Always close files.
+                bufferedReader.close();
+            }
+            catch(FileNotFoundException ex) {
+                System.out.println(
+                        "Unable to open file '" +
+                                fileName + "'");
+            }
+            catch(IOException ex) {
+                System.out.println(
+                        "Error reading file '"
+                                + fileName + "'");
+            }
+        }
     }
 
     //Initialize and run class
