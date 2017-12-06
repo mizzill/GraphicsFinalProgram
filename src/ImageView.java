@@ -221,4 +221,7 @@ public class ImageView extends JComponent {
         this.selected = clickedPoint;
     }
 
+    public Point[] getControlPoints() {
+        return controlPoints;
+    }
 }

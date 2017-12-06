@@ -16,6 +16,8 @@ public class JMorph extends JFrame {
     private BufferedImage dest; // The Destination Image
     private ImageView srcView; // Displays Source Image
     private ImageView destView; //Displays Destination Image
+    private String srcPath; //Stores the path to the source image
+    private String destPath; //Stores the path to the destination image
     private ImageViewController ivc; // Controls the Image Views
 
     private JSlider lengthSlider; // The slider that controls the animation length
@@ -87,6 +89,7 @@ public class JMorph extends JFrame {
                     } catch (IOException e1){}
 
                     srcView.setImage(src);
+                    srcPath = file.getPath();
                 }
             }
         );
@@ -103,6 +106,7 @@ public class JMorph extends JFrame {
                     } catch (IOException e1){}
 
                     destView.setImage(dest);
+                    destPath = file.getPath();
                 }
             }
         );
@@ -150,8 +154,12 @@ public class JMorph extends JFrame {
 
         // Set up the Image Views and the controller
         ivc = new ImageViewController();
-        srcView = new ImageView( readImage("src/bear.jpg"), ivc );
-        destView = new ImageView( readImage("src/shrek.jpg"), ivc );
+        String bearPic = "src/bear.jpg";
+        srcView = new ImageView( readImage(bearPic), ivc );
+        srcPath = bearPic;
+        String shrekPic = "src/shrek.jpg";
+        destView = new ImageView( readImage(shrekPic), ivc );
+        destPath = shrekPic;
         ivc.setViews(srcView, destView);
 
         // Set up the slider panel
@@ -322,6 +330,49 @@ public class JMorph extends JFrame {
                 BufferedWriter bufferedWriter =
                         new BufferedWriter(fileWriter);
 
+                //Image1 Path
+                bufferedWriter.write(srcPath);
+                bufferedWriter.newLine();
+                //Image2 Path
+                bufferedWriter.write(destPath);
+                bufferedWriter.newLine();
+                //Intensity for Image 1
+
+                bufferedWriter.write( Integer.toString( srcBrightSlider.getValue() ) );
+                bufferedWriter.newLine();
+                //Intensity for Image 2
+                bufferedWriter.write( Integer.toString( destBrightSlider.getValue() ) );
+                bufferedWriter.newLine();
+                //Control Point Resolution
+                bufferedWriter.write( Integer.toString( resolutionSlider.getValue() ) );
+                bufferedWriter.newLine();
+                //Length of Preview
+                bufferedWriter.write( Integer.toString( lengthSlider.getValue() ) );
+                bufferedWriter.newLine();
+
+                Point[] srcControlPoints = srcView.getControlPoints();
+                Point[] destControlPoints = destView.getControlPoints();
+
+                //Image 1 Control Point X
+                for(int i = 0; i < srcControlPoints.length; i ++){
+                    bufferedWriter.write( Integer.toString( srcControlPoints[i].x ) );
+                    bufferedWriter.newLine();
+                }
+                //Image 1 Control Point y
+                for(int i = 0; i < srcControlPoints.length; i ++){
+                    bufferedWriter.write( Integer.toString( srcControlPoints[i].y ) );
+                    bufferedWriter.newLine();
+                }
+                //Image 2 Control Point X
+                for(int i = 0; i < destControlPoints.length; i ++){
+                    bufferedWriter.write( Integer.toString( destControlPoints[i].x ) );
+                    bufferedWriter.newLine();
+                }
+                //Image 2 Control Point Y
+                for(int i = 0; i < destControlPoints.length; i ++){
+                    bufferedWriter.write( Integer.toString( destControlPoints[i].y ) ) ;
+                    bufferedWriter.newLine();
+                }
                 // Note that write() does not automatically
                 // append a newline character.
                 bufferedWriter.write("Hello there,");
