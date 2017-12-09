@@ -94,11 +94,8 @@ public class JMorph extends JFrame {
                 int dialogSelection = imageChooser.showOpenDialog(JMorph.this);
                 if (dialogSelection == JFileChooser.APPROVE_OPTION) {
                     File file = imageChooser.getSelectedFile();
-                    try {
-                        src = ImageIO.read(file);
-                        srcView.setImage(src);
-                        srcPath = file.getPath();
-                    } catch (IOException e1){}
+                    srcPath = file.getPath();
+                    srcView.setImage(readImage(srcPath));
                 }
             }
         );
@@ -111,11 +108,8 @@ public class JMorph extends JFrame {
                 int dialogSelection = imageChooser.showOpenDialog(JMorph.this);
                 if (dialogSelection == JFileChooser.APPROVE_OPTION) {
                     File file = imageChooser.getSelectedFile();
-                    try {
-                        dest = ImageIO.read(file);
-                        destView.setImage(dest);
-                        destPath = file.getPath();
-                    } catch (IOException e1){ }
+                    destPath = file.getPath();
+                    destView.setImage(readImage(destPath));
                 }
             }
         );
