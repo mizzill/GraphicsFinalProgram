@@ -49,10 +49,10 @@ public class PreviewDialog extends JDialog {
     }
 
     // Reveals the dialog and resets the animation
-    public void revealPreview() {
+    public void revealPreview(boolean shouldExport) {
 
         percentCompletion = 0;
-        previewImagePanel.reset();
+        previewImagePanel.reset(shouldExport);
 
         animTimer.start();
 
