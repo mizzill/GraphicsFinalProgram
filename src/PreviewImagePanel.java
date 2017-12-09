@@ -1,5 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.image.BufferedImage;
 import java.util.Arrays;
 
 public class PreviewImagePanel extends JPanel {
@@ -7,26 +8,30 @@ public class PreviewImagePanel extends JPanel {
     // The ImageViewController instance to draw information from
     private ImageViewController ivc;
 
-    // The height and width of a grid cell
-    private int cellHeight;
-    private int cellWidth;
-
     // A local array to store animated control points
     private Point[] controlPoints;
+
+    // The buffered image on which to draw the morph
+    private BufferedImage morphImage;
 
     // Constructor
     public PreviewImagePanel(ImageViewController ivc) {
 
+        // Get a reference to the image view controller
         this.ivc = ivc;
-        cellHeight = ivc.src.gridCellHeight;
-        cellWidth = ivc.src.gridCellWidth;
 
         // Copy the source image's control points into a local array for modification
         controlPoints = Arrays.copyOf(ivc.src.controlPoints, ivc.src.controlPoints.length);
 
         // Resize the panel
-        setBackground(Color.black);
-        setPreferredSize(new Dimension(ivc.gridCols * cellWidth, ivc.gridRows * cellHeight));
+        //setBackground(Color.black);
+        int width = Math.max(ivc.src.getImage().getWidth(), ivc.dest.getImage().getWidth());
+        int height = Math.max(ivc.src.getImage().getHeight(), ivc.dest.getImage().getHeight());
+        setPreferredSize(new Dimension(width, height));
+
+        // Set up the buffered image
+        morphImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
+
     }
 
     // Updates the control points
@@ -39,72 +44,110 @@ public class PreviewImagePanel extends JPanel {
             controlPoints[i] = new Point((int)_x, (int)_y);
         }
 
+        for (int i = 0; i < ivc.gridResolution * ivc.gridResolution; ++i) {
+
+            Triangle[] srcTriangles = new Triangle[4];
+            Triangle[] destTriangles = new Triangle[4];
+
+            // Top triangle
+            srcTriangles[0] = new Triangle(
+                    ivc.src.controlPoints[i].x,
+                    ivc.src.controlPoints[i].y,
+                    ivc.src.gridCellCoords[i].x,
+                    ivc.src.gridCellCoords[i].y,
+                    ivc.src.gridCellCoords[i].x + ivc.src.gridCellWidth,
+                    ivc.src.gridCellCoords[i].y
+            );
+
+            destTriangles[0] = new Triangle(
+                    controlPoints[i].x,
+                    controlPoints[i].y,
+                    ivc.dest.gridCellCoords[i].x,
+                    ivc.dest.gridCellCoords[i].y,
+                    ivc.dest.gridCellCoords[i].x + ivc.dest.gridCellWidth,
+                    ivc.dest.gridCellCoords[i].y
+            );
+
+            // Left triangle
+            srcTriangles[1] = new Triangle(
+                    ivc.src.controlPoints[i].x,
+                    ivc.src.controlPoints[i].y,
+                    ivc.src.gridCellCoords[i].x,
+                    ivc.src.gridCellCoords[i].y,
+                    ivc.src.gridCellCoords[i].x,
+                    ivc.src.gridCellCoords[i].y + ivc.src.gridCellHeight
+            );
+
+            destTriangles[1] = new Triangle(
+                    controlPoints[i].x,
+                    controlPoints[i].y,
+                    ivc.dest.gridCellCoords[i].x,
+                    ivc.dest.gridCellCoords[i].y,
+                    ivc.dest.gridCellCoords[i].x,
+                    ivc.dest.gridCellCoords[i].y + ivc.dest.gridCellHeight
+            );
+
+            // Bottom triangle
+            srcTriangles[2] = new Triangle(
+                    ivc.src.controlPoints[i].x,
+                    ivc.src.controlPoints[i].y,
+                    ivc.src.gridCellCoords[i].x,
+                    ivc.src.gridCellCoords[i].y + ivc.src.gridCellHeight,
+                    ivc.src.gridCellCoords[i].x + ivc.src.gridCellWidth,
+                    ivc.src.gridCellCoords[i].y + ivc.src.gridCellHeight
+            );
+
+            destTriangles[2] = new Triangle(
+                    controlPoints[i].x,
+                    controlPoints[i].y,
+                    ivc.dest.gridCellCoords[i].x,
+                    ivc.dest.gridCellCoords[i].y + ivc.dest.gridCellHeight,
+                    ivc.dest.gridCellCoords[i].x + ivc.dest.gridCellWidth,
+                    ivc.dest.gridCellCoords[i].y + ivc.dest.gridCellHeight
+            );
+
+            // Right triangle
+            srcTriangles[3] = new Triangle(
+                    ivc.src.controlPoints[i].x,
+                    ivc.src.controlPoints[i].y,
+                    ivc.src.gridCellCoords[i].x + ivc.src.gridCellWidth,
+                    ivc.src.gridCellCoords[i].y,
+                    ivc.src.gridCellCoords[i].x + ivc.src.gridCellWidth,
+                    ivc.src.gridCellCoords[i].y + ivc.src.gridCellHeight
+            );
+
+            destTriangles[3] = new Triangle(
+                    controlPoints[i].x,
+                    controlPoints[i].y,
+                    ivc.dest.gridCellCoords[i].x + ivc.dest.gridCellWidth,
+                    ivc.dest.gridCellCoords[i].y,
+                    ivc.dest.gridCellCoords[i].x + ivc.dest.gridCellWidth,
+                    ivc.dest.gridCellCoords[i].y + ivc.dest.gridCellHeight
+            );
+
+            MorphTools.warpTriangle(ivc.src.getImage(), morphImage, srcTriangles[0], destTriangles[0], null, null);
+            MorphTools.warpTriangle(ivc.src.getImage(), morphImage, srcTriangles[1], destTriangles[1], null, null);
+            MorphTools.warpTriangle(ivc.src.getImage(), morphImage, srcTriangles[2], destTriangles[2], null, null);
+            MorphTools.warpTriangle(ivc.src.getImage(), morphImage, srcTriangles[3], destTriangles[3], null, null);
+        }
+
         repaint();
+
+    }
+
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+
+        Graphics2D g2d = (Graphics2D)g;
+        g2d.drawImage(morphImage, 0, 0, this);
     }
 
     // Resets the control points to their positions from the source image
     public void reset() {
-        cellHeight = ivc.src.gridCellHeight;
-        cellWidth = ivc.src.gridCellWidth;
         controlPoints = Arrays.copyOf(ivc.src.controlPoints, ivc.src.controlPoints.length);
+        morphImage.getGraphics().clearRect(0, 0, morphImage.getWidth(), morphImage.getHeight());
+
     }
 
-    /*
-    // Get a graphics context and show the image with the control point grid
-    public void paintComponent(Graphics g) {
-        super.paintComponent(g);
-
-        // Get the graphics context
-        Graphics2D g2d = (Graphics2D) g;
-        g2d.setColor(Color.white);
-
-        // Draw grid lines
-        for (int i = 0; i <= ivc.gridRows; ++i) {
-            g2d.drawLine(0, i * cellHeight, ivc.gridCols * cellWidth, i * cellHeight);
-        }
-
-        for (int i = 0; i <= ivc.gridCols; ++i) {
-            g2d.drawLine(i * cellWidth, 0, i * cellWidth, ivc.gridRows * cellHeight);
-        }
-
-        // Draw control points and their corresponding lines
-        for (int i = 0; i < controlPoints.length; ++i) {
-
-            // Draw the lines
-            g2d.setColor(Color.WHITE);
-            g2d.drawLine(
-                    controlPoints[i].x,
-                    controlPoints[i].y,
-                    ivc.src.gridCellCoords[i].x,
-                    ivc.src.gridCellCoords[i].y
-            );
-            g2d.drawLine(
-                    controlPoints[i].x,
-                    controlPoints[i].y,
-                    ivc.src.gridCellCoords[i].x + cellWidth,
-                    ivc.src.gridCellCoords[i].y + cellHeight
-            );
-            g2d.drawLine(
-                    controlPoints[i].x,
-                    controlPoints[i].y,
-                    ivc.src.gridCellCoords[i].x,
-                    ivc.src.gridCellCoords[i].y + cellHeight
-            );
-            g2d.drawLine(
-                    controlPoints[i].x,
-                    controlPoints[i].y,
-                    ivc.src.gridCellCoords[i].x + cellWidth,
-                    ivc.src.gridCellCoords[i].y
-            );
-
-            // Draw the control point
-            g2d.fillOval(
-                    controlPoints[i].x - ivc.pointRadius,
-                    controlPoints[i].y - ivc.pointRadius,
-                    ivc.pointRadius * 2,
-                    ivc.pointRadius * 2
-            );
-        }
-
-    } */
 }

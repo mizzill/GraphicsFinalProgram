@@ -4,8 +4,7 @@ public class ImageViewController {
     public ImageView src, dest;
 
     // The number of grid rows and columns in each image view
-    public int gridRows = 10;
-    public int gridCols = 10;
+    public int gridResolution = 10;
 
     // The radius of each control point in an image view
     public final int pointRadius = 5;
@@ -29,16 +28,14 @@ public class ImageViewController {
         dest.repaint();
     }
 
-    public void changeGridResolution(int resolution){
-        gridRows = resolution;
-        gridCols = resolution;
-
+    public void changeGridResolution(int resolution) {
+        gridResolution = resolution;
         src.setupControlGrid();
         dest.setupControlGrid();
-
     }
-    public void loadControlPoints( int[] srcX, int[] srcY, int[] destX, int[] destY){
-        src.updateControlPoints( srcX, srcY );
+
+    public void loadControlPoints(int[] srcX, int[] srcY, int[] destX, int[] destY) {
+        src.updateControlPoints(srcX, srcY);
         dest.updateControlPoints(destX, destY);
     }
 }
