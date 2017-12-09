@@ -11,26 +11,28 @@ import java.util.ArrayList;
 
 public class JMorph extends JFrame {
 
-    private BufferedImage src; //The Source Image
+    private BufferedImage src; // The Source Image
     private BufferedImage dest; // The Destination Image
     private ImageView srcView; // Displays Source Image
-    private ImageView destView; //Displays Destination Image
-    private String srcPath; //Stores the path to the source image
-    private String destPath; //Stores the path to the destination image
+    private ImageView destView; // Displays Destination Image
+    private String srcPath; // Stores the path to the source image
+    private String destPath; // Stores the path to the destination image
     private ImageViewController ivc; // Controls the Image Views
 
-    private JSlider lengthSlider; // The slider that controls the animation length
+    // Animation length slider and related components
+    private JSlider lengthSlider;
     private JLabel sliderLabel;
     private JPanel sliderPanel;
 
-    private JSlider srcBrightSlider; //Src Brightness Slider
-    private JSlider destBrightSlider; //Dest Brightness Slider
+    // Brightness sliders
+    private JSlider srcBrightSlider;
+    private JSlider destBrightSlider;
 
-    //Brightness Slider Labels
+    // Brightness Slider Labels
     private JLabel srcBrightLabel;
     private JLabel destBrightLabel;
 
-    //Resolution Slider
+    // Resolution Slider
     private JSlider resolutionSlider;
     private JLabel resolutionLabel;
 
@@ -42,12 +44,12 @@ public class JMorph extends JFrame {
     private final int MAX_LENGTH = 10;
     private final int INIT_LENGTH = 3;
 
-    //Constants for brightness
+    // Constants for brightness
     private final int MIN_LUMINANCE = 10;
     private final int MAX_LUMINANCE = 25;
     private final int INIT_LUMINANCE = 10;
 
-    //Constants For Control Grid Resolution
+    // Constants For Control Grid Resolution
     private final int MIN_POINTS = 1;
     private final int MAX_POINTS = 20;
     private final int INIT_POINTS = 10;
@@ -55,7 +57,7 @@ public class JMorph extends JFrame {
     // Allows the user to select a directory for saving/loading settings
     private final JFileChooser fc = new JFileChooser(".");
 
-    // Animation variables
+    // Animation properties
     public final int FPS = 30;
     public int animationLength;
 

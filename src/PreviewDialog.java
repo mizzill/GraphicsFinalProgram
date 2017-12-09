@@ -1,5 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 public class PreviewDialog extends JDialog {
 
@@ -33,16 +35,26 @@ public class PreviewDialog extends JDialog {
             previewImagePanel.update(percentCompletion);
         });
 
+        // Handle window closing
+        addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                super.windowClosing(e);
+                animTimer.stop();
+            }
+        });
+
         // Pack the dialog
         pack();
     }
 
     // Reveals the dialog and resets the animation
     public void revealPreview() {
+
+        System.out.println("Revealing");
         percentCompletion = 0;
         previewImagePanel.reset();
 
-        animTimer.setDelay(1000 / jMorph.FPS);
         animTimer.start();
 
         setVisible(true);

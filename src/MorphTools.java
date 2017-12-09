@@ -4,7 +4,6 @@ import java.awt.geom.*;
 
 public class MorphTools
 {
-
     public MorphTools() {}
 
     public static void warpTriangle(
@@ -33,10 +32,6 @@ public class MorphTools
         double[][] a = new double[3][3];
         for (int i = 0; i < 3; ++i) {
             a[i][0] = S.getX(i);
-
-            // System.out.println("P" + i + "(" + S.getX(i) + ", " + S.getY(i) +
-            // ")" );
-
             a[i][1] = S.getY(i);
             a[i][2] = 1.0;
         }
@@ -60,9 +55,6 @@ public class MorphTools
         double[] y = new double[3];
         solve(3, a, l, by, y);
 
-        // System.out.println("Affine:\t" + x[0] + ", " + x[1] + ", " + x[2] );
-        // System.out.println("\t" + y[0] + ", " + y[1] + ", " + y[2] );
-
         AffineTransform af =
                 new AffineTransform(x[0], y[0], x[1], y[1], x[2], y[2]);
         GeneralPath destPath = new GeneralPath(GeneralPath.WIND_EVEN_ODD);
@@ -74,9 +66,9 @@ public class MorphTools
         Graphics2D g2 = dest.createGraphics();
 
         // set up an alpha value for compositing as an example
-        AlphaComposite ac =
+        /*AlphaComposite ac =
                 AlphaComposite.getInstance(AlphaComposite.SRC_OVER, (float)0.5);
-        g2.setComposite(ac);
+        g2.setComposite(ac);*/
 
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, ALIASING);
         g2.setRenderingHint(RenderingHints.KEY_INTERPOLATION, INTERPOLATION);

@@ -58,12 +58,9 @@ public class ImageView extends JComponent {
         g2d.drawImage(bim, 0, 0, this);
 
         // Draw grid lines
-        for (int i = 0; i <= ivc.gridRows; ++i) {
-            g2d.drawLine(0, i * gridCellHeight, ivc.gridCols * gridCellWidth, i * gridCellHeight);
-        }
-
-        for (int i = 0; i <= ivc.gridCols; ++i) {
-            g2d.drawLine(i * gridCellWidth, 0, i * gridCellWidth, ivc.gridRows * gridCellHeight);
+        for (int i = 0; i <= ivc.gridResolution; ++i) {
+            g2d.drawLine(0, i * gridCellHeight, ivc.gridResolution * gridCellWidth, i * gridCellHeight);
+            g2d.drawLine(i * gridCellWidth, 0, i * gridCellWidth, ivc.gridResolution * gridCellHeight);
         }
 
         // Draw control points and their corresponding lines
@@ -112,23 +109,23 @@ public class ImageView extends JComponent {
     public void setupControlGrid() {
 
         // Determine the appropriate distance between control points
-        gridCellHeight = bim.getHeight() / ivc.gridRows;
-        gridCellWidth = bim.getWidth() / ivc.gridCols;
+        gridCellHeight = bim.getHeight() / ivc.gridResolution;
+        gridCellWidth = bim.getWidth() / ivc.gridResolution;
 
         // Calculate the offset
         int offsetX = (gridCellWidth / 2);
         int offsetY = (gridCellHeight / 2);
 
         // Create the grid cell coordinate array
-        gridCellCoords = new Point[ivc.gridRows * ivc.gridCols];
+        gridCellCoords = new Point[ivc.gridResolution * ivc.gridResolution];
 
         // Set up the control point array
-        controlPoints = new Point[ivc.gridRows * ivc.gridCols];
+        controlPoints = new Point[ivc.gridResolution * ivc.gridResolution];
 
         // Put points into the arrays
         for (int i = 0; i < controlPoints.length; ++i) {
-            int px = (i % ivc.gridCols) * gridCellWidth;
-            int py = (i / ivc.gridCols) * gridCellHeight;
+            int px = (i % ivc.gridResolution) * gridCellWidth;
+            int py = (i / ivc.gridResolution) * gridCellHeight;
             gridCellCoords[i] = new Point(px, py);
             controlPoints[i] = new Point(px + offsetX, py + offsetY);
         }
@@ -204,11 +201,17 @@ public class ImageView extends JComponent {
         });
 
     }
+
     public void changeBrightness(float brightness){
         RescaleOp op = new RescaleOp(brightness, 0, null);
         op.filter(original, bim);
         repaint();
     }
+
+    public BufferedImage getImage() {
+        return copyImage(bim);
+    }
+
     public static BufferedImage copyImage(BufferedImage source){
         BufferedImage b = new BufferedImage(source.getWidth(), source.getHeight(), source.getType());
         Graphics g = b.getGraphics();
@@ -216,6 +219,7 @@ public class ImageView extends JComponent {
         g.dispose();
         return b;
     }
+
     // Called from the Image View Controller to update the selected control point from the other grid
     public void updateSelectedExternally(int clickedPoint){
         this.selected = clickedPoint;

@@ -2,6 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7df4f537-39d0-47f3-8e18-748b545f72b1" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Final/ImageView.class" afterPath="$PROJECT_DIR$/out/production/Final/ImageView.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Final/ImageViewController.class" afterPath="$PROJECT_DIR$/out/production/Final/ImageViewController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Final/JMorph$1.class" afterPath="$PROJECT_DIR$/out/production/Final/JMorph$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Final/JMorph$2.class" afterPath="$PROJECT_DIR$/out/production/Final/JMorph$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Final/JMorph.class" afterPath="$PROJECT_DIR$/out/production/Final/JMorph.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Final/PreviewDialog.class" afterPath="$PROJECT_DIR$/out/production/Final/PreviewDialog.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Final/PreviewImagePanel.class" afterPath="$PROJECT_DIR$/out/production/Final/PreviewImagePanel.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ImageView.java" afterPath="$PROJECT_DIR$/src/ImageView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ImageViewController.java" afterPath="$PROJECT_DIR$/src/ImageViewController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/JMorph.java" afterPath="$PROJECT_DIR$/src/JMorph.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MorphTools.java" afterPath="$PROJECT_DIR$/src/MorphTools.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PreviewDialog.java" afterPath="$PROJECT_DIR$/src/PreviewDialog.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PreviewImagePanel.java" afterPath="$PROJECT_DIR$/src/PreviewImagePanel.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -17,28 +30,28 @@
       <file leaf-file-name="JMorph.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/JMorph.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="463" column="11" lean-forward="false" selection-start-line="463" selection-start-column="11" selection-end-line="463" selection-end-column="11" />
+            <state relative-caret-position="330">
+              <caret line="295" column="25" lean-forward="false" selection-start-line="295" selection-start-column="17" selection-end-line="295" selection-end-column="25" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PreviewImagePanel.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="PreviewImagePanel.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/PreviewImagePanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2231">
-              <caret line="108" column="8" lean-forward="false" selection-start-line="108" selection-start-column="8" selection-end-line="108" selection-end-column="8" />
+            <state relative-caret-position="400">
+              <caret line="133" column="18" lean-forward="false" selection-start-line="133" selection-start-column="18" selection-end-line="133" selection-end-column="18" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MorphTools.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MorphTools.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MorphTools.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2627">
-              <caret line="156" column="0" lean-forward="true" selection-start-line="156" selection-start-column="0" selection-end-line="156" selection-end-column="0" />
+            <state relative-caret-position="1025">
+              <caret line="77" column="21" lean-forward="true" selection-start-line="77" selection-start-column="21" selection-end-line="77" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -46,11 +59,33 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="ImageViewController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ImageViewController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="12" column="36" lean-forward="true" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Triangle.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Triangle.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1777">
-              <caret line="89" column="1" lean-forward="false" selection-start-line="89" selection-start-column="1" selection-end-line="89" selection-end-column="1" />
+            <state relative-caret-position="-850">
+              <caret line="8" column="11" lean-forward="false" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ImageView.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ImageView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-165">
+              <caret line="31" column="29" lean-forward="false" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -61,31 +96,9 @@
       <file leaf-file-name="PreviewDialog.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/PreviewDialog.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="975">
-              <caret line="40" column="33" lean-forward="false" selection-start-line="40" selection-start-column="33" selection-end-line="40" selection-end-column="33" />
+            <state relative-caret-position="650">
+              <caret line="53" column="37" lean-forward="false" selection-start-line="53" selection-start-column="37" selection-end-line="53" selection-end-column="37" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ImageViewController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ImageViewController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="50">
-              <caret line="17" column="23" lean-forward="false" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ImageView.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ImageView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5400">
-              <caret line="233" column="1" lean-forward="false" selection-start-line="233" selection-start-column="1" selection-end-line="233" selection-end-column="1" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -101,8 +114,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>boa</find>
-      <find>image</find>
       <find>view</find>
       <find>slid</find>
       <find>proc</find>
@@ -129,6 +140,10 @@
       <find>thisMorph</find>
       <find>exit</find>
       <find>action</find>
+      <find>set</find>
+      <find>reveal</find>
+      <find>revealPreview</find>
+      <find>buffered</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -144,14 +159,14 @@
       <list>
         <option value="$PROJECT_DIR$/src/MyImageProc.java" />
         <option value="$PROJECT_DIR$/src/MyImageObj.java" />
-        <option value="$PROJECT_DIR$/src/PreviewDialog.java" />
         <option value="$PROJECT_DIR$/config.txt" />
-        <option value="$PROJECT_DIR$/src/ImageView.java" />
-        <option value="$PROJECT_DIR$/src/ImageViewController.java" />
-        <option value="$PROJECT_DIR$/src/JMorph.java" />
-        <option value="$PROJECT_DIR$/src/PreviewImagePanel.java" />
-        <option value="$PROJECT_DIR$/src/MorphTools.java" />
         <option value="$PROJECT_DIR$/src/Triangle.java" />
+        <option value="$PROJECT_DIR$/src/PreviewDialog.java" />
+        <option value="$PROJECT_DIR$/src/JMorph.java" />
+        <option value="$PROJECT_DIR$/src/ImageViewController.java" />
+        <option value="$PROJECT_DIR$/src/ImageView.java" />
+        <option value="$PROJECT_DIR$/src/MorphTools.java" />
+        <option value="$PROJECT_DIR$/src/PreviewImagePanel.java" />
       </list>
     </option>
   </component>
@@ -181,7 +196,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -198,8 +213,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
     </panes>
   </component>
@@ -475,12 +490,12 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21461539" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2546154" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37189716" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23049645" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -683,19 +698,10 @@
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/IdeaProjects/Minesweeper/src/Bombs.java" />
-    <entry file="file://$PROJECT_DIR$/src/PreviewDialog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="975">
-          <caret line="40" column="33" lean-forward="false" selection-start-line="40" selection-start-column="33" selection-end-line="40" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Downloads/week10/week10/ip/MyImageProc.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6950">
           <caret line="293" column="0" lean-forward="false" selection-start-line="293" selection-start-column="0" selection-end-line="293" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -710,32 +716,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config.txt" />
-    <entry file="file://$PROJECT_DIR$/src/ImageView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5400">
-          <caret line="233" column="1" lean-forward="false" selection-start-line="233" selection-start-column="1" selection-end-line="233" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ImageViewController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="17" column="23" lean-forward="false" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ohno">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/ohno" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/javax/swing/JFileChooser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="528">
@@ -746,24 +727,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/JMorph.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="463" column="11" lean-forward="false" selection-start-line="463" selection-start-column="11" selection-end-line="463" selection-end-column="11" />
+        <state relative-caret-position="330">
+          <caret line="295" column="25" lean-forward="false" selection-start-line="295" selection-start-column="17" selection-end-line="295" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/PreviewImagePanel.java">
+    <entry file="file://$PROJECT_DIR$/src/PreviewDialog.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2231">
-          <caret line="108" column="8" lean-forward="false" selection-start-line="108" selection-start-column="8" selection-end-line="108" selection-end-column="8" />
+        <state relative-caret-position="650">
+          <caret line="53" column="37" lean-forward="false" selection-start-line="53" selection-start-column="37" selection-end-line="53" selection-end-column="37" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ImageViewController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="12" column="36" lean-forward="true" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ImageView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-165">
+          <caret line="31" column="29" lean-forward="false" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Triangle.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1777">
-          <caret line="89" column="1" lean-forward="false" selection-start-line="89" selection-start-column="1" selection-end-line="89" selection-end-column="1" />
+        <state relative-caret-position="-850">
+          <caret line="8" column="11" lean-forward="false" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -772,11 +771,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MorphTools.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2627">
-          <caret line="156" column="0" lean-forward="true" selection-start-line="156" selection-start-column="0" selection-end-line="156" selection-end-column="0" />
+        <state relative-caret-position="1025">
+          <caret line="77" column="21" lean-forward="true" selection-start-line="77" selection-start-column="21" selection-end-line="77" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PreviewImagePanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="133" column="18" lean-forward="false" selection-start-line="133" selection-start-column="18" selection-end-line="133" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>
