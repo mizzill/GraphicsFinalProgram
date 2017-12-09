@@ -180,18 +180,18 @@ public class ImageView extends JComponent {
                     controlPoints[selected] = e.getPoint();
 
                    // Make sure the point stays in bounds
-                    if (controlPoints[selected].x < gridCellCoords[selected].x) {
-                        controlPoints[selected].x = gridCellCoords[selected].x;
+                    if (controlPoints[selected].x < gridCellCoords[selected].x + 1) {
+                        controlPoints[selected].x = gridCellCoords[selected].x + 1;
                     }
-                    else if (controlPoints[selected].x > gridCellCoords[selected].x + gridCellWidth) {
-                        controlPoints[selected].x = gridCellCoords[selected].x + gridCellWidth;
+                    else if (controlPoints[selected].x > gridCellCoords[selected].x + gridCellWidth - 1) {
+                        controlPoints[selected].x = gridCellCoords[selected].x + gridCellWidth - 1;
                     }
 
-                    if (controlPoints[selected].y < gridCellCoords[selected].y) {
-                        controlPoints[selected].y = gridCellCoords[selected].y;
+                    if (controlPoints[selected].y < gridCellCoords[selected].y + 1) {
+                        controlPoints[selected].y = gridCellCoords[selected].y + 1;
                     }
-                    else if (controlPoints[selected].y > gridCellCoords[selected].y + gridCellHeight) {
-                        controlPoints[selected].y = gridCellCoords[selected].y + gridCellHeight;
+                    else if (controlPoints[selected].y > gridCellCoords[selected].y + gridCellHeight - 1) {
+                        controlPoints[selected].y = gridCellCoords[selected].y + gridCellHeight - 1;
                     }
 
                     // Paint the scene again

@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7df4f537-39d0-47f3-8e18-748b545f72b1" name="Default" comment="Saving and Loading now work completely!">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/blahblah.jmorph" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/config.jmorph" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ctpts.jmorph" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test.jmorph" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/beartoshrek" afterPath="$PROJECT_DIR$/beartoshrek.jmorph" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/JMorph.java" afterPath="$PROJECT_DIR$/src/JMorph.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ImageView.java" afterPath="$PROJECT_DIR$/src/ImageView.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PreviewDialog.java" afterPath="$PROJECT_DIR$/src/PreviewDialog.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PreviewImagePanel.java" afterPath="$PROJECT_DIR$/src/PreviewImagePanel.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,8 +18,8 @@
       <file leaf-file-name="JMorph.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/JMorph.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="227" column="65" lean-forward="false" selection-start-line="227" selection-start-column="65" selection-end-line="227" selection-end-column="65" />
+            <state relative-caret-position="330">
+              <caret line="227" column="76" lean-forward="true" selection-start-line="227" selection-start-column="76" selection-end-line="227" selection-end-column="76" />
               <folding />
             </state>
           </provider>
@@ -76,30 +69,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ImageView.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ImageView.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ImageView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1180">
-              <caret line="232" column="38" lean-forward="true" selection-start-line="232" selection-start-column="38" selection-end-line="232" selection-end-column="38" />
+            <state relative-caret-position="755">
+              <caret line="193" column="99" lean-forward="false" selection-start-line="193" selection-start-column="99" selection-end-line="193" selection-end-column="99" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1512851376473" expanded="false" signature="7259:7265" ph=" }" />
-                <marker date="1512851376473" expanded="true" signature="7330:7557" ph="{...}" />
-                <marker date="1512851376473" expanded="false" signature="7719:7729" ph=" { " />
-                <marker date="1512851376473" expanded="false" signature="7758:7764" ph=" }" />
-                <marker date="1512851376473" expanded="false" signature="7803:7814" ph=" { " />
-                <marker date="1512851376473" expanded="false" signature="7835:7841" ph=" }" />
-                <marker date="1512851376473" expanded="true" signature="7896:8055" ph="{...}" />
+                <marker date="1512852228839" expanded="false" signature="7291:7297" ph=" }" />
+                <marker date="1512852228839" expanded="false" signature="7751:7761" ph=" { " />
+                <marker date="1512852228839" expanded="false" signature="7790:7796" ph=" }" />
+                <marker date="1512852228839" expanded="false" signature="7835:7846" ph=" { " />
+                <marker date="1512852228839" expanded="false" signature="7867:7873" ph=" }" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PreviewDialog.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PreviewDialog.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/PreviewDialog.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="500">
-              <caret line="52" column="8" lean-forward="false" selection-start-line="52" selection-start-column="8" selection-end-line="52" selection-end-column="8" />
+            <state relative-caret-position="575">
+              <caret line="55" column="0" lean-forward="true" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
               <folding>
                 <element signature="e#1212#1408#0" expanded="true" />
                 <element signature="e#1407#1408#0" expanded="true" />
@@ -147,8 +138,8 @@
       <find>buffered</find>
       <find>jmorph</find>
       <find>imageChoo</find>
-      <find>revealing</find>
       <find>reveal</find>
+      <find>revealing</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -167,11 +158,11 @@
         <option value="$PROJECT_DIR$/config.txt" />
         <option value="$PROJECT_DIR$/src/Triangle.java" />
         <option value="$PROJECT_DIR$/src/ImageViewController.java" />
-        <option value="$PROJECT_DIR$/src/ImageView.java" />
         <option value="$PROJECT_DIR$/src/MorphTools.java" />
         <option value="$PROJECT_DIR$/src/PreviewImagePanel.java" />
         <option value="$PROJECT_DIR$/src/JMorph.java" />
         <option value="$PROJECT_DIR$/src/PreviewDialog.java" />
+        <option value="$PROJECT_DIR$/src/ImageView.java" />
       </list>
     </option>
   </component>
@@ -629,13 +620,11 @@
           <caret line="197" column="20" lean-forward="false" selection-start-line="197" selection-start-column="20" selection-end-line="197" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1512851376473" expanded="false" signature="7259:7265" ph=" }" />
-            <marker date="1512851376473" expanded="true" signature="7330:7557" ph="{...}" />
-            <marker date="1512851376473" expanded="false" signature="7719:7729" ph=" { " />
-            <marker date="1512851376473" expanded="false" signature="7758:7764" ph=" }" />
-            <marker date="1512851376473" expanded="false" signature="7803:7814" ph=" { " />
-            <marker date="1512851376473" expanded="false" signature="7835:7841" ph=" }" />
-            <marker date="1512851376473" expanded="true" signature="7896:8055" ph="{...}" />
+            <marker date="1512852228839" expanded="false" signature="7291:7297" ph=" }" />
+            <marker date="1512852228839" expanded="false" signature="7751:7761" ph=" { " />
+            <marker date="1512852228839" expanded="false" signature="7790:7796" ph=" }" />
+            <marker date="1512852228839" expanded="false" signature="7835:7846" ph=" { " />
+            <marker date="1512852228839" expanded="false" signature="7867:7873" ph=" }" />
           </folding>
         </state>
       </provider>
@@ -737,23 +726,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ImageView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1180">
-          <caret line="232" column="38" lean-forward="true" selection-start-line="232" selection-start-column="38" selection-end-line="232" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1512851376473" expanded="false" signature="7259:7265" ph=" }" />
-            <marker date="1512851376473" expanded="true" signature="7330:7557" ph="{...}" />
-            <marker date="1512851376473" expanded="false" signature="7719:7729" ph=" { " />
-            <marker date="1512851376473" expanded="false" signature="7758:7764" ph=" }" />
-            <marker date="1512851376473" expanded="false" signature="7803:7814" ph=" { " />
-            <marker date="1512851376473" expanded="false" signature="7835:7841" ph=" }" />
-            <marker date="1512851376473" expanded="true" signature="7896:8055" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Triangle.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
@@ -781,11 +753,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/JMorph.java">
+    <entry file="file://$PROJECT_DIR$/src/PreviewDialog.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="227" column="65" lean-forward="false" selection-start-line="227" selection-start-column="65" selection-end-line="227" selection-end-column="65" />
-          <folding />
+        <state relative-caret-position="575">
+          <caret line="55" column="0" lean-forward="true" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+          <folding>
+            <element signature="e#1212#1408#0" expanded="true" />
+            <element signature="e#1407#1408#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -797,13 +772,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/PreviewDialog.java">
+    <entry file="file://$PROJECT_DIR$/src/JMorph.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="52" column="8" lean-forward="false" selection-start-line="52" selection-start-column="8" selection-end-line="52" selection-end-column="8" />
+        <state relative-caret-position="330">
+          <caret line="227" column="76" lean-forward="true" selection-start-line="227" selection-start-column="76" selection-end-line="227" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ImageView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="755">
+          <caret line="193" column="99" lean-forward="false" selection-start-line="193" selection-start-column="99" selection-end-line="193" selection-end-column="99" />
           <folding>
-            <element signature="e#1212#1408#0" expanded="true" />
-            <element signature="e#1407#1408#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <marker date="1512852228839" expanded="false" signature="7291:7297" ph=" }" />
+            <marker date="1512852228839" expanded="false" signature="7751:7761" ph=" { " />
+            <marker date="1512852228839" expanded="false" signature="7790:7796" ph=" }" />
+            <marker date="1512852228839" expanded="false" signature="7835:7846" ph=" { " />
+            <marker date="1512852228839" expanded="false" signature="7867:7873" ph=" }" />
           </folding>
         </state>
       </provider>
