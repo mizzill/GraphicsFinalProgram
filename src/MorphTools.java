@@ -8,9 +8,11 @@ public class MorphTools
 
     public static void warpTriangle(
             BufferedImage src,
+            BufferedImage mergeTo,
             BufferedImage dest,
             Triangle S,
             Triangle D,
+            float alpha,
             Object ALIASING,
             Object INTERPOLATION)
     {
@@ -65,16 +67,19 @@ public class MorphTools
         destPath.lineTo((float)D.getX(0), (float)D.getY(0));
         Graphics2D g2 = dest.createGraphics();
 
-        // set up an alpha value for compositing as an example
-        /*AlphaComposite ac =
-                AlphaComposite.getInstance(AlphaComposite.SRC_OVER, (float)0.5);
-        g2.setComposite(ac);*/
-
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, ALIASING);
         g2.setRenderingHint(RenderingHints.KEY_INTERPOLATION, INTERPOLATION);
         g2.clip(destPath);
         g2.setTransform(af);
         g2.drawImage(src, 0, 0, null);
+
+        // set up an alpha value for compositing
+        AlphaComposite ac =
+                AlphaComposite.getInstance(AlphaComposite.SRC_OVER, alpha);
+        g2.setComposite(ac);
+
+        g2.drawImage(mergeTo, 0, 0, null);
+
         g2.dispose();
     }
 

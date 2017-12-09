@@ -125,10 +125,11 @@ public class PreviewImagePanel extends JPanel {
                     ivc.dest.gridCellCoords[i].y + ivc.dest.gridCellHeight
             );
 
-            MorphTools.warpTriangle(ivc.src.getImage(), morphImage, srcTriangles[0], destTriangles[0], null, null);
-            MorphTools.warpTriangle(ivc.src.getImage(), morphImage, srcTriangles[1], destTriangles[1], null, null);
-            MorphTools.warpTriangle(ivc.src.getImage(), morphImage, srcTriangles[2], destTriangles[2], null, null);
-            MorphTools.warpTriangle(ivc.src.getImage(), morphImage, srcTriangles[3], destTriangles[3], null, null);
+
+            MorphTools.warpTriangle(ivc.src.getImage(), ivc.dest.getImage(), morphImage, srcTriangles[0], destTriangles[0], (float)percentCompleted, null, null);
+            MorphTools.warpTriangle(ivc.src.getImage(), ivc.dest.getImage(), morphImage, srcTriangles[1], destTriangles[1], (float)percentCompleted, null, null);
+            MorphTools.warpTriangle(ivc.src.getImage(), ivc.dest.getImage(), morphImage, srcTriangles[2], destTriangles[2], (float)percentCompleted, null, null);
+            MorphTools.warpTriangle(ivc.src.getImage(), ivc.dest.getImage(), morphImage, srcTriangles[3], destTriangles[3], (float)percentCompleted, null, null);
         }
 
         repaint();
