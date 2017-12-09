@@ -38,6 +38,7 @@ public class JMorph extends JFrame {
     private JLabel resolutionLabel;
 
     private JButton previewButton;
+    private JButton renderButton;
     private PreviewDialog previewDialog;
 
     // Length of animation (in seconds)
@@ -225,7 +226,11 @@ public class JMorph extends JFrame {
 
         //Set up the preview button
         previewButton = new JButton("Preview");
-        previewButton.addActionListener(e -> previewDialog.revealPreview());
+        previewButton.addActionListener(e -> previewDialog.revealPreview(false));
+
+        // Set up the render button
+        renderButton = new JButton("Render + Export");
+        renderButton.addActionListener(e -> previewDialog.revealPreview(true));
 
     }
 
@@ -269,6 +274,13 @@ public class JMorph extends JFrame {
         gc.gridy = 4;
 
         sliderPanel.add(previewButton, gc);
+
+        //Constraints for Render/Export button
+        gc.fill = GridBagConstraints.HORIZONTAL;
+        gc.gridx = 0;
+        gc.gridy = 5;
+
+        sliderPanel.add(renderButton, gc);
 
         // Add the panel and image views to the containing frame
         c.add(sliderPanel, BorderLayout.CENTER);

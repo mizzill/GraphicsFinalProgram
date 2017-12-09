@@ -16,6 +16,12 @@ public class PreviewImagePanel extends JPanel {
     // The buffered image on which to draw the morph
     private BufferedImage morphImage;
 
+    // How many times update() has been called
+    private int ticks = 0;
+
+    // Whether the window is exporting frames
+    private boolean exporting = false;
+
     // Constructor
     public PreviewImagePanel(ImageViewController ivc) {
 
@@ -138,15 +144,18 @@ public class PreviewImagePanel extends JPanel {
             MorphTools.warpTriangle(srcImage, destImage, morphImage, srcTriangles[3], destTriangles[3], (float)percentCompleted, null, null);
 
         }
-        try {
-            System.out.println(percentCompleted);
-            int percent = (int)(percentCompleted *10);
-            File outputfile = new File("Frames/tween" + percent + ".jpg");
-            ImageIO.write(morphImage, "jpg", outputfile);
+
+        if (exporting) {
+            try {
+                File outputfile = new File("Frames/tween" + ticks + ".jpg");
+                ImageIO.write(morphImage, "jpg", outputfile);
+                ticks++;
+            }
+            catch (IOException e){
+                System.out.println("Unable to write file");
+            }
         }
-        catch (IOException e){
-            System.out.println("Unable to write file");
-        }
+
         repaint();
 
     }
@@ -160,10 +169,11 @@ public class PreviewImagePanel extends JPanel {
     }
 
     // Resets the control points to their positions from the source image
-    public void reset() {
+    public void reset(boolean shouldExport) {
         controlPoints = Arrays.copyOf(ivc.src.controlPoints, ivc.src.controlPoints.length);
         morphImage.getGraphics().clearRect(0, 0, morphImage.getWidth(), morphImage.getHeight());
-
+        ticks = 0;
+        exporting = shouldExport;
     }
 
 }
