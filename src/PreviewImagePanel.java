@@ -1,7 +1,9 @@
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.util.Arrays;
+import java.io.*;
 
 public class PreviewImagePanel extends JPanel {
 
@@ -134,8 +136,16 @@ public class PreviewImagePanel extends JPanel {
             MorphTools.warpTriangle(srcImage, destImage, morphImage, srcTriangles[1], destTriangles[1], (float)percentCompleted, null, null);
             MorphTools.warpTriangle(srcImage, destImage, morphImage, srcTriangles[2], destTriangles[2], (float)percentCompleted, null, null);
             MorphTools.warpTriangle(srcImage, destImage, morphImage, srcTriangles[3], destTriangles[3], (float)percentCompleted, null, null);
-        }
 
+        }
+        try {
+            int percent = (int)(percentCompleted *10);
+            File outputfile = new File("Frames/tween" + percent + ".jpg");
+            ImageIO.write(morphImage, "jpg", outputfile);
+        }
+        catch (IOException e){
+            System.out.println("Unable to write file");
+        }
         repaint();
 
     }
