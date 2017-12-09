@@ -187,7 +187,6 @@ public class JMorph extends JFrame {
                 int value = srcBrightSlider.getValue();
                 float brightness = value / 10f;
                 srcView.changeBrightness(brightness);
-
             }
         );
 
@@ -317,14 +316,14 @@ public class JMorph extends JFrame {
     //https://docs.oracle.com/javase/tutorial/displayCode.html?code=https://docs.oracle.com/javase/tutorial/uiswing/examples/components/FileChooserDemoProject/src/components/FileChooserDemo.java
     //and here
     //https://www.caveofprogramming.com/java/java-file-reading-and-writing-files-in-java.html
-    private void saveConfig(){
+    private void saveConfig() {
 
         fc.setDialogTitle("Save Settings");
 
         // The name of the file to open
         int dialogSelection = fc.showSaveDialog(this);
         if( dialogSelection == JFileChooser.APPROVE_OPTION ) {
-            
+
             File file = fc.getSelectedFile();
             String fileName = file.getAbsolutePath();
             System.out.println(fileName);
@@ -340,19 +339,23 @@ public class JMorph extends JFrame {
                 //Image1 Path
                 bufferedWriter.write(srcPath);
                 bufferedWriter.newLine();
+
                 //Image2 Path
                 bufferedWriter.write(destPath);
                 bufferedWriter.newLine();
-                //Intensity for Image 1
 
+                //Intensity for Image 1
                 bufferedWriter.write( Integer.toString( srcBrightSlider.getValue() ) );
                 bufferedWriter.newLine();
+
                 //Intensity for Image 2
                 bufferedWriter.write( Integer.toString( destBrightSlider.getValue() ) );
                 bufferedWriter.newLine();
+
                 //Control Point Resolution
                 bufferedWriter.write( Integer.toString( resolutionSlider.getValue() ) );
                 bufferedWriter.newLine();
+
                 //Length of Preview
                 bufferedWriter.write( Integer.toString( lengthSlider.getValue() ) );
                 bufferedWriter.newLine();
@@ -365,22 +368,24 @@ public class JMorph extends JFrame {
                     bufferedWriter.write( Integer.toString( srcControlPoints[i].x ) );
                     bufferedWriter.newLine();
                 }
-                //Image 1 Control Point y
+
+                //Image 1 Control Point Y
                 for(int i = 0; i < srcControlPoints.length; i ++){
                     bufferedWriter.write( Integer.toString( srcControlPoints[i].y ) );
                     bufferedWriter.newLine();
                 }
+
                 //Image 2 Control Point X
                 for(int i = 0; i < destControlPoints.length; i ++){
                     bufferedWriter.write( Integer.toString( destControlPoints[i].x ) );
                     bufferedWriter.newLine();
                 }
+
                 //Image 2 Control Point Y
                 for(int i = 0; i < destControlPoints.length; i ++){
                     bufferedWriter.write( Integer.toString( destControlPoints[i].y ) ) ;
                     bufferedWriter.newLine();
                 }
-
 
                 // Always close files.
                 bufferedWriter.close();
@@ -396,7 +401,7 @@ public class JMorph extends JFrame {
     }
 
     //Loads user configuration from a text file the user chooses
-    private void loadConfig(){
+    private void loadConfig() {
 
         fc.setDialogTitle("Load Settings");
 
@@ -418,7 +423,6 @@ public class JMorph extends JFrame {
                         new BufferedReader(fileReader);
 
                 while((line = bufferedReader.readLine()) != null) {
-                    //System.out.println(line);
                     lineList.add(line);
                 }
 
@@ -447,9 +451,11 @@ public class JMorph extends JFrame {
 
             //Set Source Image Intensity
             srcBrightSlider.setValue( Integer.parseInt( lineList.get(2) ) );
+            srcView.changeBrightness(srcBrightSlider.getValue() / 10f); // ensure the brightness is updated
 
             //Set Destination Image Intensity
             destBrightSlider.setValue( Integer.parseInt( lineList.get(3) ) );
+            destView.changeBrightness(destBrightSlider.getValue() / 10f); // ensure the brightness is updated
 
             //Set Control Point Resolution
             int resolution = Integer.parseInt( lineList.get(4) );
