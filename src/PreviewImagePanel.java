@@ -49,6 +49,7 @@ public class PreviewImagePanel extends JPanel {
         controlPoints = Arrays.copyOf(ivc.src.controlPoints, ivc.src.controlPoints.length);
     }
 
+    /*
     // Get a graphics context and show the image with the control point grid
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
@@ -105,5 +106,5 @@ public class PreviewImagePanel extends JPanel {
             );
         }
 
-    }
+    } */
 }
