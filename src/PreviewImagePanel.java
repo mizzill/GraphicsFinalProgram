@@ -41,7 +41,7 @@ public class PreviewImagePanel extends JPanel {
         Triangle[] srcTriangles = new Triangle[4];
         Triangle[] destTriangles = new Triangle[4];
 
-        // Get references to the images
+        // Get copies of the images
         BufferedImage srcImage = ivc.src.getImage();
         BufferedImage destImage = ivc.dest.getImage();
 

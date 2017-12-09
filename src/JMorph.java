@@ -1,5 +1,6 @@
 import javax.imageio.ImageIO;
 import javax.swing.*;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
@@ -57,15 +58,20 @@ public class JMorph extends JFrame {
     // Allows the user to select a directory for saving/loading settings
     private final JFileChooser fc = new JFileChooser(".");
 
+    // Allows the user to select an image file from a directory
+    private final JFileChooser imageChooser = new JFileChooser();
+
     // Animation properties
     public final int FPS = 30;
     public int animationLength;
 
     // Constructor
-    public JMorph(){
+    public JMorph() {
         super("Mighty JMorphin' Power Rangers");
 
         animationLength = INIT_LENGTH;
+
+        fc.setFileFilter(new FileNameExtensionFilter("JMorph Settings File", "jmorph"));
 
         setupMenu();
         buildComponents();
@@ -83,10 +89,10 @@ public class JMorph extends JFrame {
         JMenuItem changeSrcImage = new JMenuItem("Change Source Image");
         fileMenu.add( changeSrcImage );
         changeSrcImage.addActionListener(e -> {
-                int dialogSelection = fc.showOpenDialog(JMorph.this);
+                imageChooser.setDialogTitle("Select source image");
+                int dialogSelection = imageChooser.showOpenDialog(JMorph.this);
                 if (dialogSelection == JFileChooser.APPROVE_OPTION) {
-                    fc.setDialogTitle("Select source image");
-                    File file = fc.getSelectedFile();
+                    File file = imageChooser.getSelectedFile();
                     try {
                         src = ImageIO.read(file);
                         srcView.setImage(src);
@@ -100,10 +106,10 @@ public class JMorph extends JFrame {
         JMenuItem changeDestImage = new JMenuItem("Change Destination Image");
         fileMenu.add( changeDestImage );
         changeDestImage.addActionListener(e -> {
-                int dialogSelection = fc.showOpenDialog(JMorph.this);
+                imageChooser.setDialogTitle("Select destination image");
+                int dialogSelection = imageChooser.showOpenDialog(JMorph.this);
                 if (dialogSelection == JFileChooser.APPROVE_OPTION) {
-                    fc.setDialogTitle("Select destination image");
-                    File file = fc.getSelectedFile();
+                    File file = imageChooser.getSelectedFile();
                     try {
                         dest = ImageIO.read(file);
                         destView.setImage(dest);
@@ -327,8 +333,7 @@ public class JMorph extends JFrame {
         if( dialogSelection == JFileChooser.APPROVE_OPTION ) {
 
             File file = fc.getSelectedFile();
-            String fileName = file.getAbsolutePath();
-            System.out.println(fileName);
+            String fileName = file.getAbsolutePath() + ".jmorph";
             try {
                 // Assume default encoding.
                 FileWriter fileWriter =

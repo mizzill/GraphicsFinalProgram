@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7df4f537-39d0-47f3-8e18-748b545f72b1" name="Default" comment="Saving and Loading now work completely!">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Final/PreviewImagePanel.class" afterPath="$PROJECT_DIR$/out/production/Final/PreviewImagePanel.class" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/blahblah.jmorph" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/config.jmorph" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ctpts.jmorph" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test.jmorph" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/beartoshrek" afterPath="$PROJECT_DIR$/beartoshrek.jmorph" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/JMorph.java" afterPath="$PROJECT_DIR$/src/JMorph.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PreviewDialog.java" afterPath="$PROJECT_DIR$/src/PreviewDialog.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/PreviewImagePanel.java" afterPath="$PROJECT_DIR$/src/PreviewImagePanel.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -19,18 +25,18 @@
       <file leaf-file-name="JMorph.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/JMorph.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7150">
-              <caret line="295" column="25" lean-forward="false" selection-start-line="295" selection-start-column="17" selection-end-line="295" selection-end-column="25" />
+            <state relative-caret-position="285">
+              <caret line="227" column="65" lean-forward="false" selection-start-line="227" selection-start-column="65" selection-end-line="227" selection-end-column="65" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PreviewImagePanel.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PreviewImagePanel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/PreviewImagePanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="650">
-              <caret line="29" column="55" lean-forward="true" selection-start-line="29" selection-start-column="55" selection-end-line="29" selection-end-column="55" />
+            <state relative-caret-position="50">
+              <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -73,21 +79,31 @@
       <file leaf-file-name="ImageView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ImageView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="650">
-              <caret line="31" column="29" lean-forward="false" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="29" />
+            <state relative-caret-position="1180">
+              <caret line="232" column="38" lean-forward="true" selection-start-line="232" selection-start-column="38" selection-end-line="232" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <marker date="1512851376473" expanded="false" signature="7259:7265" ph=" }" />
+                <marker date="1512851376473" expanded="true" signature="7330:7557" ph="{...}" />
+                <marker date="1512851376473" expanded="false" signature="7719:7729" ph=" { " />
+                <marker date="1512851376473" expanded="false" signature="7758:7764" ph=" }" />
+                <marker date="1512851376473" expanded="false" signature="7803:7814" ph=" { " />
+                <marker date="1512851376473" expanded="false" signature="7835:7841" ph=" }" />
+                <marker date="1512851376473" expanded="true" signature="7896:8055" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PreviewDialog.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="PreviewDialog.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/PreviewDialog.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1250">
-              <caret line="53" column="37" lean-forward="false" selection-start-line="53" selection-start-column="37" selection-end-line="53" selection-end-column="37" />
-              <folding />
+            <state relative-caret-position="500">
+              <caret line="52" column="8" lean-forward="false" selection-start-line="52" selection-start-column="8" selection-end-line="52" selection-end-column="8" />
+              <folding>
+                <element signature="e#1212#1408#0" expanded="true" />
+                <element signature="e#1407#1408#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -103,9 +119,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>view</find>
-      <find>slid</find>
-      <find>proc</find>
       <find>showImage</find>
       <find>print</find>
       <find>println</find>
@@ -130,9 +143,12 @@
       <find>exit</find>
       <find>action</find>
       <find>set</find>
-      <find>reveal</find>
       <find>revealPreview</find>
       <find>buffered</find>
+      <find>jmorph</find>
+      <find>imageChoo</find>
+      <find>revealing</find>
+      <find>reveal</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -150,12 +166,12 @@
         <option value="$PROJECT_DIR$/src/MyImageObj.java" />
         <option value="$PROJECT_DIR$/config.txt" />
         <option value="$PROJECT_DIR$/src/Triangle.java" />
-        <option value="$PROJECT_DIR$/src/PreviewDialog.java" />
-        <option value="$PROJECT_DIR$/src/JMorph.java" />
         <option value="$PROJECT_DIR$/src/ImageViewController.java" />
         <option value="$PROJECT_DIR$/src/ImageView.java" />
         <option value="$PROJECT_DIR$/src/MorphTools.java" />
         <option value="$PROJECT_DIR$/src/PreviewImagePanel.java" />
+        <option value="$PROJECT_DIR$/src/JMorph.java" />
+        <option value="$PROJECT_DIR$/src/PreviewDialog.java" />
       </list>
     </option>
   </component>
@@ -480,6 +496,7 @@
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23049645" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32952183" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -492,7 +509,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32952183" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -613,6 +629,13 @@
           <caret line="197" column="20" lean-forward="false" selection-start-line="197" selection-start-column="20" selection-end-line="197" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
+            <marker date="1512851376473" expanded="false" signature="7259:7265" ph=" }" />
+            <marker date="1512851376473" expanded="true" signature="7330:7557" ph="{...}" />
+            <marker date="1512851376473" expanded="false" signature="7719:7729" ph=" { " />
+            <marker date="1512851376473" expanded="false" signature="7758:7764" ph=" }" />
+            <marker date="1512851376473" expanded="false" signature="7803:7814" ph=" { " />
+            <marker date="1512851376473" expanded="false" signature="7835:7841" ph=" }" />
+            <marker date="1512851376473" expanded="true" signature="7896:8055" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -706,22 +729,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/JMorph.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7150">
-          <caret line="295" column="25" lean-forward="false" selection-start-line="295" selection-start-column="17" selection-end-line="295" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PreviewDialog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1250">
-          <caret line="53" column="37" lean-forward="false" selection-start-line="53" selection-start-column="37" selection-end-line="53" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ImageViewController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -732,10 +739,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ImageView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="650">
-          <caret line="31" column="29" lean-forward="false" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="29" />
+        <state relative-caret-position="1180">
+          <caret line="232" column="38" lean-forward="true" selection-start-line="232" selection-start-column="38" selection-end-line="232" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
+            <marker date="1512851376473" expanded="false" signature="7259:7265" ph=" }" />
+            <marker date="1512851376473" expanded="true" signature="7330:7557" ph="{...}" />
+            <marker date="1512851376473" expanded="false" signature="7719:7729" ph=" { " />
+            <marker date="1512851376473" expanded="false" signature="7758:7764" ph=" }" />
+            <marker date="1512851376473" expanded="false" signature="7803:7814" ph=" { " />
+            <marker date="1512851376473" expanded="false" signature="7835:7841" ph=" }" />
+            <marker date="1512851376473" expanded="true" signature="7896:8055" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -750,7 +764,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/beartoshrek">
+    <entry file="file://$PROJECT_DIR$/beartoshrek.jmorph">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="504">
           <caret line="24" column="2" lean-forward="true" selection-start-line="24" selection-start-column="2" selection-end-line="24" selection-end-column="2" />
@@ -767,11 +781,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/JMorph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="227" column="65" lean-forward="false" selection-start-line="227" selection-start-column="65" selection-end-line="227" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/PreviewImagePanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="650">
-          <caret line="29" column="55" lean-forward="true" selection-start-line="29" selection-start-column="55" selection-end-line="29" selection-end-column="55" />
+        <state relative-caret-position="50">
+          <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PreviewDialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="52" column="8" lean-forward="false" selection-start-line="52" selection-start-column="8" selection-end-line="52" selection-end-column="8" />
+          <folding>
+            <element signature="e#1212#1408#0" expanded="true" />
+            <element signature="e#1407#1408#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
