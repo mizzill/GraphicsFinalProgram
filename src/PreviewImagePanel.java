@@ -37,19 +37,23 @@ public class PreviewImagePanel extends JPanel {
     // Updates the control points
     public void update(double percentCompleted) {
 
+        // Create the triangle arrays
+        Triangle[] srcTriangles = new Triangle[4];
+        Triangle[] destTriangles = new Triangle[4];
+
+        // Get references to the images
+        BufferedImage srcImage = ivc.src.getImage();
+        BufferedImage destImage = ivc.dest.getImage();
+
         // Interpolate the new position of each control point
         for (int i = 0; i < controlPoints.length; ++i) {
+
+            // Move the control point
             double _x = ivc.src.controlPoints[i].x + ((ivc.dest.controlPoints[i].x - ivc.src.controlPoints[i].x) * percentCompleted);
             double _y = ivc.src.controlPoints[i].y + ((ivc.dest.controlPoints[i].y - ivc.src.controlPoints[i].y) * percentCompleted);
             controlPoints[i] = new Point((int)_x, (int)_y);
-        }
 
-        for (int i = 0; i < ivc.gridResolution * ivc.gridResolution; ++i) {
-
-            Triangle[] srcTriangles = new Triangle[4];
-            Triangle[] destTriangles = new Triangle[4];
-
-            // Top triangle
+            // Create the top triangle
             srcTriangles[0] = new Triangle(
                     ivc.src.controlPoints[i].x,
                     ivc.src.controlPoints[i].y,
@@ -126,10 +130,10 @@ public class PreviewImagePanel extends JPanel {
             );
 
 
-            MorphTools.warpTriangle(ivc.src.getImage(), ivc.dest.getImage(), morphImage, srcTriangles[0], destTriangles[0], (float)percentCompleted, null, null);
-            MorphTools.warpTriangle(ivc.src.getImage(), ivc.dest.getImage(), morphImage, srcTriangles[1], destTriangles[1], (float)percentCompleted, null, null);
-            MorphTools.warpTriangle(ivc.src.getImage(), ivc.dest.getImage(), morphImage, srcTriangles[2], destTriangles[2], (float)percentCompleted, null, null);
-            MorphTools.warpTriangle(ivc.src.getImage(), ivc.dest.getImage(), morphImage, srcTriangles[3], destTriangles[3], (float)percentCompleted, null, null);
+            MorphTools.warpTriangle(srcImage, destImage, morphImage, srcTriangles[0], destTriangles[0], (float)percentCompleted, null, null);
+            MorphTools.warpTriangle(srcImage, destImage, morphImage, srcTriangles[1], destTriangles[1], (float)percentCompleted, null, null);
+            MorphTools.warpTriangle(srcImage, destImage, morphImage, srcTriangles[2], destTriangles[2], (float)percentCompleted, null, null);
+            MorphTools.warpTriangle(srcImage, destImage, morphImage, srcTriangles[3], destTriangles[3], (float)percentCompleted, null, null);
         }
 
         repaint();
