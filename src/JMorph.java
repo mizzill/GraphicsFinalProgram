@@ -11,8 +11,6 @@ import java.util.ArrayList;
 
 public class JMorph extends JFrame {
 
-    private JMorph thisMorph; // A reference to this instance, used in callback functions
-
     private BufferedImage src; //The Source Image
     private BufferedImage dest; // The Destination Image
     private ImageView srcView; // Displays Source Image
@@ -54,16 +52,17 @@ public class JMorph extends JFrame {
     private final int MAX_POINTS = 20;
     private final int INIT_POINTS = 10;
 
+    // Allows the user to select a directory for saving/loading settings
+    private final JFileChooser fc = new JFileChooser(".");
+
+    // Animation variables
     public final int FPS = 30;
     public int animationLength;
-
-    private final JFileChooser fc = new JFileChooser(".");
 
     // Constructor
     public JMorph(){
         super("Mighty JMorphin' Power Rangers");
 
-        thisMorph = this;
         animationLength = INIT_LENGTH;
 
         setupMenu();
@@ -82,15 +81,15 @@ public class JMorph extends JFrame {
         JMenuItem changeSrcImage = new JMenuItem("Change Source Image");
         fileMenu.add( changeSrcImage );
         changeSrcImage.addActionListener(e -> {
-                int returnVal = fc.showOpenDialog(JMorph.this);
-                if (returnVal == JFileChooser.APPROVE_OPTION) {
+                int dialogSelection = fc.showOpenDialog(JMorph.this);
+                if (dialogSelection == JFileChooser.APPROVE_OPTION) {
+                    fc.setDialogTitle("Select source image");
                     File file = fc.getSelectedFile();
                     try {
                         src = ImageIO.read(file);
+                        srcView.setImage(src);
+                        srcPath = file.getPath();
                     } catch (IOException e1){}
-
-                    srcView.setImage(src);
-                    srcPath = file.getPath();
                 }
             }
         );
@@ -99,15 +98,15 @@ public class JMorph extends JFrame {
         JMenuItem changeDestImage = new JMenuItem("Change Destination Image");
         fileMenu.add( changeDestImage );
         changeDestImage.addActionListener(e -> {
-                int returnVal = fc.showOpenDialog(JMorph.this);
-                if (returnVal == JFileChooser.APPROVE_OPTION) {
+                int dialogSelection = fc.showOpenDialog(JMorph.this);
+                if (dialogSelection == JFileChooser.APPROVE_OPTION) {
+                    fc.setDialogTitle("Select destination image");
                     File file = fc.getSelectedFile();
                     try {
                         dest = ImageIO.read(file);
-                    } catch (IOException e1){}
-
-                    destView.setImage(dest);
-                    destPath = file.getPath();
+                        destView.setImage(dest);
+                        destPath = file.getPath();
+                    } catch (IOException e1){ }
                 }
             }
         );
@@ -123,19 +122,16 @@ public class JMorph extends JFrame {
                 lengthSlider.setValue(INIT_LENGTH);
             }
         );
+
+        // Save
         JMenuItem save = new JMenuItem("Save Settings");
         fileMenu.add( save );
-        save.addActionListener(e -> {
-            saveConfig();
-        }
-        );
+        save.addActionListener(e -> saveConfig());
 
+        // Load
         JMenuItem load = new JMenuItem("Load Settings");
         fileMenu.add( load );
-        load.addActionListener(e -> {
-            loadConfig();
-        }
-        );
+        load.addActionListener(e -> loadConfig());
 
         // Exit
         JMenuItem exit = new JMenuItem("Exit");
@@ -153,14 +149,19 @@ public class JMorph extends JFrame {
     *  Sets up Action Listeners if necessary */
     private void buildComponents() {
 
-        // Set up the Image Views and the controller
+        // Set up the controller
         ivc = new ImageViewController();
-        String bearPic = "src/bear.jpg";
-        srcView = new ImageView( readImage(bearPic), ivc );
-        srcPath = bearPic;
-        String shrekPic = "src/shrek.jpg";
-        destView = new ImageView( readImage(shrekPic), ivc );
-        destPath = shrekPic;
+
+        // Set up the initial image views
+        String bearPicPath = "src/bear.jpg";
+        srcView = new ImageView( readImage(bearPicPath), ivc );
+        srcPath = bearPicPath;
+
+        String shrekPicPath = "src/shrek.jpg";
+        destView = new ImageView( readImage(shrekPicPath), ivc );
+        destPath = shrekPicPath;
+
+        // Attach the views to the image view controller
         ivc.setViews(srcView, destView);
 
         // Set up the slider panel
@@ -183,11 +184,11 @@ public class JMorph extends JFrame {
         srcBrightSlider = new JSlider(SwingConstants.HORIZONTAL, MIN_LUMINANCE, MAX_LUMINANCE, INIT_LUMINANCE);
         srcBrightSlider.setPaintTicks(true);
         srcBrightSlider.addChangeListener(e -> {
-            int value = srcBrightSlider.getValue();
-            float brightness = value / 10f;
-            srcView.changeBrightness(brightness);
+                int value = srcBrightSlider.getValue();
+                float brightness = value / 10f;
+                srcView.changeBrightness(brightness);
 
-        }
+            }
         );
 
         destBrightSlider = new JSlider(SwingConstants.HORIZONTAL, MIN_LUMINANCE, MAX_LUMINANCE, INIT_LUMINANCE);
@@ -210,10 +211,11 @@ public class JMorph extends JFrame {
         resolutionSlider.setPaintLabels(true);
         resolutionSlider.setPaintTicks(true);
         resolutionSlider.addChangeListener(e -> {
-            int resolution = resolutionSlider.getValue();
-            ivc.changeGridResolution(resolution);
-        }
+                int resolution = resolutionSlider.getValue();
+                ivc.changeGridResolution(resolution);
+            }
         );
+
         //Set up the preview button
         previewButton = new JButton("Preview");
         previewButton.addActionListener(e -> previewDialog.revealPreview());
@@ -280,7 +282,7 @@ public class JMorph extends JFrame {
         c.add(brightPanel, BorderLayout.SOUTH);
 
         // Add the Preview Dialog (invisible at the start)
-        previewDialog = new PreviewDialog(SwingUtilities.getWindowAncestor(previewButton), thisMorph, ivc);
+        previewDialog = new PreviewDialog(SwingUtilities.getWindowAncestor(previewButton), this, ivc);
 
         // Reveal to the world
         pack();
@@ -309,19 +311,23 @@ public class JMorph extends JFrame {
         return bim;
 
     }
+
     //Saves what images the user is using, brightness level, and control point locations for both images
-    //Based on a combination of code from oracel docs at
+    //Based on a combination of code from oracle docs at
     //https://docs.oracle.com/javase/tutorial/displayCode.html?code=https://docs.oracle.com/javase/tutorial/uiswing/examples/components/FileChooserDemoProject/src/components/FileChooserDemo.java
     //and here
     //https://www.caveofprogramming.com/java/java-file-reading-and-writing-files-in-java.html
     private void saveConfig(){
-        // The name of the file to open.
-        //String fileName = "config.txt"
-        int returnVal = fc.showSaveDialog(this);
-        if( returnVal == JFileChooser.APPROVE_OPTION )
-        {
+
+        fc.setDialogTitle("Save Settings");
+
+        // The name of the file to open
+        int dialogSelection = fc.showSaveDialog(this);
+        if( dialogSelection == JFileChooser.APPROVE_OPTION ) {
+            
             File file = fc.getSelectedFile();
-            String fileName = file.getName();
+            String fileName = file.getAbsolutePath();
+            System.out.println(fileName);
             try {
                 // Assume default encoding.
                 FileWriter fileWriter =
@@ -386,20 +392,21 @@ public class JMorph extends JFrame {
 
             }
         }
-        else{
-
-        }
 
     }
+
     //Loads user configuration from a text file the user chooses
     private void loadConfig(){
-        int returnVal = fc.showOpenDialog(this);
 
-        if (returnVal == JFileChooser.APPROVE_OPTION) {
+        fc.setDialogTitle("Load Settings");
+
+        int dialogSelection = fc.showOpenDialog(this);
+        if (dialogSelection == JFileChooser.APPROVE_OPTION) {
+
             File file = fc.getSelectedFile();
-            String fileName = file.getName();
+            String fileName = file.getAbsolutePath();
 
-            String line = null;
+            String line;
             ArrayList<String> lineList = new ArrayList<>();
             try {
                 // FileReader reads text files in the default encoding.
@@ -459,11 +466,10 @@ public class JMorph extends JFrame {
             //Read In Image 1 X coords
             int i;
             int arrayPosition = 0;
-            for(i = 6; i < (resolution * resolution) +6 ; i++){
+            for(i = 6; i < (resolution * resolution) + 6 ; i++){
                 srcXCoords[arrayPosition] = Integer.parseInt( lineList.get(i) );
                 arrayPosition++;
             }
-
 
             //Read in Image 1 Ycoords
             int j;
@@ -472,6 +478,7 @@ public class JMorph extends JFrame {
                 srcYCoords[arrayPosition] = Integer.parseInt( lineList.get(j) );
                 arrayPosition++;
             }
+
             //Read in Image 2 X Coords
             int k;
             arrayPosition = 0;
@@ -479,6 +486,7 @@ public class JMorph extends JFrame {
                 destXCoords[arrayPosition] = Integer.parseInt( lineList.get(k) );
                 arrayPosition++;
             }
+
             //Read in Image 2 Y Coords
             int m;
             arrayPosition = 0;
